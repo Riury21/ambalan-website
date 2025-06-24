@@ -93,24 +93,27 @@
         <div class="carousel-item active">
             <img src="/logo/kjkr2015.jpg" alt="Kegiatan 1">
             <div class="carousel-caption">
-                <h1>Kegiatan Mendaki Gunung</h1>
-                <p>Petualangan seru mendaki gunung bersama tim pramuka.</p>
+                <h1>Keringat dan lelah ini adalah bukti perjuangan,
+                    tapi kebersamaan adalah kemenangan sesungguhnya</h1>
+                <p>~kjkr 2012</p>
             </div>
         </div>
         <!-- Slide 2 -->
-        <div class="carousel-item">
-            <img src="/logo/kjkr2016.jpg" alt="Kegiatan 2">
-            <div class="carousel-caption">
-                <h1>Perkemahan Tahunan</h1>
-                <p>Pengalaman mendirikan tenda dan memasak di alam terbuka.</p>
-            </div>
-        </div>
+<div class="carousel-item">
+    <img src="/logo/kjkr2016.jpg" alt="Kegiatan 2">
+    <div class="carousel-caption">
+        <h1>Gerakan Pramuka</h1>
+        <h1>Ambalan Kamajaya Kamaratih</h1>
+        <h1>Pangkalan SMA Negeri 1 Sumpiuh</h1>
+        <h1>Gugus Depan 19.2823-19.2824</h1>
+    </div>
+</div>
         <!-- Slide 3 -->
         <div class="carousel-item">
             <img src="/logo/kjkr2017.jpg" alt="Kegiatan 3">
             <div class="carousel-caption">
-                <h1>Pelatihan Kepramukaan</h1>
-                <p>Belajar keterampilan baru untuk memperkuat kepramukaan.</p>
+                <h1>Diamku bukan tanpa arti, aku hanya memilih berbicara lewat tindakan.</h1>
+                <p>~Mas Pri</p>
             </div>
         </div>
     </div>

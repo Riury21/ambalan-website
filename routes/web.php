@@ -49,7 +49,7 @@ Route::post('/login', function (Request $request) {
     $username = $request->username;
     $password = $request->password;
 
-    if ($username === 'admin' && $password === 'admin123') {
+    if ($username === 'admin' && $password === 'admin12345') {
         session(['is_admin' => true]);
         return redirect('/admin');
     }

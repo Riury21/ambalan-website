@@ -159,16 +159,16 @@
         <div class="mt-auto p-3 border-top border-light">
             <!-- Social Media Icons -->
             <div class="social-icons mb-3">
-                <a href="https://www.instagram.com" target="_blank" class="text-white" title="Instagram">
+                <a href="https://www.instagram.com/ksatriaa_kjkr/" target="_blank" class="text-white" title="Instagram">
                     <i class="bi bi-instagram" style="font-size: 1.5rem;"></i>
                 </a>
-                <a href="https://www.tiktok.com" target="_blank" class="text-white" title="TikTok">
+                <a href="https://www.tiktok.com/@ksatria_kjkr" target="_blank" class="text-white" title="TikTok">
                     <i class="bi bi-tiktok" style="font-size: 1.5rem;"></i>
                 </a>
                 <a href="https://www.facebook.com" target="_blank" class="text-white" title="Facebook">
                     <i class="bi bi-facebook" style="font-size: 1.5rem;"></i>
                 </a>
-                <a href="https://www.youtube.com" target="_blank" class="text-white" title="YouTube">
+                <a href="https://www.youtube.com/@AmbalanKamajayaKamaratih" target="_blank" class="text-white" title="YouTube">
                     <i class="bi bi-youtube" style="font-size: 1.5rem;"></i>
                 </a>
             </div>
@@ -216,16 +216,16 @@
 
             <!-- Social Media Icons -->
             <div class="social-icons d-flex justify-content-around gap-2 mb-4">
-                <a href="https://www.instagram.com" target="_blank" class="text-white" title="Instagram">
+                <a href="https://www.instagram.com/ksatriaa_kjkr/" target="_blank" class="text-white" title="Instagram">
                     <i class="bi bi-instagram" style="font-size: 1.5rem;"></i>
                 </a>
-                <a href="https://www.tiktok.com" target="_blank" class="text-white" title="TikTok">
+                <a href="https://www.tiktok.com/@ksatria_kjkr" target="_blank" class="text-white" title="TikTok">
                     <i class="bi bi-tiktok" style="font-size: 1.5rem;"></i>
                 </a>
                 <a href="https://www.facebook.com" target="_blank" class="text-white" title="Facebook">
                     <i class="bi bi-facebook" style="font-size: 1.5rem;"></i>
                 </a>
-                <a href="https://www.youtube.com" target="_blank" class="text-white" title="YouTube">
+                <a href="https://www.youtube.com/@AmbalanKamajayaKamaratih" target="_blank" class="text-white" title="YouTube">
                     <i class="bi bi-youtube" style="font-size: 1.5rem;"></i>
                 </a>
             </div>
