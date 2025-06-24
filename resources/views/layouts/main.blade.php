@@ -51,6 +51,18 @@
             text-align: center;
         }
 
+        /* Social media icons */
+        #sidebar .social-icons {
+            display: flex;
+            justify-content: space-around;
+            gap: 10px;
+        }
+
+        #sidebar.collapsed .social-icons {
+            flex-direction: column;
+            align-items: center;
+        }
+
         /* Main content styles */
         #main-content {
             margin-left: 240px;
@@ -122,6 +134,21 @@
             </li>
         </ul>
         <div class="mt-auto p-3 border-top border-light">
+            <!-- Social Media Icons -->
+            <div class="social-icons mb-3">
+                <a href="https://www.instagram.com" target="_blank" class="text-white" title="Instagram">
+                    <i class="bi bi-instagram" style="font-size: 1.5rem;"></i>
+                </a>
+                <a href="https://www.tiktok.com" target="_blank" class="text-white" title="TikTok">
+                    <i class="bi bi-tiktok" style="font-size: 1.5rem;"></i>
+                </a>
+                <a href="https://www.facebook.com" target="_blank" class="text-white" title="Facebook">
+                    <i class="bi bi-facebook" style="font-size: 1.5rem;"></i>
+                </a>
+                <a href="https://www.youtube.com" target="_blank" class="text-white" title="YouTube">
+                    <i class="bi bi-youtube" style="font-size: 1.5rem;"></i>
+                </a>
+            </div>
             <a href="/login" class="btn btn-outline-light w-100 d-flex align-items-center justify-content-center">
                 <i class="bi bi-box-arrow-right me-2"></i><span>Login</span>
             </a>
@@ -166,12 +193,10 @@
         document.addEventListener('DOMContentLoaded', function () {
             const sidebar = document.getElementById('sidebar');
             const toggleBtn = document.getElementById('toggleSidebar');
-            const mainContent = document.getElementById('main-content');
 
             if (toggleBtn) {
                 toggleBtn.addEventListener('click', function () {
                     sidebar.classList.toggle('collapsed');
-
                     const icon = toggleBtn.querySelector('i');
                     icon.classList.toggle('bi-chevron-double-left');
                     icon.classList.toggle('bi-chevron-double-right');

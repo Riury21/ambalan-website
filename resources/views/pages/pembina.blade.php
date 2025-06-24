@@ -33,7 +33,21 @@
                 <input type="text" name="nama" class="form-control" placeholder="Filter Nama" value="{{ request('nama') }}">
             </div>
             <div class="col-6 col-md-3">
-                <input type="text" name="jabatan" class="form-control" placeholder="Filter Jabatan" value="{{ request('jabatan') }}">
+                <select name="jabatan" class="form-select">
+                    <option value="">Semua Jabatan</option>
+                    <option value="Kamabigus" {{ request('jabatan') == 'Kamabigus' ? 'selected' : '' }}>Kamabigus</option>
+                    <option value="Ketua Gudep Kamajaya" {{ request('jabatan') == 'Ketua Gudep Kamajaya' ? 'selected' : '' }}>Ketua Gudep Kamajaya</option>
+                    <option value="Ketua Gudep Kamaratih" {{ request('jabatan') == 'Ketua Gudep Kamaratih' ? 'selected' : '' }}>Ketua Gudep Kamaratih</option>
+                    <option value="Pembina Kamajaya" {{ request('jabatan') == 'Pembina Kamajaya' ? 'selected' : '' }}>Pembina Kamajaya</option>
+                    <option value="Pembina Kamaratih" {{ request('jabatan') == 'Pembina Kamaratih' ? 'selected' : '' }}>Pembina Kamaratih</option>
+                </select>
+            </div>
+            <div class="col-6 col-md-3">
+                <select name="bertugas" class="form-select">
+                    <option value="">Bertugas</option>
+                    <option value="Ya" {{ request('bertugas') == 'Ya' ? 'selected' : '' }}>Ya</option>
+                    <option value="Tidak" {{ request('bertugas') == 'Tidak' ? 'selected' : '' }}>Tidak</option>
+                </select>
             </div>
             <div class="col-12 col-md-auto d-flex gap-2 justify-content-center">
                 <button type="submit" class="btn btn-primary">Filter</button>
@@ -61,7 +75,7 @@
                     <div class="card-body px-2 py-2">
                         <h6 class="card-title mb-1" style="font-size: 14px;">{{ $item->nama }}</h6>
                         <p class="card-text mb-1" style="font-size: 13px;"><strong>Jabatan:</strong> {{ $item->jabatan }}</p>
-                        <p class="card-text mb-1" style="font-size: 13px;"><strong>Bertugas:</strong> {{ $item->tahun_menjabat ?? '-' }}</p>
+                        <p class="card-text mb-1" style="font-size: 13px;"><strong>Bertugas:</strong> {{ $item->tahun_menjabat }}</p>
                         <p class="card-text mb-1" style="font-size: 13px;"><strong>Email:</strong> {{ $item->email ?? '-' }}</p>
                         <p class="card-text mb-1" style="font-size: 13px;"><strong>Kontak:</strong> {{ $item->kontak ?? '-' }}</p>
                         <p class="card-text" style="font-size: 13px;"><strong>Alamat:</strong> {{ $item->alamat ?? '-' }}</p>

@@ -42,22 +42,31 @@ class UserController extends Controller
 
         return view('pages.dewanambalan', compact('dewanMenjabat'));
     }
+
     public function pembina(Request $request)
     {
         $query = \App\Models\Pembina::query();
 
+        // Filter berdasarkan nama
         if ($request->filled('nama')) {
             $query->where('nama', 'like', '%' . $request->nama . '%');
         }
 
+        // Filter berdasarkan jabatan
         if ($request->filled('jabatan')) {
             $query->where('jabatan', 'like', '%' . $request->jabatan . '%');
+        }
+
+        // Filter berdasarkan bertugas
+        if ($request->filled('bertugas')) {
+            $query->where('tahun_menjabat', $request->bertugas);
         }
 
         $pembina = $query->orderBy('nama')->get();
 
         return view('pages.pembina', compact('pembina'));
     }
+
     public function galeri()
     {
         $galeri = \App\Models\Galeri::orderBy('tanggal_upload', 'desc')->get();
@@ -78,7 +87,6 @@ class UserController extends Controller
     {
         $galeri = Galeri::findOrFail($id);
         return view('pages.galeri-detail', compact('galeri'));
-    }
-    
+    } 
 
 }
