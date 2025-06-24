@@ -5,19 +5,18 @@
     <title>Edit Pembina</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-
     <style>
         body {
             background-color: #f8f9fa;
         }
 
         .bg-kamajaya {
-            background-color: #003366; /* biru tua */
+            background-color: #003366;
             color: #fff;
         }
 
         .btn-kamaratih {
-            background-color: #66ccff; /* biru muda */
+            background-color: #66ccff;
             color: #003366;
         }
 
@@ -44,7 +43,7 @@
                     <h4 class="mb-0">Edit Pembina</h4>
                 </div>
                 <div class="card-body">
-                    <form action="{{ url('/admin/pembina/'.$pembina->id) }}" method="POST" enctype="multipart/form-data">
+                    <form action="{{ url('/admin/pembina/' . $pembina->id) }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         @method('PUT')
 
@@ -55,12 +54,23 @@
 
                         <div class="mb-3">
                             <label for="jabatan" class="form-label">Jabatan</label>
-                            <input type="text" class="form-control" id="jabatan" name="jabatan" value="{{ old('jabatan', $pembina->jabatan) }}" required>
+                            <select class="form-select" id="jabatan" name="jabatan" required>
+                                <option value="">-- Pilih Jabatan --</option>
+                                <option value="Kamabigus" {{ old('jabatan', $pembina->jabatan) == 'Kamabigus' ? 'selected' : '' }}>Kamabigus</option>
+                                <option value="Ketua Gudep Kamajaya" {{ old('jabatan', $pembina->jabatan) == 'Ketua Gudep Kamajaya' ? 'selected' : '' }}>Ketua Gudep Kamajaya</option>
+                                <option value="Ketua Gudep Kamaratih" {{ old('jabatan', $pembina->jabatan) == 'Ketua Gudep Kamaratih' ? 'selected' : '' }}>Ketua Gudep Kamaratih</option>
+                                <option value="Pembina Kamajaya" {{ old('jabatan', $pembina->jabatan) == 'Pembina Kamajaya' ? 'selected' : '' }}>Pembina Kamajaya</option>
+                                <option value="Pembina Kamaratih" {{ old('jabatan', $pembina->jabatan) == 'Pembina Kamaratih' ? 'selected' : '' }}>Pembina Kamaratih</option>
+                            </select>
                         </div>
 
                         <div class="mb-3">
-                            <label for="tahun_menjabat" class="form-label">Tahun Menjabat</label>
-                            <input type="text" class="form-control" id="tahun_menjabat" name="tahun_menjabat" value="{{ old('tahun_menjabat', $pembina->tahun_menjabat) }}">
+                            <label for="tahun_menjabat" class="form-label">Bertugas</label>
+                            <select class="form-select" id="tahun_menjabat" name="tahun_menjabat">
+                                <option value="">-- Pilih --</option>
+                                <option value="Ya" {{ old('tahun_menjabat', $pembina->tahun_menjabat) == 'Ya' ? 'selected' : '' }}>Ya</option>
+                                <option value="Tidak" {{ old('tahun_menjabat', $pembina->tahun_menjabat) == 'Tidak' ? 'selected' : '' }}>Tidak</option>
+                            </select>
                         </div>
 
                         <div class="mb-3">
@@ -84,7 +94,7 @@
                         </div>
 
                         <div class="mb-3">
-                            <label for="foto" class="form-label">Foto (biarkan kosong jika tidak ingin mengubah)</label>
+                            <label for="foto" class="form-label">Foto (biarkan kosong jika tidak diubah)</label>
                             <input type="file" class="form-control" id="foto" name="foto" accept="image/*">
                             @if($pembina->foto)
                                 <div class="mt-2">

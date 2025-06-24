@@ -65,7 +65,7 @@
                 <th>No</th>
                 <th>Nama</th>
                 <th>Jabatan</th>
-                <th>Tahun Menjabat</th>
+                <th>Bertugas</th>
                 <th>HP</th>
                 <th>Email</th>
                 <th>Alamat</th>

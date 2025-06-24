@@ -61,7 +61,7 @@
                     <div class="card-body px-2 py-2">
                         <h6 class="card-title mb-1" style="font-size: 14px;">{{ $item->nama }}</h6>
                         <p class="card-text mb-1" style="font-size: 13px;"><strong>Jabatan:</strong> {{ $item->jabatan }}</p>
-                        <p class="card-text mb-1" style="font-size: 13px;"><strong>Menjabat:</strong> {{ $item->tahun_menjabat ?? '-' }}</p>
+                        <p class="card-text mb-1" style="font-size: 13px;"><strong>Bertugas:</strong> {{ $item->tahun_menjabat ?? '-' }}</p>
                         <p class="card-text mb-1" style="font-size: 13px;"><strong>Email:</strong> {{ $item->email ?? '-' }}</p>
                         <p class="card-text mb-1" style="font-size: 13px;"><strong>Kontak:</strong> {{ $item->kontak ?? '-' }}</p>
                         <p class="card-text" style="font-size: 13px;"><strong>Alamat:</strong> {{ $item->alamat ?? '-' }}</p>

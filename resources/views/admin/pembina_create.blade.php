@@ -52,11 +52,22 @@
                         </div>
                         <div class="mb-3">
                             <label for="jabatan" class="form-label">Jabatan</label>
-                            <input type="text" class="form-control" id="jabatan" name="jabatan" required>
+                            <select class="form-select" id="jabatan" name="jabatan" required>
+                                <option value="">-- Pilih Jabatan --</option>
+                                <option value="Kamabigus">Kamabigus</option>
+                                <option value="Ketua Gudep Kamajaya">Ketua Gudep Kamajaya</option>
+                                <option value="Ketua Gudep Kamaratih">Ketua Gudep Kamaratih</option>
+                                <option value="Pembina Kamajaya">Pembina Kamajaya</option>
+                                <option value="Pembina Kamaratih">Pembina Kamaratih</option>
+                            </select>
                         </div>
                         <div class="mb-3">
-                            <label for="tahun_menjabat" class="form-label">Tahun Menjabat</label>
-                            <input type="text" class="form-control" id="tahun_menjabat" name="tahun_menjabat">
+                            <label for="tahun_menjabat" class="form-label">Bertugas</label>
+                            <select class="form-select" id="tahun_menjabat" name="tahun_menjabat">
+                                <option value="">-- Pilih --</option>
+                                <option value="Ya">Ya</option>
+                                <option value="Tidak">Tidak</option>
+                            </select>
                         </div>
                         <div class="mb-3">
                             <label for="nomer_hp" class="form-label">Nomor HP</label>
