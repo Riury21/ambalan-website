@@ -67,7 +67,7 @@
         #main-content {
             margin-left: 240px;
             transition: margin-left 0.3s;
-            padding: 0.5rem;
+            padding: 0;
         }
 
         #sidebar.collapsed + #main-content {
@@ -83,6 +83,25 @@
                 margin-left: 0;
                 padding: 1rem;
             }
+
+        @media (min-width: 992px) {
+            #main-content {
+                margin-left: 240px; /* Tambahkan margin hanya jika sidebar terlihat */
+            }
+        }
+
+            #mobileMenuButton {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                z-index: 1050;
+                background-color: #0d6efd;
+                color: white;
+                border-bottom: 1px solid #dee2e6;
+                padding: 0.5rem;
+                text-align: center;
+            }
         }
     </style>
 </head>
@@ -90,12 +109,16 @@
 
     <!-- Sidebar -->
     <div id="sidebar">
+        <!-- gambar Cikal -->
         <div class="d-flex justify-content-between align-items-center p-3 border-bottom border-light">
-            <h5 class="sidebar-title mb-0">Pramuka KJKR</h5>
+            <div class="d-flex align-items-center">
+                <h5 class="sidebar-title mb-0">Pramuka KJKR</h5>
+            </div> 
             <button class="btn btn-sm btn-outline-light d-none d-lg-inline" id="toggleSidebar" title="Toggle Sidebar">
                 <i class="bi bi-chevron-double-left"></i>
             </button>
-        </div>
+        </div> 
+
         <ul class="nav flex-column px-2 pt-3">
             <li class="nav-item mb-2">
                 <a href="/" class="nav-link text-white {{ request()->is('/') ? 'active fw-bold' : '' }}">
@@ -158,8 +181,8 @@
     <!-- Main content -->
     <div id="main-content">
         <!-- Mobile menu toggle -->
-        <div class="d-lg-none mb-3">
-            <button class="btn btn-primary" data-bs-toggle="offcanvas" data-bs-target="#mobileSidebar">
+        <div id="mobileMenuButton" class="d-lg-none">
+            <button class="btn btn-primary w-100" data-bs-toggle="offcanvas" data-bs-target="#mobileSidebar">
                 <i class="bi bi-list"></i> Menu
             </button>
         </div>
@@ -170,11 +193,18 @@
     <!-- Offcanvas Sidebar (Mobile) -->
     <div class="offcanvas offcanvas-start bg-primary text-white" tabindex="-1" id="mobileSidebar">
         <div class="offcanvas-header">
-            <h5 class="offcanvas-title">Menu Navigasi</h5>
+            <!-- Logo Cikal -->
+            <div class="d-flex align-items-center">
+                <img src="{{ asset('logo/cikal.png') }}" alt="Logo Cikal" 
+                    style="width: 30px; height: 30px; margin-right: 10px; object-fit: contain;">
+                <h5 class="offcanvas-title">Pramuka KJKR</h5>
+            </div>
             <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"></button>
         </div>
-        <div class="offcanvas-body">
-            <ul class="nav flex-column px-2">
+        
+        <div class="offcanvas-body d-flex flex-column">
+            <!-- Navigation Links -->
+            <ul class="nav flex-column px-2 mb-4">
                 <li class="nav-item mb-2"><a href="/" class="nav-link text-white"><i class="bi bi-house-door me-2"></i>Halaman Utama</a></li>
                 <li class="nav-item mb-2"><a href="/berita" class="nav-link text-white"><i class="bi bi-newspaper me-2"></i>Berita</a></li>
                 <li class="nav-item mb-2"><a href="/galeri" class="nav-link text-white"><i class="bi bi-images me-2"></i>Galeri</a></li>
@@ -183,6 +213,27 @@
                 <li class="nav-item mb-2"><a href="/dewanambalan" class="nav-link text-white"><i class="bi bi-people me-2"></i>Dewan Ambalan</a></li>
                 <li class="nav-item mb-2"><a href="/dewanpurna" class="nav-link text-white"><i class="bi bi-person-lines-fill me-2"></i>Purna Dewan</a></li>
             </ul>
+
+            <!-- Social Media Icons -->
+            <div class="social-icons d-flex justify-content-around gap-2 mb-4">
+                <a href="https://www.instagram.com" target="_blank" class="text-white" title="Instagram">
+                    <i class="bi bi-instagram" style="font-size: 1.5rem;"></i>
+                </a>
+                <a href="https://www.tiktok.com" target="_blank" class="text-white" title="TikTok">
+                    <i class="bi bi-tiktok" style="font-size: 1.5rem;"></i>
+                </a>
+                <a href="https://www.facebook.com" target="_blank" class="text-white" title="Facebook">
+                    <i class="bi bi-facebook" style="font-size: 1.5rem;"></i>
+                </a>
+                <a href="https://www.youtube.com" target="_blank" class="text-white" title="YouTube">
+                    <i class="bi bi-youtube" style="font-size: 1.5rem;"></i>
+                </a>
+            </div>
+
+            <!-- Login Button -->
+            <a href="/login" class="btn btn-outline-light w-100 d-flex align-items-center justify-content-center">
+                <i class="bi bi-box-arrow-right me-2"></i><span>Login</span>
+            </a>
         </div>
     </div>
 
