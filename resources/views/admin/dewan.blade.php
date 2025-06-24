@@ -38,7 +38,7 @@
     }
 </style>
 
-<div class="container-fluid px-3">
+<div class="container py-4">
     <!-- Sticky Judul -->
     <div class="sticky-header">
         <div class="d-flex justify-content-between align-items-center">
@@ -53,7 +53,20 @@
     <div class="sticky-filter mt-2">
         <form method="GET" action="{{ url('/admin/dewan') }}" class="row g-2">
             <div class="col-md-3">
-                <input type="text" name="jabatan" class="form-control" placeholder="Filter Jabatan" value="{{ request('jabatan') }}">
+                <select name="jabatan" class="form-select">
+                    <option value="">Semua Jabatan</option>
+                    <option value="Pradana" {{ request('jabatan') == 'Pradana' ? 'selected' : '' }}>Pradana</option>
+                    <option value="Wakil Pradana" {{ request('jabatan') == 'Wakil Pradana' ? 'selected' : '' }}>Wakil Pradana</option>
+                    <option value="Pemangku Adat" {{ request('jabatan') == 'Pemangku Adat' ? 'selected' : '' }}>Pemangku Adat</option>
+                    <option value="Pendamping Kanan" {{ request('jabatan') == 'Pendamping Kanan' ? 'selected' : '' }}>Pendamping Kanan</option>
+                    <option value="Pendamping Kiri" {{ request('jabatan') == 'Pendamping Kiri' ? 'selected' : '' }}>Pendamping Kiri</option>
+                    <option value="Sekretaris/Kerani" {{ request('jabatan') == 'Sekretaris/Kerani' ? 'selected' : '' }}>Sekretaris/Kerani</option>
+                    <option value="Bendahara/Juru Uang" {{ request('jabatan') == 'Bendahara/Juru Uang' ? 'selected' : '' }}>Bendahara/Juru Uang</option>
+                    <option value="Seksi Giat" {{ request('jabatan') == 'Seksi Giat' ? 'selected' : '' }}>Seksi Giat</option>
+                    <option value="Seksi Abdimas" {{ request('jabatan') == 'Seksi Abdimas' ? 'selected' : '' }}>Seksi Abdimas</option>
+                    <option value="Seksi Evabang" {{ request('jabatan') == 'Seksi Evabang' ? 'selected' : '' }}>Seksi Evabang</option>
+                    <option value="Seksi Kajian Pramuka" {{ request('jabatan') == 'Seksi Kajian Pramuka' ? 'selected' : '' }}>Seksi Kajian Pramuka</option>
+                </select>
             </div>
             <div class="col-md-2">
                 <input type="text" name="angkatan" class="form-control" placeholder="Filter Angkatan" value="{{ request('angkatan') }}">

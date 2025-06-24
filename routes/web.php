@@ -94,4 +94,7 @@ Route::delete('/admin/dewan/{id}', [AdminDewanController::class, 'destroy']);
 Route::get('/dewanpurna', [UserController::class, 'dewanPurna'])->name('dewan-purna.index');
 Route::get('/dewanambalan', [UserController::class, 'dewanAmbalan'])->name('dewan-ambalan.index');
 Route::get('/pembina', [UserController::class, 'pembina']);
-
+Route::get('/galeri', [UserController::class, 'galeri']);
+Route::get('/berita', [UserController::class, 'berita']);
+Route::get('/berita/{id}', [UserController::class, 'detailBerita']);
+Route::get('/galeri/{id}', [UserController::class, 'detailGaleri']);

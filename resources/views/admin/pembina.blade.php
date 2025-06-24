@@ -5,31 +5,37 @@
 @section('content')
 
 <style>
+    /* Sticky Header (judul) */
     .sticky-header {
         position: sticky;
         top: 0;
-        background-color: #fff;
-        z-index: 1020;
-        padding-top: 1rem;
-        padding-bottom: 0.5rem;
+        z-index: 999;
+        background-color: white;
+        padding: 0.5rem 0;
         border-bottom: 1px solid #dee2e6;
     }
 
+    /* Sticky Filter */
     .sticky-filter {
         position: sticky;
-        top: 72px; /* Sesuaikan dengan tinggi judul */
-        background-color: #fff;
-        z-index: 1015;
-        padding-top: 0.5rem;
-        padding-bottom: 1rem;
+        top: 56px; /* cukup kecil agar tidak terlalu jauh */
+        z-index: 998;
+        background-color: white;
+        padding-bottom: 0.75rem;
         border-bottom: 1px solid #dee2e6;
     }
 
+    /* Non-sticky di mobile */
     @media (max-width: 767.98px) {
         .sticky-header,
         .sticky-filter {
-            position: static !important;
+            position: static;
         }
+    }
+
+    /* Hapus padding atas konten utama jika ada */
+    #main-content {
+        padding-top: 0 !important;
     }
 </style>
 
@@ -46,11 +52,24 @@
     <div class="sticky-filter">
         <form method="GET" action="{{ url('/admin/pembina') }}" class="row row-cols-1 row-cols-md-4 g-2">
             <div class="col">
-                <input type="text" name="jabatan" class="form-control" placeholder="Filter Jabatan" value="{{ request('jabatan') }}">
-            </div>
+                <select name="jabatan" class="form-select">
+                    <option value="">Semua Jabatan</option>
+                    <option value="Kamabigus" {{ request('jabatan') == 'Kamabigus' ? 'selected' : '' }}>Kamabigus</option>
+                    <option value="Ketua Gudep Kamajaya" {{ request('jabatan') == 'Ketua Gudep Kamajaya' ? 'selected' : '' }}>Ketua Gudep Kamajaya</option>
+                    <option value="Ketua Gudep Kamaratih" {{ request('jabatan') == 'Ketua Gudep Kamaratih' ? 'selected' : '' }}>Ketua Gudep Kamaratih</option>
+                    <option value="Pembina Kamajaya" {{ request('jabatan') == 'Pembina Kamajaya' ? 'selected' : '' }}>Pembina Kamajaya</option>
+                    <option value="Pembina Kamaratih" {{ request('jabatan') == 'Pembina Kamaratih' ? 'selected' : '' }}>Pembina Kamaratih</option>
+                </select>
+            </div> 
+
             <div class="col">
-                <input type="text" name="tahun_menjabat" class="form-control" placeholder="Filter Tahun Menjabat" value="{{ request('tahun_menjabat') }}">
+                <select name="tahun_menjabat" class="form-select">
+                    <option value="">Filter Bertugas</option>
+                    <option value="Ya" {{ request('tahun_menjabat') == 'Ya' ? 'selected' : '' }}>Ya</option>
+                    <option value="Tidak" {{ request('tahun_menjabat') == 'Tidak' ? 'selected' : '' }}>Tidak</option>
+                </select>
             </div>
+
             <div class="col d-flex">
                 <button type="submit" class="btn btn-primary me-2">Filter</button>
                 <a href="{{ url('/admin/pembina') }}" class="btn btn-secondary">Reset</a>

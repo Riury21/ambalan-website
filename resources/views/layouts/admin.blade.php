@@ -88,7 +88,7 @@
             </li>
             <li class="nav-item mb-2">
                 <a href="/admin/berita" class="nav-link text-white {{ request()->is('admin/berita') ? 'active fw-bold' : '' }}">
-                    <i class="bi bi-newspaper me-2"></i><span>Input Berita</span>
+                    <i class="bi bi-newspaper me-2"></i><span>Input Berita / Artikel</span>
                 </a>
             </li>
             <li class="nav-item mb-2">

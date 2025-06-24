@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Dewan;
+use App\Models\Berita;
+use App\Models\Galeri;
 
 class UserController extends Controller
 {
@@ -56,4 +58,27 @@ class UserController extends Controller
 
         return view('pages.pembina', compact('pembina'));
     }
+    public function galeri()
+    {
+        $galeri = \App\Models\Galeri::orderBy('tanggal_upload', 'desc')->get();
+        return view('pages.galeri', compact('galeri'));
+    }
+
+    public function berita()
+    {
+        $berita = \App\Models\Berita::orderBy('created_at', 'desc')->get();
+        return view('pages.berita', compact('berita'));
+    }
+    public function detailBerita($id)
+    {
+        $berita = Berita::findOrFail($id);
+        return view('pages.berita-detail', compact('berita'));
+    }
+    public function detailGaleri($id)
+    {
+        $galeri = Galeri::findOrFail($id);
+        return view('pages.galeri-detail', compact('galeri'));
+    }
+    
+
 }

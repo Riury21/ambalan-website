@@ -92,7 +92,7 @@
             </li>
             <li class="nav-item mb-2">
                 <a href="/berita" class="nav-link text-white {{ request()->is('berita') ? 'active fw-bold' : '' }}">
-                    <i class="bi bi-newspaper me-2"></i><span>Berita</span>
+                    <i class="bi bi-newspaper me-2"></i><span>Berita / Artikel</span>
                 </a>
             </li>
             <li class="nav-item mb-2">
@@ -102,7 +102,7 @@
             </li>
             <li class="nav-item mb-2">
                 <a href="/sejarah" class="nav-link text-white {{ request()->is('sejarah') ? 'active fw-bold' : '' }}">
-                    <i class="bi bi-clock-history me-2"></i><span>Sejarah</span>
+                    <i class="bi bi-clock-history me-2"></i><span>Sejarah KJKR</span>
                 </a>
             </li>
             <li class="nav-item mb-2">
