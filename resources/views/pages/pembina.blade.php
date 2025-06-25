@@ -116,15 +116,16 @@
         @forelse($pembina as $item)
             <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-4">
                 <div class="card h-100 shadow-sm text-center pt-4">
-                    <div class="mx-auto mb-2" style="width: 100px; height: 100px;">
+                    <div class="mx-auto mb-2" style="width: 100px; height: 120px; clip-path: polygon(
+                            10% 5%, 90% 5%, /* Lengkung atas */
+                            100% 20%, 85% 95%, /* Sisi kanan */
+                            50% 100%, /* Titik bawah */
+                            15% 95%, 0% 20% /* Sisi kiri */
+                        );overflow: hidden; background: #fff;">
                         @if($item->foto)
-                            <img src="{{ asset('uploads/' . $item->foto) }}"
-                                class="rounded-circle img-fluid"
-                                style="width: 100px; height: 100px; object-fit: cover;">
+                            <img src="{{ asset('uploads/' . $item->foto) }}" class="img-fluid" style="width: 100%; height: 100%; object-fit: cover;">
                         @else
-                            <img src="https://via.placeholder.com/100x100?text=No+Image"
-                                class="rounded-circle img-fluid"
-                                style="width: 100px; height: 100px; object-fit: cover;">
+                            <img src="https://via.placeholder.com/100x100?text=No+Image" class="img-fluid" style="width: 100%; height: 100%; object-fit: cover;">
                         @endif
                     </div>
                     <div class="card-body px-2 py-2">

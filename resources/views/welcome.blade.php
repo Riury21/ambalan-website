@@ -26,12 +26,10 @@
         margin-left: 0;     /* Reset margin */
     }
     
-
     #main-content {
         margin-left: 0; /* Reset margin utama */
         padding: 0;     /* Hindari padding tambahan */
     }
-
 
     .carousel .carousel-inner,
     .carousel .carousel-item {
@@ -74,9 +72,10 @@
             font-size: 1.5rem; /* Ukuran judul lebih kecil */
         }
 
-        .carousel-caption p {
-            font-size: 1rem; /* Ukuran deskripsi lebih kecil */
-        }
+    .carousel-caption p {
+        font-size: 1rem; /* Ukuran deskripsi lebih kecil */
+    }
+    
     }
     @media (min-width: 992px) { /* Hanya untuk tampilan desktop */
         .carousel-caption {

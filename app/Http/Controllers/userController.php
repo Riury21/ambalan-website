@@ -43,9 +43,9 @@ class UserController extends Controller
         }
 
         $dewanPurna = $query
+            ->orderBy('angkatan', 'desc')
             ->orderByRaw("FIELD(satuan, 'Kamajaya', 'Kamaratih')")
             ->orderByRaw('FIELD(jabatan, "' . implode('", "', $jabatanOrder) . '")')
-            ->orderBy('angkatan', 'desc')
             ->get();
 
         return view('pages.dewanpurna', compact('dewanPurna'));

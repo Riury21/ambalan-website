@@ -75,7 +75,7 @@
                 </p>
                 <p>
                     Maka dari itu, untuk mempertahankan Pramuka di SMA N Sumpiuh, Pembina yang belum dilantik memberanikan diri untuk mengadakan latihan secara
-                    terus-menerus. Akhirnya, setelah dalam keadaan yang tidak menentu dan jangka waktu yang cukup lama, pada tanggal 18 September 1991 secara
+                    terus-menerus. Akhirnya, setelah dalam keadaan yang tidak menentu dan jangka waktu yang cukup lama, pada tanggal <strong>18 September 1991</strong> secara
                     resmi lahirlah Gudep 19.2823-19.2824 Pangkalan SMA N Sumpiuh yang masih bertahan hingga saat ini.
                 </p>
                 <p>

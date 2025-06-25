@@ -220,8 +220,9 @@
                 <li class="nav-item mb-2"><a href="/dewanambalan" class="nav-link text-white"><i class="bi bi-people me-2"></i>Dewan Ambalan</a></li>
                 <li class="nav-item mb-2"><a href="/dewanpurna" class="nav-link text-white"><i class="bi bi-person-lines-fill me-2"></i>Purna Dewan</a></li>
             </ul>
-
             <!-- Social Media Icons -->
+            <div class="p-3 border-top border-light"></div>
+            <div class="p-3 border-top border-light"></div>
             <div class="social-icons d-flex justify-content-around gap-2 mb-4">
                 <a href="https://www.instagram.com/ksatriaa_kjkr/" target="_blank" class="text-white" title="Instagram">
                     <i class="bi bi-instagram" style="font-size: 1.5rem;"></i>
@@ -236,12 +237,8 @@
                     <i class="bi bi-youtube" style="font-size: 1.5rem;"></i>
                 </a>
             </div>
-
-            <!-- Login Button -->
-            <a href="/login" class="btn btn-outline-light w-100 d-flex align-items-center justify-content-center">
-                <i class="bi bi-box-arrow-right me-2"></i><span>Login</span>
-            </a>
-        </div>
+            <div class="p-3 border-top border-light"></div>
+            <div class="p-3 border-top border-light"></div>
     </div>
 
     <!-- Scripts -->
