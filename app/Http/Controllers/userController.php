@@ -11,8 +11,25 @@ class UserController extends Controller
 {
     public function dewanPurna(Request $request)
     {
+        $jabatanOrder = [
+            'pradana',
+            'wakil pradana',
+            'pemangku adat',
+            'pendamping kanan',
+            'pendamping kiri',
+            'sekretaris/kerani',
+            'bendahara/juru uang',
+            'seksi giat',
+            'seksi kajian pramuka',
+            'seksi evabang',
+            'seksi abdimas',
+        ];
+
         $query = Dewan::where('keaktifan', 'Purna');
 
+        if ($request->filled('nama')) {
+            $query->where('nama', 'like', '%' . $request->nama . '%');
+        }
         if ($request->filled('jabatan')) {
             $query->where('jabatan', 'like', '%' . $request->jabatan . '%');
         }
@@ -21,13 +38,35 @@ class UserController extends Controller
             $query->where('angkatan', 'like', '%' . $request->angkatan . '%');
         }
 
-        $dewanPurna = $query->orderBy('angkatan', 'desc')->get();
+        if ($request->filled('satuan')) {
+            $query->where('satuan', $request->satuan);
+        }
+
+        $dewanPurna = $query
+            ->orderByRaw("FIELD(satuan, 'Kamajaya', 'Kamaratih')")
+            ->orderByRaw('FIELD(jabatan, "' . implode('", "', $jabatanOrder) . '")')
+            ->orderBy('angkatan', 'desc')
+            ->get();
 
         return view('pages.dewanpurna', compact('dewanPurna'));
     }
 
     public function dewanAmbalan(Request $request)
     {
+        $jabatanOrder = [
+            'pradana',
+            'wakil pradana',
+            'pemangku adat',
+            'pendamping kanan',
+            'pendamping kiri',
+            'sekretaris/kerani',
+            'bendahara/juru uang',
+            'seksi giat',
+            'seksi kajian pramuka',
+            'seksi evabang',
+            'seksi abdimas',
+        ];
+
         $query = Dewan::where('keaktifan', 'Menjabat');
 
         if ($request->filled('jabatan')) {
@@ -38,7 +77,11 @@ class UserController extends Controller
             $query->where('angkatan', 'like', '%' . $request->angkatan . '%');
         }
 
-        $dewanMenjabat = $query->orderBy('angkatan', 'desc')->get();
+        $dewanMenjabat = $query
+            ->orderByRaw("FIELD(satuan, 'Kamajaya', 'Kamaratih')")
+            ->orderByRaw('FIELD(jabatan, "' . implode('", "', $jabatanOrder) . '")')
+            ->orderBy('angkatan', 'desc')
+            ->get();
 
         return view('pages.dewanambalan', compact('dewanMenjabat'));
     }
@@ -62,7 +105,18 @@ class UserController extends Controller
             $query->where('tahun_menjabat', $request->bertugas);
         }
 
-        $pembina = $query->orderBy('nama')->get();
+        // Pengurutan data berdasarkan jabatan
+        $pembina = $query
+            ->orderByRaw("
+                FIELD(jabatan, 
+                'Kamabigus', 
+                'Ketua Gudep Kamajaya', 
+                'Pembina Kamajaya', 
+                'Ketua Gudep Kamaratih', 
+                'Pembina Kamaratih')
+            ")
+            ->orderBy('nama') // Pengurutan nama setelah jabatan
+            ->get();
 
         return view('pages.pembina', compact('pembina'));
     }

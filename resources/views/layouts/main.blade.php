@@ -65,9 +65,16 @@
 
         /* Main content styles */
         #main-content {
+            padding-top: 0 !important;
             margin-left: 240px;
             transition: margin-left 0.3s;
             padding: 0;
+            background-image: url('{{ asset('logo/bg1.png') }}'); /* Path gambar latar */
+            background-size: cover; /* Memenuhi area */
+            background-position: center; /* Pusat gambar */
+            background-repeat: no-repeat; /* Tidak diulang */
+            background-attachment: fixed; /* Tetap saat scroll */
+            min-height: 100vh; /* Memastikan tinggi minimal mencakup layar */
         }
 
         #sidebar.collapsed + #main-content {
@@ -112,7 +119,7 @@
         <!-- gambar Cikal -->
         <div class="d-flex justify-content-between align-items-center p-3 border-bottom border-light">
             <div class="d-flex align-items-center">
-                <h5 class="sidebar-title mb-0">Pramuka KJKR</h5>
+                <h5 class="sidebar-title mb-0">Ambalan KJKR</h5>
             </div> 
             <button class="btn btn-sm btn-outline-light d-none d-lg-inline" id="toggleSidebar" title="Toggle Sidebar">
                 <i class="bi bi-chevron-double-left"></i>

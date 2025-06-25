@@ -10,9 +10,10 @@
         position: sticky;
         top: 0;
         z-index: 1020;
-        background-color: #fff;
+        background-color: rgba(255, 255, 255, 0.95); /* Warna putih transparan */
         padding: 0.5rem 0;
         border-bottom: 1px solid #dee2e6;
+        border-radius: 10px; /* Sudut membulat */
     }
 
     @media (max-width: 768px) {
@@ -35,7 +36,11 @@
 
     <!-- Sticky Title -->
     <div class="sticky-top-section">
-        <h1 class="text-center mb-3">Berita Ambalan</h1>
+        <h1 class="text-center mb-3 d-flex align-items-center justify-content-center gap-2">
+            <img src="{{ asset('logo/kj.png') }}" alt="Logo KJ" class="img-fluid" style="height: 40px;">
+            Berita & Artikel
+            <img src="{{ asset('logo/kr.png') }}" alt="Logo KR" class="img-fluid" style="height: 40px;">
+        </h1>
     </div>
 
     <!-- Grid Berita -->

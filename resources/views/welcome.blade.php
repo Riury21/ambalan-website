@@ -99,15 +99,15 @@
             </div>
         </div>
         <!-- Slide 2 -->
-<div class="carousel-item">
-    <img src="/logo/kjkr2016.jpg" alt="Kegiatan 2">
-    <div class="carousel-caption">
-        <h1>Gerakan Pramuka</h1>
-        <h1>Ambalan Kamajaya Kamaratih</h1>
-        <h1>Pangkalan SMA Negeri 1 Sumpiuh</h1>
-        <h1>Gugus Depan 19.2823-19.2824</h1>
-    </div>
-</div>
+        <div class="carousel-item">
+            <img src="/logo/kjkr2016.jpg" alt="Kegiatan 2">
+            <div class="carousel-caption">
+                <h1>Gerakan Pramuka</h1>
+                <h1>Ambalan Kamajaya Kamaratih</h1>
+                <h1>Pangkalan SMA Negeri 1 Sumpiuh</h1>
+                <h1>Gugus Depan 19.2823-19.2824</h1>
+            </div>
+        </div>
         <!-- Slide 3 -->
         <div class="carousel-item">
             <img src="/logo/kjkr2017.jpg" alt="Kegiatan 3">
