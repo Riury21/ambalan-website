@@ -18,8 +18,11 @@ Route::get('/berita', function () {
 Route::get('/galeri', function () {
     return view('pages.galeri');
 });
-Route::get('/sejarah', function () {
-    return view('pages.sejarah');
+Route::get('/proker', function () {
+    return view('pages.proker');
+});
+Route::get('/profil', function () {
+    return view('pages.profil');
 });
 Route::get('/pembina', function () {
     return view('pages.pembina');
@@ -96,5 +99,6 @@ Route::get('/dewanambalan', [UserController::class, 'dewanAmbalan'])->name('dewa
 Route::get('/pembina', [UserController::class, 'pembina']);
 Route::get('/galeri', [UserController::class, 'galeri']);
 Route::get('/berita', [UserController::class, 'berita']);
-Route::get('/berita/{id}', [UserController::class, 'detailBerita']);
-Route::get('/galeri/{id}', [UserController::class, 'detailGaleri']);
+Route::get('/berita/{judul}', [UserController::class, 'detailBerita']);
+Route::get('/galeri/{judul}', [UserController::class, 'detailGaleri']);
+

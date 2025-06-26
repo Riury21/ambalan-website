@@ -28,7 +28,7 @@
 
     @media (max-width: 768px) {
         .sticky-top-section {
-            top: 50px;
+            top: 0px;
             padding-top: 0.5rem;
         }
     }
@@ -114,7 +114,11 @@
                 </select>
             </div>
             <div class="col-6 col-md-3">
-                <input type="text" name="angkatan" class="form-control" placeholder="Filter Angkatan" value="{{ request('angkatan') }}">
+                <select name="satuan" class="form-control">
+                    <option value="" disabled selected>Filter Satuan</option>
+                    <option value="Kamajaya" {{ request('satuan') === 'Kamajaya' ? 'selected' : '' }}>Kamajaya</option>
+                    <option value="Kamaratih" {{ request('satuan') === 'Kamaratih' ? 'selected' : '' }}>Kamaratih</option>
+                </select>
             </div>
             <div class="col-12 col-md-auto d-flex gap-2 justify-content-center">
                 <button type="submit" class="btn btn-primary">Filter</button>

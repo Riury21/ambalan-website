@@ -92,9 +92,8 @@
         <div class="carousel-item active">
             <img src="/logo/kjkr2015.jpg" alt="Kegiatan 1">
             <div class="carousel-caption">
-                <h1>Keringat dan lelah ini adalah bukti perjuangan,
-                    tapi kebersamaan adalah kemenangan sesungguhnya</h1>
-                <p>~kjkr 2012</p>
+                <h1>Visi Misi</h1>
+                <p>~kjkr 2025</p>
             </div>
         </div>
         <!-- Slide 2 -->

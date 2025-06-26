@@ -10,30 +10,28 @@
         position: sticky;
         top: 0;
         z-index: 1020;
-        background-color: rgba(255, 255, 255, 0.95); /* Warna putih transparan */
+        background-color: rgba(255, 255, 255, 0.95);
         padding: 0.5rem 0;
         border-bottom: 1px solid #dee2e6;
-        border-radius: 10px; /* Sudut membulat */
-        transition: transform 0.3s ease, opacity 0.3s ease; /* Transisi untuk animasi */
+        border-radius: 10px;
+        transition: transform 0.3s ease, opacity 0.3s ease;
     }
 
     .sticky-hidden {
-        transform: translateY(-100%); /* Geser header ke luar layar */
-        opacity: 0; /* Header tidak terlihat */
+        transform: translateY(-100%);
+        opacity: 0;
     }
 
     .sticky-visible {
-        transform: translateY(0); /* Kembalikan header ke posisi awal */
-        opacity: 1; /* Header terlihat */
+        transform: translateY(0);
+        opacity: 1;
     }
-
     @media (max-width: 768px) {
         .sticky-top-section {
-            top: 50px; /* Sesuaikan dengan tinggi navbar */
+            top: 0px;
             padding-top: 0.5rem;
         }
     }
-
     .card {
         position: relative;
         overflow: hidden;
@@ -45,7 +43,8 @@
         box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
     }
 
-    .card.kamajaya::before {
+    .card.kamajaya::before,
+    .card.kamaratih::before {
         content: '';
         position: absolute;
         top: 50%;
@@ -61,27 +60,14 @@
     }
 
     .card.kamajaya:hover::before {
+        background: radial-gradient(circle, rgb(0, 0, 254), rgba(123, 191, 255, 0));
         width: 300%;
         height: 300%;
         opacity: 1;
     }
 
-    .card.kamaratih::before {
-        content: '';
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        width: 0;
-        height: 0;
-        background: radial-gradient(circle, rgb(0, 255, 255), rgba(123, 191, 255, 0));
-        border-radius: 50%;
-        transform: translate(-50%, -50%);
-        opacity: 0;
-        z-index: -1;
-        transition: all 0.4s ease-in-out;
-    }
-
     .card.kamaratih:hover::before {
+        background: radial-gradient(circle, rgb(0, 255, 255), rgba(123, 191, 255, 0));
         width: 300%;
         height: 300%;
         opacity: 1;
@@ -101,7 +87,7 @@
                 <input type="text" name="nama" class="form-control" placeholder="Filter Nama" value="{{ request('nama') }}">
             </div>
             <div class="col-6 col-md-2">
-                <select name="jabatan" class="form-control">
+                <select name="jabatan" class="form-control" style="text-transform: capitalize;">
                     <option value="" disabled selected>Filter Jabatan</option>
                     @foreach(['pradana', 'wakil pradana', 'pemangku adat', 'pendamping kanan', 'pendamping kiri', 'sekretaris/kerani', 'bendahara/juru uang', 'seksi giat', 'seksi kajian pramuka', 'seksi evabang', 'seksi abdimas'] as $jabatan)
                         <option value="{{ $jabatan }}" {{ request('jabatan') === $jabatan ? 'selected' : '' }}>{{ ucfirst($jabatan) }}</option>
@@ -109,7 +95,12 @@
                 </select>
             </div>
             <div class="col-6 col-md-2">
-                <input type="text" name="angkatan" class="form-control" placeholder="Filter Angkatan" value="{{ request('angkatan') }}">
+                <select name="angkatan" class="form-control">
+                    <option value="" disabled selected>Filter Angkatan</option>
+                    @foreach($angkatanList as $angkatan)
+                        <option value="{{ $angkatan }}" {{ request('angkatan') === $angkatan ? 'selected' : '' }}>{{ $angkatan }}</option>
+                    @endforeach
+                </select>
             </div>
             <div class="col-6 col-md-2">
                 <select name="satuan" class="form-control">
@@ -131,10 +122,10 @@
             <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-4">
                 <div class="card h-100 shadow-sm text-center pt-4 {{ strtolower($purna->satuan) }}">
                     <div class="mx-auto mb-2" style="width: 100px; height: 120px; clip-path: polygon(
-                            10% 5%, 90% 5%, /* Lengkung atas */
-                            100% 20%, 85% 95%, /* Sisi kanan */
-                            50% 100%, /* Titik bawah */
-                            15% 95%, 0% 20% /* Sisi kiri */
+                            10% 5%, 90% 5%, 
+                            100% 20%, 85% 95%, 
+                            50% 100%, 
+                            15% 95%, 0% 20%
                         );overflow: hidden; background: #fff;">
                         @if($purna->foto)
                             <img src="{{ asset('uploads/' . $purna->foto) }}" class="img-fluid" style="width: 100%; height: 100%; object-fit: cover;">
@@ -159,7 +150,6 @@
 </div>
 
 <script>
-    // Scroll detection untuk sticky header
     document.addEventListener("DOMContentLoaded", function () {
         const stickyHeader = document.getElementById("stickyHeader");
         let lastScrollPosition = 0;
@@ -168,11 +158,9 @@
             const currentScrollPosition = window.pageYOffset;
 
             if (currentScrollPosition > lastScrollPosition) {
-                // Scroll ke bawah, sembunyikan header
                 stickyHeader.classList.add("sticky-hidden");
                 stickyHeader.classList.remove("sticky-visible");
             } else {
-                // Scroll ke atas atau berhenti, tampilkan header
                 stickyHeader.classList.add("sticky-visible");
                 stickyHeader.classList.remove("sticky-hidden");
             }

@@ -29,7 +29,7 @@
 
     @media (max-width: 768px) {
         .sticky-top-section {
-            top: 50px;
+            top: 0px;
             padding-top: 0.5rem;
         }
     }

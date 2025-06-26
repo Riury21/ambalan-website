@@ -17,7 +17,7 @@
 
     @media (max-width: 768px) {
         .sticky-title {
-            top: 50px;
+            top: 0px;
         }
     }
 
