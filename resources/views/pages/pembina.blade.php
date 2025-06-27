@@ -79,9 +79,9 @@
     <!-- Sticky Title & Filter -->
     <div class="sticky-top-section sticky-visible" id="stickyHeader">
         <h1 class="text-center mb-3 d-flex align-items-center justify-content-center gap-2">
-            <img src="{{ asset('logo/kj.png') }}" alt="Logo KJ" class="img-fluid" style="height: 40px;">
+            <img src="{{ asset('logo/kj.png') }}" alt="Logo KJ" class="img-fluid" style="height: 70px;">
             Pembina Ambalan
-            <img src="{{ asset('logo/kr.png') }}" alt="Logo KR" class="img-fluid" style="height: 40px;">
+            <img src="{{ asset('logo/kr.png') }}" alt="Logo KR" class="img-fluid" style="height: 70px;">
         </h1>
         <form method="GET" action="{{ url('/pembina') }}" class="row g-2 justify-content-center">
             <div class="col-6 col-md-3">

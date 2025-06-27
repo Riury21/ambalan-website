@@ -106,6 +106,11 @@
                     <i class="bi bi-people me-2"></i><span>Input Data Dewan</span>
                 </a>
             </li>
+            <li class="nav-item mb-2">
+                <a href="/admin/pesan" class="nav-link text-white {{ request()->is('admin/pesan') ? 'active fw-bold' : '' }}">
+                    <i class="bi bi-people me-2"></i><span>Lihat Pesan</span>
+                </a>
+            </li>
         </ul>
         <div class="mt-auto p-4 border-top border-light">
             <a href="/" class="btn btn-outline-light w-100 d-flex align-items-center justify-content-center">
@@ -140,6 +145,9 @@
                     </li>
                     <li class="nav-item mb-2">
                         <a href="/admin/dewan" class="nav-link text-white"><i class="bi bi-people me-2"></i><span>Input Data Dewan</span></a>
+                    </li>
+                    <li class="nav-item mb-2">
+                        <a href="/admin/pesan" class="nav-link text-white"><i class="bi bi-people me-2"></i><span>Lihat Pesan</span></a>
                     </li>
                 </ul>
                 <div class="mt-auto p-4 border-top border-light">

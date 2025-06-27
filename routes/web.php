@@ -8,6 +8,9 @@ use App\Http\Controllers\AdminGaleriController;
 use App\Http\Controllers\AdminPembinaController;
 use App\Http\Controllers\AdminDewanController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\PesanController;
+use App\Http\Controllers\PesanAdminController;
+use App\Http\Controllers\DashboardAdminController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -102,3 +105,11 @@ Route::get('/berita', [UserController::class, 'berita']);
 Route::get('/berita/{judul}', [UserController::class, 'detailBerita']);
 Route::get('/galeri/{judul}', [UserController::class, 'detailGaleri']);
 
+Route::get('/pesan', [PesanController::class, 'create'])->name('pesan.create');
+Route::post('/pesan', [PesanController::class, 'store'])->name('pesan.store');
+
+Route::get('/admin/pesan', [PesanAdminController::class, 'index'])->name('pesan.index');
+Route::delete('/admin/pesan/{id}', [PesanAdminController::class, 'destroy'])->name('pesan.destroy');
+Route::patch('/admin/pesan/{id}', [PesanAdminController::class, 'update'])->name('pesan.update');
+
+Route::get('/admin', [DashboardAdminController::class, 'index'])->name('admin.dashboard');

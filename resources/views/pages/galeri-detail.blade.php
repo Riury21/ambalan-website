@@ -50,9 +50,9 @@
     <!-- Sticky Judul -->
     <div class="sticky-title text-center mb-4">
         <h1 class="text-center mb-3 d-flex align-items-center justify-content-center gap-2">
-            <img src="{{ asset('logo/kj.png') }}" alt="Logo KJ" class="img-fluid" style="height: 40px;">
+            <img src="{{ asset('logo/kj.png') }}" alt="Logo KJ" class="img-fluid" style="height: 70px;">
             {{ $galeri->judul }}
-            <img src="{{ asset('logo/kr.png') }}" alt="Logo KR" class="img-fluid" style="height: 40px;">
+            <img src="{{ asset('logo/kr.png') }}" alt="Logo KR" class="img-fluid" style="height: 70px;">
         </h1>
     </div>
 
