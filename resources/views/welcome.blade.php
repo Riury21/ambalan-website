@@ -49,12 +49,15 @@
     /* Posisi teks */
     .carousel-caption {
         position: absolute;
-        bottom: 20px; /* Jarak dari bawah */
-        left: 20px; /* Jarak dari kiri */
-        right: 20px; /* Tambahkan ruang untuk teks panjang */
+        bottom: 30px; /* naikkan teks (default 0 → ubah ke 30px) */
+        left: 30px;   /* geser teks ke kanan sedikit */
+        padding: 15px 20px;
+        margin: 0;
+        width: auto;
+        max-width: 100%;
         color: #fff;
         text-align: left;
-        text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+        text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
     }
 
     .carousel-caption h1 {
@@ -77,12 +80,6 @@
     }
     
     }
-    @media (min-width: 992px) { /* Hanya untuk tampilan desktop */
-        .carousel-caption {
-            margin-left: 240px; /* Sesuaikan dengan lebar sidebar */
-            text-align: left;
-        }
-    }
 
 </style>
 
@@ -90,28 +87,30 @@
     <div class="carousel-inner">
         <!-- Slide 1 -->
         <div class="carousel-item active">
-            <img src="/logo/kjkr2015.jpg" alt="Kegiatan 1">
+            <img src="/logo/dewanambalan.jpg" alt="Kegiatan 1">
             <div class="carousel-caption">
-                <h1>Visi Misi</h1>
-                <p>~kjkr 2025</p>
+                <h1>Gerakan Pramuka</h1>
+                <h2>Ambalan Kamajaya Kamaratih</h2>
+                <h3>Pangkalan SMA Negeri 1 Sumpiuh</h3>
+                <h4>Gugus Depan 19.2823-19.2824</h4>
             </div>
         </div>
         <!-- Slide 2 -->
         <div class="carousel-item">
             <img src="/logo/kjkr2016.jpg" alt="Kegiatan 2">
             <div class="carousel-caption">
-                <h1>Gerakan Pramuka</h1>
-                <h1>Ambalan Kamajaya Kamaratih</h1>
-                <h1>Pangkalan SMA Negeri 1 Sumpiuh</h1>
-                <h1>Gugus Depan 19.2823-19.2824</h1>
+                <h3>Kami belajar bahwa cinta bukan hanya urusan hati,</h3>
+                <h3>tapi juga aksi nyata: menolong tanpa mengharap balasan,</h3>
+                <h3>memberi tanpa meminta kembali.</h3>
             </div>
         </div>
         <!-- Slide 3 -->
         <div class="carousel-item">
             <img src="/logo/kjkr2017.jpg" alt="Kegiatan 3">
             <div class="carousel-caption">
-                <h1>Diamku bukan tanpa arti, aku hanya memilih berbicara lewat tindakan.</h1>
-                <p>~Mas Pri</p>
+                <h1>Diamku bukan tanpa arti,</h1>
+                <h2>aku hanya memilih berbicara lewat tindakan.</h2>
+                <p>Giat 15/16 Priyanggono</p>
             </div>
         </div>
     </div>

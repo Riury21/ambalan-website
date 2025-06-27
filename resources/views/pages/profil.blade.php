@@ -29,8 +29,8 @@
 
     .badge-container {
         display: flex;
-        justify-content: space-between;
-        gap: 40px; /* Jarak antar kolom */
+        justify-content: center;
+        gap: 20px;
         flex-wrap: wrap;
         margin-top: 0px;
     }
@@ -41,7 +41,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 15px;
+        gap: 30px;
         padding: 20px;
         background-color: rgba(255, 255, 255, 0.9);
         border-radius: 10px;
@@ -52,7 +52,6 @@
         max-width: 33%;
         height: auto;
         border-radius: 10px;
-        shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     }
 
     .badge-text {
@@ -84,139 +83,133 @@
         </h1>
     </div>
 
-    <!-- Konten Profil -->
+    <!-- Sejarah Ambalan -->
     <div class="row justify-content-center mt-4">
         <div class="col-12">
-        <div class="row justify-content-center">
-            <div class="row justify-content-center">
-                <div class="col-12 d-flex justify-content-center align-items-center" style="min-height: 100px;">
-                    <h2 style="background-color: rgba(255, 255, 255, 0.8); padding: 10px 20px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
-                        Sejarah
-                    </h2>
-                </div>
-            </div>
-        </div>
+            <h2 class="text-center" style="background-color: rgba(255, 255, 255, 0.8); padding: 10px 20px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">Sejarah Terbentuknya Ambalan KJKR</h2>
             <div class="content-container">
-                <p>
-                    Semenjak berdirinya sekolah tercinta kita ini, yakni SMA N Sumpiuh pada tahun 1985. Sekitar tahun 1988
-                    tercetuslah gagasan untuk mendirikan <strong>GUGUS DEPAN SMA NEGERI SUMPIUH</strong>. Pada tahun itulah mulai
-                    diselenggarakan iuran bulanan pramuka, namun kegiatan kepramukaan belum ada dan hanya berlangsung satu tahun saja.
-                </p>
-                <p>
-                    Pada bulan April tahun 1989 dibentuk <strong>Dewan Pembina</strong> dan <strong>Mabigus</strong> setelah mendapat nomor Gudep
-                    (<i>Gugus Depan</i> maksudnya...) 19.2823-19.2824. Rencananya Pembina sekaligus Mabigus akan dilantik pada bulan itu. Akan tetapi,
-                    setelah semuanya dipersiapkan dan pelantikan pun telah siap dilaksanakan, muncul hambatan berupa penundaan pelantikan.
-                </p>
-                <p>
-                    Dengan adanya penundaan tersebut, Pembina segera memberitahukan kepada pangkalan lain bahwa upacara pelantikan ditunda.
-                    Akibatnya Gerakan Pramuka (GP) di SMA N Sumpiuh diakui secara <i>de facto</i> (kenyataan) namun tidak diakui secara <i>de jure</i> (hukum).
-                </p>
-                <p>
-                    Maka dari itu, untuk mempertahankan Pramuka di SMA N Sumpiuh, Pembina yang belum dilantik memberanikan diri untuk mengadakan latihan secara
-                    terus-menerus. Akhirnya, setelah dalam keadaan yang tidak menentu dan jangka waktu yang cukup lama, pada tanggal <strong>18 September 1991</strong> secara
-                    resmi lahirlah Gudep 19.2823-19.2824 Pangkalan SMA N Sumpiuh yang masih bertahan hingga saat ini.
-                </p>
-                <p>
-                    Pangkalan ini diberi nama <strong>KAMAJAYA KAMARATIH</strong>. Nama ini diambil dari nama sepasang Dewa dan Dewi dalam cerita pewayangan.
-                    Kamajaya adalah dewa yang sangat tampan dan rupawan, sedangkan Kamaratih adalah dewi yang sangat cantik dan anggun. Dalam cerita pewayangan,
-                    Kamajaya dan Kamaratih adalah simbol kesempurnaan yang mencapai 99%, dengan 1% sisanya diberikan kepada umat manusia di bumi.
-                </p>
-                <p>
-                    Dengan simbol sepasang Dewa Dewi yang memiliki kesempurnaan ini, pendiri pangkalan berharap agar Ambalan Kamajaya Kamaratih mampu menjadi
-                    Pramuka yang sempurna, mengamalkan <strong>Tri Satya</strong> dan <strong>Dasa Dharma</strong>, serta menjadi pandu ibu pertiwi.
-                </p>
-                <p>
-                    Keren bukan? Inilah asal usul nama <strong>Kamajaya Kamaratih</strong>. Semoga kita semua mampu mewujudkan harapan ini.
-                </p>
-                <p>
-                    sumber : <a href="https://thegatsofkjkr.blogspot.com/2012/11/sejarah-kjkr.html" target="_blank">https://thegatsofkjkr.blogspot.com/2012/11/sejarah-kjkr.html</a>
-                </p>
-            </div>
-        </div>
-    </div>
-    <div class="row justify-content-center mt-2">
-        <div class="row justify-content-center">
-            <div class="col-12 d-flex justify-content-center align-items-center" style="min-height: 100px;">
-                <h2 style="background-color: rgba(255, 255, 255, 0.8); padding: 10px 20px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
-                    Makna Badge
-                </h2>
-            </div>
-        </div>
-    </div>
-    <!-- Konten Badge -->
-    <div class="badge-container">
-        <div class="badge-column">
-            <img src="{{ asset('logo/kj.png') }}" alt="Logo Kamajaya">
-            <div class="badge-text">
-                <p>
-                    Kamajaya adalah dewa yang sangat tampan dan rupawan. Dalam cerita pewayangan, Kamajaya menjadi simbol kesempurnaan yang mencapai 99%, 
-                    dengan 1% sisanya diberikan kepada umat manusia di bumi. Harapan dari simbol ini adalah agar anggota pramuka Kamajaya dapat menjadi sempurna 
-                    dalam mengamalkan Tri Satya dan Dasa Dharma, serta menjadi pandu ibu pertiwi.
-                    Kamajaya adalah dewa yang sangat tampan dan rupawan. Dalam cerita pewayangan, Kamajaya menjadi simbol kesempurnaan yang mencapai 99%, 
-                    dengan 1% sisanya diberikan kepada umat manusia di bumi. Harapan dari simbol ini adalah agar anggota pramuka Kamajaya dapat menjadi sempurna 
-                    dalam mengamalkan Tri Satya dan Dasa Dharma, serta menjadi pandu ibu pertiwi.
-                </p>
-            </div>
-        </div>
-        <div class="badge-column">
-            <img src="{{ asset('logo/kr.png') }}" alt="Logo Kamaratih">
-            <div class="badge-text">
-                <p>
-                    Kamaratih adalah dewi yang sangat cantik dan anggun. Dalam cerita pewayangan, Kamaratih juga menjadi simbol kesempurnaan yang mencapai 99%. 
-                    Dengan harapan yang sama seperti Kamajaya, Kamaratih melambangkan kecantikan dan kesempurnaan yang dapat diterapkan dalam kehidupan anggota 
-                    pramuka, untuk selalu menjaga keharmonisan dan menjadi pribadi yang membangun.
-                </p>
-            </div>
-        </div>
-    </div>
-        <div class="col-12">
-        <div class="row justify-content-center">
-            <div class="row justify-content-center">
-                <div class="col-12 d-flex justify-content-center align-items-center" style="min-height: 100px;">
-                    <h2 style="background-color: rgba(255, 255, 255, 0.8); padding: 10px 20px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
-                        Sejarah
-                    </h2>
-                </div>
-            </div>
-        </div>
-            <div class="content-container">
-                <p>
-                    Semenjak berdirinya sekolah tercinta kita ini, yakni SMA N Sumpiuh pada tahun 1985. Sekitar tahun 1988
-                    tercetuslah gagasan untuk mendirikan <strong>GUGUS DEPAN SMA NEGERI SUMPIUH</strong>. Pada tahun itulah mulai
-                    diselenggarakan iuran bulanan pramuka, namun kegiatan kepramukaan belum ada dan hanya berlangsung satu tahun saja.
-                </p>
-                <p>
-                    Pada bulan April tahun 1989 dibentuk <strong>Dewan Pembina</strong> dan <strong>Mabigus</strong> setelah mendapat nomor Gudep
-                    (<i>Gugus Depan</i> maksudnya...) 19.2823-19.2824. Rencananya Pembina sekaligus Mabigus akan dilantik pada bulan itu. Akan tetapi,
-                    setelah semuanya dipersiapkan dan pelantikan pun telah siap dilaksanakan, muncul hambatan berupa penundaan pelantikan.
-                </p>
-                <p>
-                    Dengan adanya penundaan tersebut, Pembina segera memberitahukan kepada pangkalan lain bahwa upacara pelantikan ditunda.
-                    Akibatnya Gerakan Pramuka (GP) di SMA N Sumpiuh diakui secara <i>de facto</i> (kenyataan) namun tidak diakui secara <i>de jure</i> (hukum).
-                </p>
-                <p>
-                    Maka dari itu, untuk mempertahankan Pramuka di SMA N Sumpiuh, Pembina yang belum dilantik memberanikan diri untuk mengadakan latihan secara
-                    terus-menerus. Akhirnya, setelah dalam keadaan yang tidak menentu dan jangka waktu yang cukup lama, pada tanggal <strong>18 September 1991</strong> secara
-                    resmi lahirlah Gudep 19.2823-19.2824 Pangkalan SMA N Sumpiuh yang masih bertahan hingga saat ini.
-                </p>
-                <p>
-                    Pangkalan ini diberi nama <strong>KAMAJAYA KAMARATIH</strong>. Nama ini diambil dari nama sepasang Dewa dan Dewi dalam cerita pewayangan.
-                    Kamajaya adalah dewa yang sangat tampan dan rupawan, sedangkan Kamaratih adalah dewi yang sangat cantik dan anggun. Dalam cerita pewayangan,
-                    Kamajaya dan Kamaratih adalah simbol kesempurnaan yang mencapai 99%, dengan 1% sisanya diberikan kepada umat manusia di bumi.
-                </p>
-                <p>
-                    Dengan simbol sepasang Dewa Dewi yang memiliki kesempurnaan ini, pendiri pangkalan berharap agar Ambalan Kamajaya Kamaratih mampu menjadi
-                    Pramuka yang sempurna, mengamalkan <strong>Tri Satya</strong> dan <strong>Dasa Dharma</strong>, serta menjadi pandu ibu pertiwi.
-                </p>
-                <p>
-                    Keren bukan? Inilah asal usul nama <strong>Kamajaya Kamaratih</strong>. Semoga kita semua mampu mewujudkan harapan ini.
-                </p>
-                <p>
-                    sumber : <a href="https://thegatsofkjkr.blogspot.com/2012/11/sejarah-kjkr.html" target="_blank">https://thegatsofkjkr.blogspot.com/2012/11/sejarah-kjkr.html</a>
-                </p>
+                <p>Semenjak berdirinya SMA Negeri 1 Sumpiuh pada tahun 1985, barulah pada tahun <strong>1988</strong> tercetus gagasan untuk mendirikan GUGUS DEPAN SMA NEGERI I SUMPIUH. Sejak tahun 1988 mulai diselenggarakan iuran bulanan Pramuka, namun kegiatan kepramukaan belum ada dan berlangsung selama satu tahun.</p>
+
+                <p>Pada bulan <strong>April pada tahun 1989</strong> dibentuk Dewan Pembina dan Mabigus setelah mendapat nomor Gudep yaitu <strong>19.2823 – 19.2824</strong>, yang rencananya pelantikan Pembina dan Mabigus akan dilaksanakan pada bulan itu. Setelah semuanya dipersiapkan dan pelantikan telah siap dilaksanakan, pada pukul 12.00 WIB siang yang menerima amanat pemberitahuan yang isinya tentang penundaan pelantikan karena alasan tersendiri Pembina segera memberitahukan kepada pangkalan lain bahwa pelantikan dibatalkan.</p>
+
+                <p>Akibat dari penundaan tersebut, Gerakan Pramuka di SMA Negeri 1 Sumpiuh <strong>diakui secara de facto (kenyataan)</strong> tetapi <strong>tidak diakui secara de jure (hukum)</strong>.</p>
+
+                <p>Untuk mempertahankan Pramuka di SMA Negeri 1 Sumpiuh , Pembina yang belum dilantik memberanikan diri untuk mengadakan latihan secara terus-menerus yang belum dilantik memberikan amanat. Setelah bertahan dalam keadaan yang tidak menentu, akhirnya pada <strong>tanggal 18 September 1991</strong> lahirlah Gudep 19.2823 – 19.2824 Pangkalan SMA Negeri I Sumpiuh yang masih bertahan hingga saat ini.</p>
+
+                <p>sumber: Buku Adat Pramuka SMA Negeri 1 Sumpiuh</p>
             </div>
         </div>
     </div>
 
+    <!-- Arti Logo -->
+    <div class="row justify-content-center mt-4">
+        <div class="col-12">
+            <h2 class="text-center" style="background-color: rgba(255, 255, 255, 0.8); padding: 10px 20px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">Logo dan Filosofi Ambalan</h2>
+        </div>
+        <div class="badge-container">
+            <div class="badge-column">
+                <img src="{{ asset('logo/kj.png') }}" alt="Logo Kamajaya">
+                    <div class="badge-text">
+                        <h4>Deskripsi Logo</h4>
+                        <p><strong>Nama Ambalan:</strong><br>
+                        Kamajaya adalah tokoh wayang yang melambangkan kesetiaan, kelurusan, dan kebijaksanaan. Nama ini mencerminkan semangat pengabdian yang tulus kepada Pramuka.</p>
+
+                        <p><strong>Warna Dasar:</strong><br>
+                        Warna biru tua sebagai dasar logo menggambarkan kesetiaan, ketekunan, dan ketabahan.</p>
+
+                        <p><strong>Gambar Mahkota (lebih tinggi):</strong></p>
+                        <ul>
+                            <li>3 sudut atas: melambangkan Tri Satya</li>
+                            <li>10 permata: melambangkan Dasa Dharma</li>
+                            <li>5 bulu pena: melambangkan ideologi Pancasila</li>
+                            <li>Sudut puncak: hubungan dengan Tuhan Yang Maha Esa</li>
+                            <li>Tunas kelapa: lambang Gerakan Pramuka</li>
+                        </ul>
+
+                        <p><strong>Padi dan Kapas:</strong><br>
+                        Melambangkan kemakmuran serta harapan agar Pramuka menjadi insan yang memakmurkan bangsa.</p>
+
+                        <p><strong>Mahkota mengarah ke bintang:</strong><br>
+                        Simbol pengabdian dan keyakinan spiritual kepada Tuhan.</p>
+
+                        <p><strong>Bentuk Perisai:</strong><br>
+                        Melambangkan kekuatan dan pelindung dari pengaruh negatif.</p>
+
+                        <p><strong>Jumlah Padi (18) dan Kapas (9):</strong><br>
+                        Melambangkan tanggal lahir Gugus Depan, yaitu 18 September 1991.</p>
+                    </div>
+
+            </div>
+            <div class="badge-column">
+                <img src="{{ asset('logo/kr.png') }}" alt="Logo Kamaratih">
+                    <div class="badge-text">
+                        <h4>Deskripsi Logo</h4>
+                        <p><strong>Nama Ambalan:</strong><br>
+                        Kamaratih adalah tokoh wayang istri Kamajaya, melambangkan kelembutan, kasih sayang, kesetiaan, dan kekuatan dalam kesempurnaan perempuan.</p>
+
+                        <p><strong>Warna Dasar:</strong><br>
+                        Warna biru muda mencerminkan kelembutan dan keteguhan hati yang penuh kesetiaan.</p>
+
+                        <p><strong>Gambar Mahkota (lebih rendah):</strong></p>
+                        <ul>
+                            <li>5 sudut atas: melambangkan Pancasila</li>
+                            <li>3 bulu pena: melambangkan Tri Satya</li>
+                            <li>10 permata: melambangkan Dasa Dharma</li>
+                            <li>Sudut puncak: hubungan dengan Tuhan Yang Maha Esa</li>
+                            <li>Tunas kelapa: lambang Gerakan Pramuka</li>
+                        </ul>
+
+                        <p><strong>Padi dan Kapas:</strong><br>
+                        Sama seperti pada Kamajaya, simbol kemakmuran dan kontribusi bagi bangsa.</p>
+
+                        <p><strong>Mahkota mengarah ke bintang:</strong><br>
+                        Harapan agar tetap mendekatkan diri pada Tuhan dalam setiap kegiatan.</p>
+
+                        <p><strong>Bentuk Perisai:</strong><br>
+                        Perlambang pelindung karakter, agar Pramuka Kamaratih mampu menyaring pengaruh negatif.</p>
+
+                        <p><strong>Jumlah Padi (18) dan Kapas (9):</strong><br>
+                        Melambangkan tanggal berdirinya Gugus Depan, yaitu 18 September 1991.</p>
+                    </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Tokoh Wayang Kamajaya Kamaratih -->
+    <div class="row justify-content-center mt-4">
+        <div class="col-12">
+            <h2 class="text-center" style="background-color: rgba(255, 255, 255, 0.8); padding: 10px 20px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">Tokoh Wayang Kamajaya dan Kamaratih</h2>
+                <div class="content-container">
+                    <p><strong>Kamajaya</strong> adalah tokoh wayang yang dikenal sebagai dewa cinta dan kasih sayang. Dalam pewayangan Jawa, Kamajaya merupakan personifikasi dari Dewa Asmara atau Kamadeva dalam tradisi Hindu. Ia adalah putra Batara Semar (Ismaya), salah satu punakawan utama yang bijaksana. Kamajaya digambarkan sebagai sosok yang sangat tampan, lembut, dan memancarkan wibawa karena cinta dan ketulusan hatinya.</p>
+
+                    <p>Kamajaya melambangkan kesetiaan, keluhuran budi, kerendahan hati, dan cinta yang spiritual. Ia adalah lambang cinta sejati, seorang suami yang penuh pengabdian dan pemimpin yang bijaksana. Dalam konteks Pramuka, ia mencerminkan semangat pengabdian tulus dan keteguhan hati dalam mengamalkan nilai-nilai Tri Satya dan Dasa Dharma.</p>
+
+                    <p><strong>Kamaratih</strong> adalah pasangan sejati Kamajaya. Ia merupakan dewi cinta dan simbol kesempurnaan perempuan. Kamaratih adalah putri dari Batara Resi Soma, dewa kebijaksanaan. Dikenal pula dengan nama Dewi Ratih, ia melambangkan kecantikan yang sempurna, kelembutan, kasih sayang, dan kesetiaan mutlak kepada suaminya.</p>
+
+                    <p>Kamaratih dikenal sebagai dewi yang sangat sabar, bijaksana, dan berjiwa besar. Ia tidak hanya mencintai Kamajaya secara duniawi, tetapi juga spiritual. Dalam kisahnya, Kamaratih rela menyatu dalam api bersama Kamajaya saat mereka dikutuk oleh Batara Guru karena melanggar aturan kahyangan.</p>
+
+                    <p><strong>Lakon “Gugurnya Kamajaya dan Kamaratih”</strong> adalah kisah legendaris dalam dunia pewayangan. Diceritakan bahwa Batara Guru memerintahkan Kamajaya dan Kamaratih untuk tidak mengganggu para dewa yang sedang bertapa. Namun karena kekuatan cinta mereka, para dewa tergoda. Akhirnya Kamajaya dibakar menjadi abu oleh api tapa Batara Guru. Kamaratih yang setia, ikut melebur jiwanya dalam abu sang suami. Roh keduanya menyatu dan tersebar ke seluruh alam semesta sebagai kekuatan cinta dan pengabdian sejati.</p>
+
+                    <p>Kisah ini dipercaya menjadi asal muasal adanya cinta di hati manusia. Dalam budaya Jawa, cinta Kamajaya dan Kamaratih bukan sekadar asmara, tetapi simbol pengorbanan, kesetiaan, dan kebajikan yang mengakar kuat dalam kehidupan masyarakat.</p>
+
+                    <p>Ambalan Kamajaya–Kamaratih mengambil nama dari tokoh ini dengan harapan bahwa setiap anggota ambalan dapat meneladani nilai-nilai luhur yang diwariskan: pengabdian, kesetiaan, ketulusan, cinta terhadap sesama, serta kekuatan dalam kelembutan.</p>
+
+                    <p><strong>Sumber Referensi:</strong> Serat Kandha Kamajaya–Kamaratih, Ensiklopedi Wayang Purwa, Kajian Budaya UGM, Dalang Ki Manteb Sudarsono, dan Tradisi Lisan Jawa Tengah.</p>
+                </div>
+
+        </div>
+    </div>
+
+    <!-- Makna untuk Ambalan -->
+    <div class="row justify-content-center mt-4">
+        <div class="col-12">
+            <h2 class="text-center" style="background-color: rgba(255, 255, 255, 0.8); padding: 10px 20px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">Makna untuk Ambalan Kamajaya – Kamaratih</h2>
+            <div class="content-container">
+                <p>Pemilihan nama dan simbol Kamajaya–Kamaratih bukan hanya untuk keindahan, melainkan sebagai nilai pendidikan karakter. Ambalan ini diharapkan mencetak Pramuka Penegak yang bijaksana, penuh cinta, tangguh, dan setia pada tugas pengabdian.</p>
+                <p>Anggota Ambalan diarahkan untuk mengamalkan nilai Tri Satya dan Dasa Dharma dengan sepenuh hati, serta menjadi generasi muda yang tangguh, siap berkarya, dan menjaga kehormatan bangsa.</p>
+            </div>
+        </div>
+    </div>
 </div>
 @endsection
