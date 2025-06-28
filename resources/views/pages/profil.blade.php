@@ -120,8 +120,8 @@
                         <p><strong>Gambar Mahkota (lebih tinggi):</strong></p>
                         <ul>
                             <li>3 sudut atas: melambangkan Tri Satya</li>
-                            <li>10 permata: melambangkan Dasa Dharma</li>
-                            <li>5 bulu pena: melambangkan ideologi Pancasila</li>
+                            <li>10 bentuk oval: melambangkan Dasa Dharma</li>
+                            <li>5 permata: melambangkan ideologi Pancasila</li>
                             <li>Sudut puncak: hubungan dengan Tuhan Yang Maha Esa</li>
                             <li>Tunas kelapa: lambang Gerakan Pramuka</li>
                         </ul>
@@ -153,8 +153,8 @@
                         <p><strong>Gambar Mahkota (lebih rendah):</strong></p>
                         <ul>
                             <li>5 sudut atas: melambangkan Pancasila</li>
-                            <li>3 bulu pena: melambangkan Tri Satya</li>
-                            <li>10 permata: melambangkan Dasa Dharma</li>
+                            <li>3 permata: melambangkan Tri Satya</li>
+                            <li>10 bentuk oval: melambangkan Dasa Dharma</li>
                             <li>Sudut puncak: hubungan dengan Tuhan Yang Maha Esa</li>
                             <li>Tunas kelapa: lambang Gerakan Pramuka</li>
                         </ul>
