@@ -61,10 +61,10 @@ Route::post('/login', function (\Illuminate\Http\Request $request) {
 })->name('login.process');
 
 Route::post('/logout', function () {
-    \Illuminate\Support\Facades\Auth::logout();
-    request()->session()->invalidate();
-    request()->session()->regenerateToken();
-    return redirect('/login');
+    \Illuminate\Support\Facades\Auth::logout(); // Hapus autentikasi pengguna
+    request()->session()->invalidate(); // Hapus semua data sesi
+    request()->session()->regenerateToken(); // Regenerasi token sesi
+    return redirect('/login'); // Arahkan ke halaman login
 })->name('logout');
 
 Route::get('/logout', function () {

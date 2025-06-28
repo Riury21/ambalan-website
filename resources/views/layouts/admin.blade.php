@@ -173,9 +173,13 @@
     </li>
   </ul>
   <div class="mt-auto p-4 border-top border-light d-flex justify-content-center">
-    <a href="/" class="btn btn-outline-light d-flex align-items-center justify-content-center" data-bs-toggle="tooltip" data-bs-placement="right" title="Logout">
-      <i class="bi bi-box-arrow-right"></i><span>Logout</span>
-    </a>
+      <form action="{{ route('logout') }}" method="POST" class="d-flex align-items-center justify-content-center">
+          @csrf
+          <button type="submit" class="btn btn-outline-light d-flex align-items-center justify-content-center" data-bs-toggle="tooltip" data-bs-placement="right" title="Logout">
+              <i class="bi bi-box-arrow-right"></i>
+              <span class="ms-1">Logout</span>
+          </button>
+      </form>
   </div>
 </div>
 
@@ -210,10 +214,14 @@
           <a href="/admin/pesan" class="nav-link text-white"><i class="bi bi-envelope me-2"></i><span>Lihat Pesan</span></a>
         </li>
       </ul>
-      <div class="mt-auto p-4 border-top border-light">
-        <a href="/" class="btn btn-outline-light w-100 d-flex align-items-center justify-content-center">
-          <i class="bi bi-box-arrow-right me-2"></i><span>Logout</span>
-        </a>
+      <div class="mt-auto p-4 border-top border-light d-flex justify-content-center">
+          <form action="{{ route('logout') }}" method="POST" class="d-flex align-items-center justify-content-center">
+              @csrf
+              <button type="submit" class="btn btn-outline-light d-flex align-items-center justify-content-center" data-bs-toggle="tooltip" data-bs-placement="right" title="Logout">
+                  <i class="bi bi-box-arrow-right"></i>
+                  <span class="ms-1">Logout</span>
+              </button>
+          </form>
       </div>
     </div>
   </div>
