@@ -55,7 +55,23 @@ Route::get('/login', function () {
     return view('auth.login'); // Pastikan file view ada di resources/views/auth/login.blade.php
 })->name('auth.login');
 
-Route::post('/login', [AuthController::class, 'login'])->name('login.process');
+Route::post('/login', function (\Illuminate\Http\Request $request) {
+    $credentials = $request->only('email', 'password');
+
+    // Periksa apakah email ada di database
+    if (!\App\Models\User::where('email', $credentials['email'])->exists()) {
+        return back()->with('error', 'Email tidak ditemukan.');
+    }
+
+    // Proses login
+    if (Auth::attempt($credentials)) {
+        $request->session()->regenerate();
+        return redirect()->intended('/admin');
+    }
+
+    return back()->with('error', 'Email atau password salah.');
+})->name('login.process');
+
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
 Route::middleware(['auth'])->group(function () {
