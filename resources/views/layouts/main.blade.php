@@ -188,9 +188,9 @@
                     <i class="bi bi-youtube"></i>
                 </a>
             </div>
-            <a href="{{ route('auth.login') }}" class="btn btn-primary btn-login">
-                <i class="bi bi-box-arrow-right me-2"></i>Login
-            </a>
+                <a href="/login" class="{{ request()->is('login') ? 'fw-bold' : '' }}">
+                    <i class="bi bi-box-arrow-in-right me-2"></i>Login
+                </a>
         </div>
     </div>
 

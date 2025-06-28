@@ -11,6 +11,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\PesanController;
 use App\Http\Controllers\PesanAdminController;
 use App\Http\Controllers\DashboardAdminController;
+use App\Http\Controllers\AuthController;
 
 Route::get('/', function () {
     return view('pages.home');
@@ -50,16 +51,15 @@ Route::get('/admin', function () {
     return view('admin');
 });
 
-Route::post('/login', function (Request $request) {
-    // Username dan password sederhana (contoh)
-    $username = $request->username;
-    $password = $request->password;
+Route::get('/login', function () {
+    return view('auth.login'); // Pastikan file view ada di resources/views/auth/login.blade.php
+})->name('auth.login');
 
-    if ($username === 'admin' && $password === 'admin12345') {
-        session(['is_admin' => true]);
-        return redirect('/admin');
-    }
-    return back()->with('error', 'Username atau password salah!');
+Route::post('/login', [AuthController::class, 'login'])->name('login.process');
+Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+
+Route::middleware(['auth'])->group(function () {
+    Route::get('/admin', [DashboardAdminController::class, 'index'])->name('admin.dashboard');
 });
 
 Route::get('/logout', function () {

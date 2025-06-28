@@ -29,17 +29,17 @@
         @if(session('error'))
             <div class="alert alert-danger py-2">{{ session('error') }}</div>
         @endif
-        <form method="POST" action="/login">
-            @csrf
-            <div class="mb-3">
-                <label for="username" class="form-label">Username</label>
-                <input type="text" class="form-control" id="username" name="username" placeholder="Masukkan username" required autofocus>
-            </div>
-            <div class="mb-3">
-                <label for="password" class="form-label">Password</label>
-                <input type="password" class="form-control" id="password" name="password" placeholder="Masukkan password" required>
-            </div>
-            <button type="submit" class="btn btn-primary w-100 mb-2">Login</button>
+<form method="POST" action="/login">
+    @csrf
+    <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input type="email" class="form-control" id="email" name="email" placeholder="Masukkan email" required autofocus>
+    </div>
+    <div class="mb-3">
+        <label for="password" class="form-label">Password</label>
+        <input type="password" class="form-control" id="password" name="password" placeholder="Masukkan password" required>
+    </div>
+    <button type="submit" class="btn btn-primary w-100">Login</button>
             <a href="/" class="btn btn-outline-secondary w-100">Kembali</a>
         </form>
     </div>
