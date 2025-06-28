@@ -40,8 +40,8 @@ Route::get('/dewanpurna', function () {
 });
 
 Route::get('/login', function () {
-    return view('auth.login'); // Pastikan file view ada di resources/views/auth/login.blade.php
-})->name('auth.login');
+    return view('auth.login'); // Menampilkan halaman login
+})->name('login');
 
 Route::post('/login', function (\Illuminate\Http\Request $request) {
     $credentials = $request->only('email', 'password');
@@ -60,45 +60,73 @@ Route::post('/login', function (\Illuminate\Http\Request $request) {
     return back()->with('error', 'Email atau password salah.');
 })->name('login.process');
 
-Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+Route::post('/logout', function () {
+    \Illuminate\Support\Facades\Auth::logout();
+    request()->session()->invalidate();
+    request()->session()->regenerateToken();
+    return redirect('/login');
+})->name('logout');
 
 Route::get('/logout', function () {
     session()->forget('is_admin');
     return redirect('/login');
 });
 
-Route::get('/admin', [DashboardAdminController::class, 'index'])->name('admin.dashboard');
+// Route untuk admin, dilindungi middleware auth
+Route::middleware('auth')->group(function () {
+    Route::get('/admin', [DashboardAdminController::class, 'index'])->name('admin.dashboard');
 
-Route::get('/admin/berita', [AdminBeritaController::class, 'index']);
-Route::get('/admin/berita/gambar/{id}', [AdminBeritaController::class, 'gambar']);
-Route::get('/admin/berita/create', [AdminBeritaController::class, 'create']);
-Route::post('/admin/berita', [AdminBeritaController::class, 'store']);
-Route::delete('/admin/berita/{id}', [AdminBeritaController::class, 'destroy']);
-Route::get('/admin/berita/{id}/edit', [AdminBeritaController::class, 'edit']);
-Route::put('/admin/berita/{id}', [AdminBeritaController::class, 'update']);
+    // Rute berita
+    Route::prefix('admin/berita')->group(function () {
+        Route::get('/', [AdminBeritaController::class, 'index']);
+        Route::get('/gambar/{id}', [AdminBeritaController::class, 'gambar']);
+        Route::get('/create', [AdminBeritaController::class, 'create']);
+        Route::post('/', [AdminBeritaController::class, 'store']);
+        Route::delete('/{id}', [AdminBeritaController::class, 'destroy']);
+        Route::get('/{id}/edit', [AdminBeritaController::class, 'edit']);
+        Route::put('/{id}', [AdminBeritaController::class, 'update']);
+    });
 
-Route::get('/admin/galeri', [AdminGaleriController::class, 'index']);
-Route::get('/admin/galeri/gambar/{id}', [AdminGaleriController::class, 'gambar']);
-Route::get('/admin/galeri/create', [AdminGaleriController::class, 'create']);
-Route::post('/admin/galeri', [AdminGaleriController::class, 'store']);
-Route::get('/admin/galeri/{id}/edit', [AdminGaleriController::class, 'edit']);
-Route::put('/admin/galeri/{id}', [AdminGaleriController::class, 'update']);
-Route::delete('/admin/galeri/{id}', [AdminGaleriController::class, 'destroy']);
+    // Rute galeri
+    Route::prefix('admin/galeri')->group(function () {
+        Route::get('/', [AdminGaleriController::class, 'index']);
+        Route::get('/gambar/{id}', [AdminGaleriController::class, 'gambar']);
+        Route::get('/create', [AdminGaleriController::class, 'create']);
+        Route::post('/', [AdminGaleriController::class, 'store']);
+        Route::get('/{id}/edit', [AdminGaleriController::class, 'edit']);
+        Route::put('/{id}', [AdminGaleriController::class, 'update']);
+        Route::delete('/{id}', [AdminGaleriController::class, 'destroy']);
+    });
 
-Route::get('/admin/pembina', [AdminPembinaController::class, 'index']);
-Route::get('/admin/pembina/create', [AdminPembinaController::class, 'create']);
-Route::post('/admin/pembina', [AdminPembinaController::class, 'store']);
-Route::get('/admin/pembina/{id}/edit', [AdminPembinaController::class, 'edit']);
-Route::put('/admin/pembina/{id}', [AdminPembinaController::class, 'update']);
-Route::delete('/admin/pembina/{id}', [AdminPembinaController::class, 'destroy']);
+    // Rute pembina
+    Route::prefix('admin/pembina')->group(function () {
+        Route::get('/', [AdminPembinaController::class, 'index']);
+        Route::get('/create', [AdminPembinaController::class, 'create']);
+        Route::post('/', [AdminPembinaController::class, 'store']);
+        Route::get('/{id}/edit', [AdminPembinaController::class, 'edit']);
+        Route::put('/{id}', [AdminPembinaController::class, 'update']);
+        Route::delete('/{id}', [AdminPembinaController::class, 'destroy']);
+    });
 
-Route::get('/admin/dewan', [AdminDewanController::class, 'index']);
-Route::get('/admin/dewan/create', [AdminDewanController::class, 'create']);
-Route::post('/admin/dewan', [AdminDewanController::class, 'store']);
-Route::get('/admin/dewan/{id}/edit', [AdminDewanController::class, 'edit']);
-Route::put('/admin/dewan/{id}', [AdminDewanController::class, 'update']);
-Route::delete('/admin/dewan/{id}', [AdminDewanController::class, 'destroy']);
+    // Rute dewan
+    Route::prefix('admin/dewan')->group(function () {
+        Route::get('/', [AdminDewanController::class, 'index']);
+        Route::get('/create', [AdminDewanController::class, 'create']);
+        Route::post('/', [AdminDewanController::class, 'store']);
+        Route::get('/{id}/edit', [AdminDewanController::class, 'edit']);
+        Route::put('/{id}', [AdminDewanController::class, 'update']);
+        Route::delete('/{id}', [AdminDewanController::class, 'destroy']);
+    });
 
+    // Rute pesan
+    Route::prefix('admin/pesan')->group(function () {
+        Route::get('/', [PesanAdminController::class, 'index'])->name('pesan.index');
+        Route::delete('/{id}', [PesanAdminController::class, 'destroy'])->name('pesan.destroy');
+        Route::patch('/{id}', [PesanAdminController::class, 'update'])->name('pesan.update');
+    });
+});
+
+// Route untuk pengguna, tanpa middleware
 Route::get('/dewanpurna', [UserController::class, 'dewanPurna'])->name('dewan-purna.index');
 Route::get('/dewanambalan', [UserController::class, 'dewanAmbalan'])->name('dewan-ambalan.index');
 Route::get('/pembina', [UserController::class, 'pembina']);
@@ -110,6 +138,4 @@ Route::get('/galeri/{judul}', [UserController::class, 'detailGaleri']);
 Route::get('/pesan', [PesanController::class, 'create'])->name('pesan.create');
 Route::post('/pesan', [PesanController::class, 'store'])->name('pesan.store');
 
-Route::get('/admin/pesan', [PesanAdminController::class, 'index'])->name('pesan.index');
-Route::delete('/admin/pesan/{id}', [PesanAdminController::class, 'destroy'])->name('pesan.destroy');
-Route::patch('/admin/pesan/{id}', [PesanAdminController::class, 'update'])->name('pesan.update');
+
