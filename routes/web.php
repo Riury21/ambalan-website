@@ -40,18 +40,6 @@ Route::get('/dewanpurna', function () {
 });
 
 Route::get('/login', function () {
-    return view('auth.login');
-})->name('auth.login');
-
-Route::get('/admin', function () {
-    // Cek session login
-    if (!session('is_admin')) {
-        return redirect('/login');
-    }
-    return view('admin');
-});
-
-Route::get('/login', function () {
     return view('auth.login'); // Pastikan file view ada di resources/views/auth/login.blade.php
 })->name('auth.login');
 
@@ -73,10 +61,6 @@ Route::post('/login', function (\Illuminate\Http\Request $request) {
 })->name('login.process');
 
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
-
-Route::middleware(['auth'])->group(function () {
-    Route::get('/admin', [DashboardAdminController::class, 'index'])->name('admin.dashboard');
-});
 
 Route::get('/logout', function () {
     session()->forget('is_admin');
