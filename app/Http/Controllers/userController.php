@@ -9,55 +9,54 @@ use App\Models\Galeri;
 
 class UserController extends Controller
 {
-public function dewanPurna(Request $request)
-{
-    $jabatanOrder = [
-        'pradana',
-        'wakil pradana',
-        'pemangku adat',
-        'pendamping kanan',
-        'pendamping kiri',
-        'sekretaris/kerani',
-        'bendahara/juru uang',
-        'seksi giat',
-        'seksi kajian pramuka',
-        'seksi evabang',
-        'seksi abdimas',
-    ];
+    public function dewanPurna(Request $request)
+    {
+        $jabatanOrder = [
+            'pradana',
+            'wakil pradana',
+            'pemangku adat',
+            'pendamping kanan',
+            'pendamping kiri',
+            'sekretaris/kerani',
+            'bendahara/juru uang',
+            'seksi giat',
+            'seksi kajian pramuka',
+            'seksi evabang',
+            'seksi abdimas',
+        ];
 
-    $query = Dewan::where('keaktifan', 'Purna');
+        $query = Dewan::where('keaktifan', 'Purna');
 
-    if ($request->filled('nama')) {
-        $query->where('nama', 'like', '%' . $request->nama . '%');
+        if ($request->filled('nama')) {
+            $query->where('nama', 'like', '%' . $request->nama . '%');
+        }
+        if ($request->filled('jabatan')) {
+            $query->where('jabatan', 'like', '%' . $request->jabatan . '%');
+        }
+
+        if ($request->filled('angkatan')) {
+            $query->where('angkatan', 'like', '%' . $request->angkatan . '%');
+        }
+
+        if ($request->filled('satuan')) {
+            $query->where('satuan', $request->satuan);
+        }
+
+        $dewanPurna = $query
+            ->orderBy('angkatan', 'desc')
+            ->orderByRaw("FIELD(satuan, 'Kamajaya', 'Kamaratih')")
+            ->orderByRaw('FIELD(jabatan, "' . implode('", "', $jabatanOrder) . '")')
+            ->get();
+
+        // Ambil daftar angkatan unik
+        $angkatanList = Dewan::where('keaktifan', 'Purna')
+            ->select('angkatan')
+            ->distinct()
+            ->orderBy('angkatan', 'desc')
+            ->pluck('angkatan');
+
+        return view('pages.dewanpurna', compact('dewanPurna', 'angkatanList'));
     }
-    if ($request->filled('jabatan')) {
-        $query->where('jabatan', 'like', '%' . $request->jabatan . '%');
-    }
-
-    if ($request->filled('angkatan')) {
-        $query->where('angkatan', 'like', '%' . $request->angkatan . '%');
-    }
-
-    if ($request->filled('satuan')) {
-        $query->where('satuan', $request->satuan);
-    }
-
-    $dewanPurna = $query
-        ->orderBy('angkatan', 'desc')
-        ->orderByRaw("FIELD(satuan, 'Kamajaya', 'Kamaratih')")
-        ->orderByRaw('FIELD(jabatan, "' . implode('", "', $jabatanOrder) . '")')
-        ->get();
-
-    // Ambil daftar angkatan unik
-    $angkatanList = Dewan::where('keaktifan', 'Purna')
-        ->select('angkatan')
-        ->distinct()
-        ->orderBy('angkatan', 'desc')
-        ->pluck('angkatan');
-
-    return view('pages.dewanpurna', compact('dewanPurna', 'angkatanList'));
-}
-
 
     public function dewanAmbalan(Request $request)
     {

@@ -10,7 +10,7 @@ class AdminBeritaController extends Controller
     public function index()
     {
         $berita = Berita::all();
-        return view('admin.berita', compact('berita'));
+        return view('admin.berita.index', compact('berita'));
     }
     public function gambar($id)
     {
@@ -22,7 +22,7 @@ class AdminBeritaController extends Controller
     }
     public function create()
     {
-        return view('admin.berita_create');
+        return view('admin.berita.berita_create');
     }
 
     public function store(Request $request)
@@ -59,7 +59,7 @@ class AdminBeritaController extends Controller
     public function edit($id)
     {
         $berita = \App\Models\Berita::findOrFail($id);
-        return view('admin.berita_edit', compact('berita'));
+        return view('admin.berita.berita_edit', compact('berita'));
     }
 
     public function update(Request $request, $id)

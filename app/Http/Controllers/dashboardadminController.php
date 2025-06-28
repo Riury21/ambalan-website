@@ -21,7 +21,7 @@ class DashboardAdminController extends Controller
         $jumlahGaleri = Galeri::count();
         $jumlahBerita = Berita::count();
 
-        return view('admin', compact(
+        return view('admin.dashboard', compact(
             'jumlahPembina',
             'jumlahPembinaAktif',
             'jumlahDewanAmbalan',

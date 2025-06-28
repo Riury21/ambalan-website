@@ -29,14 +29,12 @@ class AdminDewanController extends Controller
 
         $dewan = $query->get();
 
-        return view('admin.dewan', compact('dewan'));
+        return view('admin.dewan.index', compact('dewan'));
     }
-
-
 
     public function create()
     {
-        return view('admin.dewan_create');
+        return view('admin.dewan.dewan_create');
     }
 
     public function store(Request $request)
@@ -70,10 +68,10 @@ class AdminDewanController extends Controller
     }
 
     public function edit($id)
-    {
-        $dewan = Dewan::findOrFail($id);
-        return view('admin.dewan_edit', compact('dewan'));
-    }
+        {
+            $dewan = Dewan::findOrFail($id);
+            return view('admin.dewan.dewan_edit', compact('dewan'));
+        }
 
     public function update(Request $request, $id)
     {

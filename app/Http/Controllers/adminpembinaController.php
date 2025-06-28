@@ -21,13 +21,13 @@ class AdminPembinaController extends Controller
 
         $pembina = $query->get();
 
-        return view('admin.pembina', compact('pembina'));
+        return view('admin.pembina.index', compact('pembina'));
     }
 
 
     public function create()
     {
-        return view('admin.pembina_create');
+        return view('admin.pembina.pembina_create');
     }
 
     public function store(Request $request)
@@ -67,7 +67,7 @@ class AdminPembinaController extends Controller
     public function edit($id)
     {
         $pembina = Pembina::findOrFail($id);
-        return view('admin.pembina_edit', compact('pembina'));
+        return view('admin.pembina.pembina_edit', compact('pembina'));
     }
 
     public function update(Request $request, $id)

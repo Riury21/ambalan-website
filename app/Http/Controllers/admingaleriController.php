@@ -11,7 +11,7 @@ class AdminGaleriController extends Controller
     public function index()
     {
         $galeri = Galeri::all();
-        return view('admin.galeri', compact('galeri'));
+        return view('admin.galeri.index', compact('galeri'));
     }
 
     public function gambar($id)
@@ -25,7 +25,7 @@ class AdminGaleriController extends Controller
 
     public function create()
     {
-        return view('admin.galeri_create');
+        return view('admin.galeri.galeri_create');
     }
 
     public function store(Request $request)
@@ -57,7 +57,7 @@ class AdminGaleriController extends Controller
     public function edit($id)
     {
         $galeri = Galeri::findOrFail($id);
-        return view('admin.galeri_edit', compact('galeri'));
+        return view('admin.galeri.galeri_edit', compact('galeri'));
     }
 
     public function update(Request $request, $id)

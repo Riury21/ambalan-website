@@ -13,7 +13,7 @@ class PesanAdminController extends Controller
     public function index()
     {
         $pesan = Pesan::latest()->paginate(10); // Ambil pesan terbaru dengan pagination
-        return view('admin.pesan', compact('pesan'));
+        return view('admin.pesan.pesan', compact('pesan'));
     }
 
     /**

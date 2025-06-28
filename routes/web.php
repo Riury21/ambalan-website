@@ -13,7 +13,7 @@ use App\Http\Controllers\PesanAdminController;
 use App\Http\Controllers\DashboardAdminController;
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('pages.home');
 });
 Route::get('/berita', function () {
     return view('pages.berita');
@@ -39,8 +39,8 @@ Route::get('/dewanpurna', function () {
 });
 
 Route::get('/login', function () {
-    return view('login');
-});
+    return view('auth.login');
+})->name('auth.login');
 
 Route::get('/admin', function () {
     // Cek session login
@@ -66,6 +66,8 @@ Route::get('/logout', function () {
     session()->forget('is_admin');
     return redirect('/login');
 });
+
+Route::get('/admin', [DashboardAdminController::class, 'index'])->name('admin.dashboard');
 
 Route::get('/admin/berita', [AdminBeritaController::class, 'index']);
 Route::get('/admin/berita/gambar/{id}', [AdminBeritaController::class, 'gambar']);
@@ -111,5 +113,3 @@ Route::post('/pesan', [PesanController::class, 'store'])->name('pesan.store');
 Route::get('/admin/pesan', [PesanAdminController::class, 'index'])->name('pesan.index');
 Route::delete('/admin/pesan/{id}', [PesanAdminController::class, 'destroy'])->name('pesan.destroy');
 Route::patch('/admin/pesan/{id}', [PesanAdminController::class, 'update'])->name('pesan.update');
-
-Route::get('/admin', [DashboardAdminController::class, 'index'])->name('admin.dashboard');
