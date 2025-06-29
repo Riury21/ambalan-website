@@ -46,11 +46,16 @@
         font-weight: bold;
     }
 
+    .accordion-button:not(.collapsed) {
+    background-color: #0d6efd;
+    color: #fff;
+    }
+
     @media (prefers-color-scheme: dark) {
         body {
             background-color: #121212;
             color: #e0e0e0;
-        }
+        } 
 
         .sticky-top-section {
             background-color: rgba(30, 30, 30, 1);
@@ -65,6 +70,8 @@
 
         .btn-download {
             background-color: #2196f3;
+            color: white;
+            box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1);
         }
 
         .btn-download:hover {
@@ -78,6 +85,23 @@
 
         .accordion-body {
             background-color: #2c2c2c;
+            color: #e0e0e0;
+        }
+        .accordion-button:not(.collapsed) {
+        background-color: #1e1e1e;
+        color: #fff;
+        }  
+    }
+    .section-title {
+        background-color: rgba(255, 255, 255, 0.8);
+        padding: 10px 20px;
+        border-radius: 10px;
+        color: #000;
+    }
+
+    @media (prefers-color-scheme: dark) {
+        .section-title {
+            background-color: rgba(30, 30, 30, 0.9);
             color: #e0e0e0;
         }
     }
@@ -102,11 +126,37 @@
 
     <!-- CONTOH -->
     <!-- <li>Pembentukan Dewan Ambalan<span class="badge bg-success">✔ Terlaksana</span></li> -->
-
+    <div class="row justify-content-center mt-4">
+        <div class="col-12">
+            <h2 class="text-center section-title">
+                Visi dan Misi Dewan Ambalan 2024/2025
+            </h2>
+            <div class="content-container">
+                <h3>Visi</h3>
+                <ul>
+                    <li>Latihan Rutin Mingguan</li>
+                    <li>Penerimaan Tamu Ambalan (PTA)</li>
+                    <li>Pelatihan Kepemimpinan</li>
+                    <li>Perkemahan Sabtu Minggu (Persami)</li>
+                    <li>Lomba Tingkat (LT I & II)</li>
+                </ul>
+                <h3>Misi</h3>
+                <ul>
+                    <li>Kegiatan Bakti Sosial</li>
+                    <li>Pengembangan Kreativitas</li>
+                    <li>Upacara Hari Besar Nasional</li>
+                    <li>Rapat Evaluasi Dewan Ambalan</li>
+                    <li>Pelatihan Skill Khusus (Tali-temali, P3K, Semaphore, dll)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
     <!-- Daftar Program Umum -->
     <div class="row justify-content-center mt-4">
         <div class="col-12">
-            <h2 class="text-center" style="background-color: rgba(255, 255, 255, 0.8); padding: 10px 20px; border-radius: 10px;">Daftar Program Umum</h2>
+            <h2 class="text-center section-title">
+                Daftar Program Umum
+            </h2>
             <div class="content-container">
                 <ul>
                     <li>Latihan Rutin Mingguan</li>
@@ -127,7 +177,7 @@
     <!-- Accordion Timeline Tahun Ajaran -->
     <div class="row justify-content-center mt-4">
         <div class="col-12">
-            <h2 class="text-center" style="background-color: rgba(255, 255, 255, 0.8); padding: 10px 20px; border-radius: 10px;">
+            <h2 class="text-center section-title">
                 Timeline Kegiatan (Tahun Ajaran)
             </h2>
             <div class="accordion" id="accordionTahunAjaran">
