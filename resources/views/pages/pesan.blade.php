@@ -4,7 +4,6 @@
 
 @section('content')
 
-<!-- CSS untuk Form Kritik dan Saran -->
 <style>
     .form-container {
         background-color: rgba(255, 255, 255, 0.95);
@@ -15,6 +14,7 @@
         padding: 20px;
         border-radius: 10px;
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        transition: background-color 0.3s ease, color 0.3s ease;
     }
 
     .form-title {
@@ -35,6 +35,7 @@
     .form-control {
         border-radius: 10px;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        transition: background-color 0.3s ease, color 0.3s ease;
     }
 
     .submit-btn {
@@ -54,11 +55,12 @@
         position: sticky;
         top: 0;
         z-index: 1020;
-        background-color: rgba(255, 255, 255, 0.95); /* Latar belakang putih transparan */
+        background-color: rgba(255, 255, 255, 0.95);
         color: black;
         border-radius: 10px;
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         padding: 10px 0;
+        transition: background-color 0.3s ease, color 0.3s ease;
     }
 
     .sticky-top-section h1 {
@@ -71,6 +73,20 @@
         gap: 10px;
     }
 
+    .custom-ok-btn {
+        background-color: #0d6efd !important;
+        color: white !important;
+        border-radius: 5px;
+        font-weight: bold;
+        padding: 8px 20px;
+        border: none;
+        transition: background-color 0.3s ease;
+    }
+
+    .custom-ok-btn:hover {
+        background-color: #0056b3 !important;
+    }
+
     @media (max-width: 768px) {
         .form-container {
             padding: 15px;
@@ -79,18 +95,52 @@
             font-size: 1.4rem;
         }
     }
-    .custom-ok-btn {
-        background-color: #0d6efd !important; /* Ganti dengan warna yang Anda inginkan */
-        color: white !important; /* Warna teks pada tombol */
-        border-radius: 5px; /* Atur bentuk tombol */
-        font-weight: bold; /* Teks tebal */
-        padding: 8px 20px; /* Jarak dalam tombol */
-        border: none; /* Hapus border default */
-        transition: background-color 0.3s ease; /* Efek hover */
-    }
 
-    .custom-ok-btn:hover {
-        background-color: #0056b3 !important; /* Warna saat tombol di-hover */
+    /* DARK MODE SUPPORT */
+    @media (prefers-color-scheme: dark) {
+        body {
+            background-color: #121212;
+            color: #e0e0e0;
+        }
+
+        .form-container {
+            background-color: rgba(30, 30, 30, 0.95);
+            color: #e0e0e0;
+            box-shadow: 0 4px 10px rgba(255, 255, 255, 0.05);
+        }
+
+        .form-control {
+            background-color: #2c2c2c;
+            color: #fff;
+            border: 1px solid #444;
+        }
+
+        .form-control::placeholder {
+            color: #bbb;
+        }
+
+        .submit-btn {
+            background-color: #0d6efd;
+            color: white;
+        }
+
+        .submit-btn:hover {
+            background-color: #0056b3;
+        }
+
+        .sticky-top-section {
+            background-color: rgba(30, 30, 30, 0.95);
+            color: #fff;
+            box-shadow: 0 4px 10px rgba(255, 255, 255, 0.05);
+        }
+
+        .form-label {
+            color: #fff;
+        }
+
+        .text-danger {
+            color: #ff6b6b !important;
+        }
     }
 </style>
 

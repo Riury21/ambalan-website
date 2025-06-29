@@ -4,16 +4,16 @@
 
 @section('content')
 
-<!-- CSS Sticky Header -->
 <style>
     .sticky-top-section {
         position: sticky;
         top: 0;
         z-index: 1020;
-        background-color: rgba(255, 255, 255, 0.95); /* Warna putih transparan */
+        background-color: rgba(255, 255, 255, 0.95);
         padding: 0.5rem 0;
         border-bottom: 1px solid #dee2e6;
-        border-radius: 10px; /* Sudut membulat */
+        border-radius: 10px;
+        transition: background-color 0.3s ease, color 0.3s ease;
     }
 
     @media (max-width: 768px) {
@@ -30,10 +30,71 @@
         -webkit-line-clamp: 4;
         -webkit-box-orient: vertical;
     }
+
+    .card {
+        transition: background-color 0.3s ease, color 0.3s ease;
+        background-color: #ffffff;
+        color: #000000;
+    }
+
+    .card-text a {
+        color: #0d6efd;
+        text-decoration: underline;
+    }
+
+    .card-text a:hover {
+        color: #084298;
+    }
+
+    .text-muted {
+        color: #6c757d !important;
+    }
+
+    /* === DARK MODE === */
+    @media (prefers-color-scheme: dark) {
+        body {
+            background-color: #121212;
+            color: #ffffff;
+        }
+
+        .sticky-top-section {
+            background-color: rgba(30, 30, 30, 0.95);
+            border-bottom: 1px solid #444;
+            color: #ffffff;
+        }
+
+        .card {
+            background-color: #1e1e1e;
+            color: #ffffff;
+            border: 1px solid #444;
+        }
+
+        .card-title,
+        .card-body,
+        .card-text,
+        .card p {
+            color: #ffffff;
+        }
+
+        .card-text a {
+            color: #66b0ff;
+        }
+
+        .card-text a:hover {
+            color: #89c9ff;
+        }
+
+        .text-muted {
+            color: #aaa !important;
+        }
+
+        a.text-dark {
+            color: #ffffff !important;
+        }
+    }
 </style>
 
 <div class="container py-4">
-
     <!-- Sticky Title -->
     <div class="sticky-top-section">
         <h1 class="text-center mb-3 d-flex align-items-center justify-content-center gap-2">
@@ -65,7 +126,6 @@
                             <h5 class="card-title mb-2">{{ $item->judul }}</h5>
 
                             @php
-                                // Escape HTML, ubah baris baru, dan deteksi link
                                 $text = nl2br(e($item->deskripsi));
                                 $withLinks = preg_replace(
                                     '/(https?:\/\/[^\s<]+)/',
@@ -73,6 +133,7 @@
                                     $text
                                 );
                             @endphp
+
                             <p class="card-text truncate">{!! $withLinks !!}</p>
 
                             <p class="card-text mt-2">
@@ -88,6 +149,5 @@
             </div>
         @endforelse
     </div>
-
 </div>
 @endsection

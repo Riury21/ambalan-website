@@ -4,16 +4,23 @@
 
 @section('content')
 
-<!-- CSS Sticky Header -->
 <style>
     .sticky-top-section {
         position: sticky;
         top: 0;
         z-index: 1020;
-        background-color: rgba(255, 255, 255, 0.95); /* Warna putih transparan */
+        background-color: rgba(255, 255, 255, 0.95);
         padding: 0.5rem 0;
         border-bottom: 1px solid #dee2e6;
-        border-radius: 10px; /* Sudut membulat */
+        border-radius: 10px;
+    }
+
+    .truncate {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 4;
+        -webkit-box-orient: vertical;
     }
 
     @media (max-width: 768px) {
@@ -23,12 +30,37 @@
         }
     }
 
-    .truncate {
-        overflow: hidden;
-        text-overflow: ellipsis;
-        display: -webkit-box;
-        -webkit-line-clamp: 4;
-        -webkit-box-orient: vertical;
+    /* === Dark Mode === */
+    @media (prefers-color-scheme: dark) {
+        body {
+            background-color: #121212;
+            color: #e0e0e0;
+        }
+
+        .sticky-top-section {
+            background-color: rgba(30, 30, 30, 0.95);
+            border-bottom: 1px solid #333;
+        }
+
+        .card {
+            background-color: #1e1e1e;
+            color: #e0e0e0;
+            border-color: #444;
+        }
+
+        .card a,
+        .card-text a {
+            color: #90caf9;
+        }
+
+        .card a:hover,
+        .card-text a:hover {
+            color: #64b5f6;
+        }
+
+        .text-dark {
+            color: #e0e0e0 !important;
+        }
     }
 </style>
 

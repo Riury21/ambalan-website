@@ -9,10 +9,11 @@
         position: sticky;
         top: 0;
         z-index: 1020;
-        background-color: rgba(255, 255, 255, 0.95); /* Warna putih transparan */
+        background-color: rgba(255, 255, 255, 0.95);
         padding: 1rem 0;
         border-bottom: 1px solid #dee2e6;
-        border-radius: 10px; /* Sudut membulat */
+        border-radius: 10px;
+        transition: background-color 0.3s ease, color 0.3s ease;
     }
 
     @media (max-width: 768px) {
@@ -38,10 +39,66 @@
     }
 
     .content-bg {
-        background-color: rgba(255, 255, 255, 0.9); /* Background putih semi-transparan */
+        background-color: rgba(255, 255, 255, 0.9);
         padding: 1.5rem;
         border-radius: 10px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Bayangan */
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: background-color 0.3s ease, color 0.3s ease;
+        color: #212529;
+    }
+
+    a {
+        color: #007bff;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+
+    .btn-secondary {
+        background-color: #0d6efd;
+        color: #fff;
+        border: none;
+        transition: background-color 0.3s ease;
+    }
+
+    .btn-secondary:hover {
+        background-color: #0b5ed7;
+        color: #fff;
+    }
+
+    /* === DARK MODE === */
+    @media (prefers-color-scheme: dark) {
+        body {
+            background-color: #121212;
+            color: #e0e0e0;
+        }
+
+        .sticky-title {
+            background-color: rgba(30, 30, 30, 0.95);
+            border-bottom: 1px solid #333;
+            color: #e0e0e0;
+        }
+
+        .content-bg {
+            background-color: rgba(30, 30, 30, 0.95);
+            color: #e0e0e0;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+        }
+
+        a {
+            color: #66b0ff;
+        }
+
+        .btn-secondary {
+            background-color: #0d6efd;
+            color: #fff;
+        }
+
+        .btn-secondary:hover {
+            background-color: #0b5ed7;
+            color: #fff;
+        }
     }
 </style>
 

@@ -4,17 +4,16 @@
 
 @section('content')
 
-<!-- CSS Sticky Header dan Hover Effect -->
 <style>
     .sticky-top-section {
         position: sticky;
         top: 0;
         z-index: 1020;
-        background-color: rgba(255, 255, 255, 0.95); /* Warna putih dengan transparansi */
+        background-color: rgba(255, 255, 255, 0.95);
         padding: 0.5rem 0;
         border-bottom: 1px solid #dee2e6;
-        border-radius: 10px; /* Sudut membulat */
-        transition: transform 0.3s ease, opacity 0.3s ease; /* Transisi untuk animasi */
+        border-radius: 10px;
+        transition: background-color 0.3s ease;
     }
 
     .sticky-hidden {
@@ -36,8 +35,11 @@
 
     .card {
         position: relative;
-        overflow: hidden; /* Supaya efek cahaya tidak keluar dari card */
+        overflow: hidden;
         transition: transform 0.3s ease, box-shadow 0.3s ease;
+        background-color: #ffffff;
+        color: #000;
+        border: 1px solid #ddd;
     }
 
     .card:hover {
@@ -56,7 +58,7 @@
         border-radius: 50%;
         transform: translate(-50%, -50%);
         opacity: 0;
-        z-index: -1; /* Supaya efek berada di belakang konten card */
+        z-index: -1;
         transition: all 0.4s ease-in-out;
     }
 
@@ -66,23 +68,76 @@
         opacity: 1;
     }
 
-    @media (max-width: 576px) {
-        .card:hover {
-            transform: scale(1.02); /* Sedikit pembesaran */
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Bayangan lebih halus */
+    .form-control,
+    .btn {
+        transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    /* DARK MODE */
+    @media (prefers-color-scheme: dark) {
+        body {
+            background-color: #121212;
+            color: #e0e0e0;
+        }
+
+        .sticky-top-section {
+            background-color: rgba(30, 30, 30, 0.95);
+            border-bottom: 1px solid #444;
+            color: #fff;
+        }
+
+        .card {
+            background-color: #1e1e1e;
+            color: #e0e0e0;
+            border-color: #444;
+        }
+
+        .form-control {
+            background-color: #2c2c2c;
+            color: #e0e0e0;
+            border-color: #444;
+            appearance: none;
+        }
+
+        .form-control::placeholder {
+            color: #aaa;
+        }
+
+        select.form-control {
+            background-image: none; /* hilangkan panah default */
+        }
+
+        option {
+            background-color: #2c2c2c;
+            color: #fff;
+        }
+
+        .btn-primary {
+            background-color: #0d6efd;
+            border-color: #0d6efd;
+            color: #fff;
+        }
+
+        .btn-secondary {
+            background-color: #3a3a3a;
+            border-color: #555;
+            color: #fff;
+        }
+
+        .text-muted {
+            color: #bbb !important;
         }
     }
 </style>
 
 <div class="container py-4">
-
-    <!-- Sticky Title & Filter -->
     <div class="sticky-top-section sticky-visible" id="stickyHeader">
         <h1 class="text-center mb-3 d-flex align-items-center justify-content-center gap-2">
             <img src="{{ asset('logo/kj.png') }}" alt="Logo KJ" class="img-fluid" style="height: 70px;">
             Pembina Ambalan
             <img src="{{ asset('logo/kr.png') }}" alt="Logo KR" class="img-fluid" style="height: 70px;">
         </h1>
+
         <form method="GET" action="{{ url('/pembina') }}" class="row g-2 justify-content-center">
             <div class="col-6 col-md-3">
                 <input type="text" name="nama" class="form-control" placeholder="Filter Nama" value="{{ request('nama') }}">
@@ -111,17 +166,14 @@
         </form>
     </div>
 
-    <!-- Grid Data -->
+    <!-- Grid -->
     <div class="row justify-content-center mt-4">
         @forelse($pembina as $item)
             <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-4">
                 <div class="card h-100 shadow-sm text-center pt-4">
                     <div class="mx-auto mb-2" style="width: 100px; height: 120px; clip-path: polygon(
-                            10% 5%, 90% 5%, /* Lengkung atas */
-                            100% 20%, 85% 95%, /* Sisi kanan */
-                            50% 100%, /* Titik bawah */
-                            15% 95%, 0% 20% /* Sisi kiri */
-                        );overflow: hidden; background: #fff;">
+                        10% 5%, 90% 5%, 100% 20%, 85% 95%, 50% 100%, 15% 95%, 0% 20%
+                    ); overflow: hidden; background: #fff;">
                         @if($item->foto)
                             <img src="{{ asset('uploads/' . $item->foto) }}" class="img-fluid" style="width: 100%; height: 100%; object-fit: cover;">
                         @else
@@ -144,7 +196,6 @@
             </div>
         @endforelse
     </div>
-
 </div>
 
 <script>
@@ -156,11 +207,9 @@
             const currentScrollPosition = window.pageYOffset;
 
             if (currentScrollPosition > lastScrollPosition) {
-                // Scroll ke bawah, sembunyikan header
                 stickyHeader.classList.add("sticky-hidden");
                 stickyHeader.classList.remove("sticky-visible");
             } else {
-                // Scroll ke atas atau berhenti, tampilkan header
                 stickyHeader.classList.add("sticky-visible");
                 stickyHeader.classList.remove("sticky-hidden");
             }
@@ -169,4 +218,5 @@
         });
     });
 </script>
+
 @endsection

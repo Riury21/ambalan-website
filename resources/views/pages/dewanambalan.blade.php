@@ -12,7 +12,7 @@
         background-color: rgba(255, 255, 255, 0.95);
         padding: 0.5rem 0;
         border-bottom: 1px solid #dee2e6;
-        border-radius: 10px; /* Sudut membulat */
+        border-radius: 10px;
         transition: transform 0.3s ease, opacity 0.3s ease;
     }
 
@@ -35,8 +35,10 @@
 
     .card {
         position: relative;
-        overflow: hidden; /* Supaya efek cahaya tidak keluar dari card */
+        overflow: hidden;
         transition: transform 0.3s ease, box-shadow 0.3s ease;
+        background-color: #ffffff;
+        color: #000000;
     }
 
     .card:hover {
@@ -44,29 +46,7 @@
         box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
     }
 
-    /* Efek cahaya untuk Kamajaya */
-    .card.kamajaya::before {
-        content: '';
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        width: 0;
-        height: 0;
-        background: radial-gradient(circle, rgb(0, 0, 254), rgba(123, 191, 255, 0));
-        border-radius: 50%;
-        transform: translate(-50%, -50%);
-        opacity: 0;
-        z-index: -1;
-        transition: all 0.4s ease-in-out;
-    }
-
-    .card.kamajaya:hover::before {
-        width: 300%;
-        height: 300%;
-        opacity: 1;
-    }
-
-    /* Efek cahaya untuk Kamaratih */
+    .card.kamajaya::before,
     .card.kamaratih::before {
         content: '';
         position: absolute;
@@ -74,7 +54,6 @@
         left: 50%;
         width: 0;
         height: 0;
-        background: radial-gradient(circle, rgb(0, 255, 255), rgba(123, 191, 255, 0));
         border-radius: 50%;
         transform: translate(-50%, -50%);
         opacity: 0;
@@ -82,10 +61,83 @@
         transition: all 0.4s ease-in-out;
     }
 
+    .card.kamajaya::before {
+        background: radial-gradient(circle, rgb(0, 0, 254), rgba(123, 191, 255, 0));
+    }
+
+    .card.kamaratih::before {
+        background: radial-gradient(circle, rgb(0, 255, 255), rgba(123, 191, 255, 0));
+    }
+
+    .card.kamajaya:hover::before,
     .card.kamaratih:hover::before {
         width: 300%;
         height: 300%;
         opacity: 1;
+    }
+
+    /* Hapus tanda panah di select dropdown */
+    select.form-control {
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        background-image: none !important;
+        padding-right: 1rem;
+    }
+
+    /* === Dark Mode === */
+    @media (prefers-color-scheme: dark) {
+        body {
+            background-color: #121212;
+            color: #e0e0e0;
+        }
+
+        .sticky-top-section {
+            background-color: rgba(30, 30, 30, 0.95);
+            border-bottom: 1px solid #333;
+        }
+
+        .card {
+            background-color: #1e1e1e;
+            color: #e0e0e0;
+            border-color: #444;
+        }
+
+        .card-body p,
+        .card-body h6 {
+            color: #e0e0e0;
+        }
+
+        .form-control {
+            background-color: #2c2c2c;
+            color: #e0e0e0;
+            border-color: #444;
+        }
+
+        .form-control::placeholder {
+            color: #aaa;
+        }
+
+        select.form-control {
+            background-color: #2c2c2c !important;
+            color: #e0e0e0 !important;
+            border: 1px solid #444 !important;
+        }
+
+        .btn-primary {
+            background-color: #0d6efd;
+            border-color: #0d6efd;
+        }
+
+        .btn-secondary {
+            background-color: #3a3a3a;
+            border-color: #555;
+            color: #fff;
+        }
+
+        .text-muted {
+            color: #bbb !important;
+        }
     }
 </style>
 
@@ -133,10 +185,10 @@
             <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-4">
                 <div class="card h-100 shadow-sm text-center pt-4 {{ strtolower($dewan->satuan) }}">
                     <div class="mx-auto mb-2" style="width: 100px; height: 120px; clip-path: polygon(
-                            10% 5%, 90% 5%, /* Lengkung atas */
-                            100% 20%, 85% 95%, /* Sisi kanan */
-                            50% 100%, /* Titik bawah */
-                            15% 95%, 0% 20% /* Sisi kiri */
+                            10% 5%, 90% 5%, 
+                            100% 20%, 85% 95%, 
+                            50% 100%, 
+                            15% 95%, 0% 20%
                         );overflow: hidden; background: #fff;">
                         @if($dewan->foto)
                             <img src="{{ asset('uploads/' . $dewan->foto) }}" class="img-fluid" style="width: 100%; height: 100%; object-fit: cover;">
@@ -169,11 +221,9 @@
             const currentScrollPosition = window.pageYOffset;
 
             if (currentScrollPosition > lastScrollPosition) {
-                // Scroll ke bawah, sembunyikan header
                 stickyHeader.classList.add("sticky-hidden");
                 stickyHeader.classList.remove("sticky-visible");
             } else {
-                // Scroll ke atas atau berhenti, tampilkan header
                 stickyHeader.classList.add("sticky-visible");
                 stickyHeader.classList.remove("sticky-hidden");
             }
@@ -182,4 +232,5 @@
         });
     });
 </script>
+
 @endsection

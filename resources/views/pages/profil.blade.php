@@ -70,6 +70,39 @@
             padding-top: 0.5rem;
         }
     }
+
+    /* Dark mode support */
+    @media (prefers-color-scheme: dark) {
+        body {
+            background-color: #121212;
+            color: #e0e0e0;
+        }
+
+        .sticky-top-section {
+            background-color: rgba(30, 30, 30, 1);
+            border-bottom: 1px solid #333;
+        }
+
+        .content-container {
+            background-color: rgba(30, 30, 30, 0.9);
+            color: #e0e0e0;
+            box-shadow: 0 4px 10px rgba(255, 255, 255, 0.05);
+        }
+
+        .badge-column {
+            background-color: rgba(30, 30, 30, 0.9);
+            box-shadow: 0 4px 10px rgba(255, 255, 255, 0.05);
+        }
+
+        .badge-text {
+            color: #e0e0e0;
+        }
+
+        h2, h4 {
+            background-color: rgba(40, 40, 40, 0.9) !important;
+            color: #ffffff;
+        }
+    }
 </style>
 
 <div class="container py-4">
@@ -110,13 +143,10 @@
             <div class="badge-column">
                 <img src="{{ asset('logo/kj.png') }}" alt="Logo Kamajaya">
                     <div class="badge-text">
-                        <h4>Deskripsi Logo</h4>
                         <p><strong>Nama Ambalan:</strong><br>
                         Kamajaya adalah tokoh wayang yang melambangkan kesetiaan, kelurusan, dan kebijaksanaan. Nama ini mencerminkan semangat pengabdian yang tulus kepada Pramuka.</p>
-
                         <p><strong>Warna Dasar:</strong><br>
                         Warna biru tua sebagai dasar logo menggambarkan kesetiaan, ketekunan, dan ketabahan.</p>
-
                         <p><strong>Gambar Mahkota (lebih tinggi):</strong></p>
                         <ul>
                             <li>3 sudut atas: melambangkan Tri Satya</li>
@@ -125,31 +155,23 @@
                             <li>Sudut puncak: hubungan dengan Tuhan Yang Maha Esa</li>
                             <li>Tunas kelapa: lambang Gerakan Pramuka</li>
                         </ul>
-
                         <p><strong>Padi dan Kapas:</strong><br>
                         Melambangkan kemakmuran serta harapan agar Pramuka menjadi insan yang memakmurkan bangsa.</p>
-
                         <p><strong>Mahkota mengarah ke bintang:</strong><br>
                         Simbol pengabdian dan keyakinan spiritual kepada Tuhan.</p>
-
                         <p><strong>Bentuk Perisai:</strong><br>
                         Melambangkan kekuatan dan pelindung dari pengaruh negatif.</p>
-
                         <p><strong>Jumlah Padi (18) dan Kapas (9):</strong><br>
                         Melambangkan tanggal lahir Gugus Depan, yaitu 18 September 1991.</p>
                     </div>
-
             </div>
             <div class="badge-column">
                 <img src="{{ asset('logo/kr.png') }}" alt="Logo Kamaratih">
                     <div class="badge-text">
-                        <h4>Deskripsi Logo</h4>
                         <p><strong>Nama Ambalan:</strong><br>
                         Kamaratih adalah tokoh wayang istri Kamajaya, melambangkan kelembutan, kasih sayang, kesetiaan, dan kekuatan dalam kesempurnaan perempuan.</p>
-
                         <p><strong>Warna Dasar:</strong><br>
                         Warna biru muda mencerminkan kelembutan dan keteguhan hati yang penuh kesetiaan.</p>
-
                         <p><strong>Gambar Mahkota (lebih rendah):</strong></p>
                         <ul>
                             <li>5 sudut atas: melambangkan Pancasila</li>
@@ -158,20 +180,15 @@
                             <li>Sudut puncak: hubungan dengan Tuhan Yang Maha Esa</li>
                             <li>Tunas kelapa: lambang Gerakan Pramuka</li>
                         </ul>
-
                         <p><strong>Padi dan Kapas:</strong><br>
                         Sama seperti pada Kamajaya, simbol kemakmuran dan kontribusi bagi bangsa.</p>
-
                         <p><strong>Mahkota mengarah ke bintang:</strong><br>
                         Harapan agar tetap mendekatkan diri pada Tuhan dalam setiap kegiatan.</p>
-
                         <p><strong>Bentuk Perisai:</strong><br>
                         Perlambang pelindung karakter, agar Pramuka Kamaratih mampu menyaring pengaruh negatif.</p>
-
                         <p><strong>Jumlah Padi (18) dan Kapas (9):</strong><br>
                         Melambangkan tanggal berdirinya Gugus Depan, yaitu 18 September 1991.</p>
                     </div>
-
             </div>
         </div>
     </div>

@@ -4,7 +4,7 @@
 
 @section('content')
 
-<!-- CSS Sticky Header dan Efek -->
+<!-- CSS Dark Mode Support -->
 <style>
     .sticky-top-section {
         position: sticky;
@@ -26,16 +26,13 @@
         transform: translateY(0);
         opacity: 1;
     }
-    @media (max-width: 768px) {
-        .sticky-top-section {
-            top: 0px;
-            padding-top: 0.5rem;
-        }
-    }
+
     .card {
         position: relative;
         overflow: hidden;
         transition: transform 0.3s ease, box-shadow 0.3s ease;
+        background-color: #fff;
+        color: #000;
     }
 
     .card:hover {
@@ -72,6 +69,53 @@
         height: 300%;
         opacity: 1;
     }
+
+    @media (prefers-color-scheme: dark) {
+        body {
+            background-color: #121212;
+            color: #e0e0e0;
+        }
+
+        .sticky-top-section {
+            background-color: rgba(40, 40, 40, 0.95);
+            border-color: #444;
+        }
+
+        .card {
+            background-color: #1e1e1e;
+            color: #e0e0e0;
+            box-shadow: 0 4px 10px rgba(255, 255, 255, 0.05);
+        }
+
+        .card-body strong {
+            color: #ffffff;
+        }
+
+        .form-control {
+            background-color: #2c2c2c;
+            color: #e0e0e0;
+            border-color: #555;
+        }
+
+        .form-control::placeholder {
+            color: #aaa;
+        }
+
+        .btn-primary {
+            background-color: #0d6efd;
+            border-color: #0d6efd;
+        }
+
+        .btn-secondary {
+            background-color: #6c757d;
+            border-color: #6c757d;
+        }
+
+        option {
+            background-color: #2c2c2c;
+            color: #e0e0e0;
+        }
+    }
 </style>
 
 <div class="container py-4">
@@ -82,6 +126,7 @@
             Dewan Purna
             <img src="{{ asset('logo/kr.png') }}" alt="Logo KR" class="img-fluid" style="height: 70px;">
         </h1>
+
         <form method="GET" action="{{ route('dewan-purna.index') }}" class="row g-2 justify-content-center">
             <div class="col-6 col-md-2">
                 <input type="text" name="nama" class="form-control" placeholder="Filter Nama" value="{{ request('nama') }}">
@@ -169,4 +214,5 @@
         });
     });
 </script>
+
 @endsection

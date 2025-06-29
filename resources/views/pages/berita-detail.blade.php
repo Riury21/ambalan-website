@@ -9,10 +9,10 @@
         position: sticky;
         top: 0;
         z-index: 1020;
-        background-color: rgba(255, 255, 255, 0.95); /* Warna putih transparan */
+        background-color: rgba(255, 255, 255, 0.95);
         padding: 1rem 0;
         border-bottom: 1px solid #dee2e6;
-        border-radius: 10px; /* Sudut membulat */
+        border-radius: 10px;
     }
 
     @media (max-width: 768px) {
@@ -38,10 +38,69 @@
     }
 
     .content-bg {
-        background-color: rgba(255, 255, 255, 0.9); /* Background putih semi-transparan */
+        background-color: rgba(255, 255, 255, 0.9);
         padding: 1.5rem;
         border-radius: 10px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Bayangan */
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        color: #212529;
+    }
+
+    .content-bg a {
+        color: #0d6efd;
+    }
+
+    .content-bg a:hover {
+        color: #0a58ca;
+        text-decoration: underline;
+    }
+
+    .btn-secondary {
+        background-color: #0d6efd;
+        color: #fff !important;
+        border: none;
+        transition: background-color 0.3s ease;
+    }
+
+    .btn-secondary:hover {
+        background-color: #0b5ed7;
+        color: #fff !important;
+    }
+
+    /* === Dark Mode Support === */
+    @media (prefers-color-scheme: dark) {
+        body {
+            background-color: #121212;
+            color: #e0e0e0;
+        }
+
+        .sticky-title {
+            background-color: rgba(30, 30, 30, 0.95);
+            border-bottom: 1px solid #333;
+        }
+
+        .content-bg {
+            background-color: rgba(30, 30, 30, 0.95);
+            color: #e0e0e0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+        }
+
+        .content-bg a {
+            color: #90caf9;
+        }
+
+        .content-bg a:hover {
+            color: #64b5f6;
+        }
+
+        .btn-secondary {
+            background-color: #0d6efd;
+            color: #fff !important;
+        }
+
+        .btn-secondary:hover {
+            background-color: #0b5ed7;
+            color: #fff !important;
+        }
     }
 </style>
 

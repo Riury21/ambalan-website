@@ -30,9 +30,9 @@
         align-items: center;
         gap: 20px;
         padding: 20px;
-        background-color: rgba(255, 255, 255, 0.9); /* Background putih semi-transparan */
-        border-radius: 10px; /* Membuat sudut lebih halus */
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Efek bayangan */
+        background-color: rgba(255, 255, 255, 0.9);
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     }
 
     .content-column img {
@@ -46,7 +46,7 @@
         text-align: justify;
         font-size: 1rem;
         line-height: 1.6;
-        color: #000; /* Warna teks */
+        color: #000;
     }
 
     @media (max-width: 768px) {
@@ -57,6 +57,29 @@
             top: 0px;
             padding-top: 0.5rem;
         }
+    }
+
+    /* Dark mode support */
+    @media (prefers-color-scheme: dark) {
+        body {
+            background-color: #121212;
+            color: #e0e0e0;
+        }
+
+        .sticky-top-section {
+            background-color: rgba(30, 30, 30, 1);
+            border-bottom: 1px solid #333;
+        }
+
+        .content-column {
+            background-color: rgba(30, 30, 30, 0.9);
+            box-shadow: 0 4px 10px rgba(255, 255, 255, 0.05);
+        }
+
+        .text-content {
+            color: #e0e0e0;
+        }
+    }
 </style>
 
 <div class="container py-4">
