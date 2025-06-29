@@ -94,6 +94,15 @@
         </h1>
     </div>
 
+    <!-- tambahkan perintah berikut dibelakang kegitan -->
+    <!-- <span class="badge bg-success"> ✔ Terlaksana</span> -->
+    <!-- <span class="badge bg-warning text-dark">⏳ Berlangsung</span> -->
+    <!-- <span class="badge bg-danger"> ✘ Gagal</span> -->
+     <!-- <span class="badge bg-secondary"> 🕓 Belum Dilaksanakan</span> -->
+
+    <!-- CONTOH -->
+    <!-- <li>Pembentukan Dewan Ambalan<span class="badge bg-success">✔ Terlaksana</span></li> -->
+
     <!-- Daftar Program Umum -->
     <div class="row justify-content-center mt-4">
         <div class="col-12">
