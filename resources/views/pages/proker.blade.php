@@ -10,7 +10,7 @@
         position: sticky;
         top: 0;
         z-index: 1020;
-        background-color: rgba(255, 255, 255, 1);
+        background-color: rgba(255, 255, 255, 0.95);
         padding: 0.5rem 0;
         border-bottom: 1px solid #dee2e6;
         border-radius: 10px;
@@ -58,7 +58,7 @@
         } 
 
         .sticky-top-section {
-            background-color: rgba(30, 30, 30, 1);
+            background-color: rgba(30, 30, 30, 0.95);
             border-bottom: 1px solid #333;
         }
 

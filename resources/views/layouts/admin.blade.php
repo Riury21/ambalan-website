@@ -7,11 +7,42 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
   <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-  <link rel="icon" href="{{ asset('logo/cikal.png') }}" type="image/png">  
+  <link rel="icon" href="{{ asset('logo/cikal.png') }}" type="image/png">
+  @stack('head')
+  
+  <!-- Untuk Android  -->
+  <link rel="manifest" href="/manifest.json">
+  <link rel="icon" href="/icons/icon-192x192.png" sizes="192x192">
+  <meta name="theme-color" content="#000000">
+
+  <!-- Untuk iOS -->
+  <link rel="apple-touch-icon" href="/icons/icon-192x192.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Kamajaya">
+
   <style>
     body {
       margin: 0;
-      background-color: #f8f9fa;
+      background-image: url('{{ asset('logo/bg1.png') }}');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      min-height: 100vh;
+    }
+
+    .main-content {
+      margin-left: 240px;
+      padding: 2rem;
+      transition: margin-left 0.3s ease-in-out;
+      background-color: rgba(255, 255, 255, 0.92);
+      border-radius: 8px;
+      min-height: 100vh;
+    }
+
+    .main-content.expanded {
+      margin-left: 70px !important;
     }
 
     .sidebar-fixed {
@@ -94,7 +125,6 @@
       display: none;
     }
 
-    /* Perbaikan tombol toggle & logout saat sidebar collapsed */
     .sidebar-collapsed .btn-outline-light {
       width: 42px !important;
       height: 42px;
@@ -107,16 +137,6 @@
 
     .sidebar-collapsed .btn-outline-light i {
       margin: 0 !important;
-    }
-
-    .main-content {
-      margin-left: 240px;
-      padding: 2rem;
-      transition: margin-left 0.3s ease-in-out;
-    }
-
-    .main-content.expanded {
-      margin-left: 70px !important;
     }
 
     @media (max-width: 991.98px) {
@@ -141,87 +161,51 @@
     </button>
   </div>
   <ul class="nav flex-column mb-auto px-2 pt-3">
-    <li class="nav-item mb-2">
-      <a href="/admin" class="nav-link text-white {{ request()->is('admin') ? 'active fw-bold' : '' }}" data-bs-toggle="tooltip" data-bs-placement="right" title="Halaman Admin">
-        <i class="bi bi-house-door"></i><span>Halaman Admin</span>
-      </a>
-    </li>
-    <li class="nav-item mb-2">
-      <a href="/admin/berita" class="nav-link text-white {{ request()->is('admin/berita') ? 'active fw-bold' : '' }}" data-bs-toggle="tooltip" data-bs-placement="right" title="Input Berita">
-        <i class="bi bi-newspaper"></i><span>Input Berita</span>
-      </a>
-    </li>
-    <li class="nav-item mb-2">
-      <a href="/admin/galeri" class="nav-link text-white {{ request()->is('admin/galeri') ? 'active fw-bold' : '' }}" data-bs-toggle="tooltip" data-bs-placement="right" title="Input Galeri">
-        <i class="bi bi-images"></i><span>Input Galeri</span>
-      </a>
-    </li>
-    <li class="nav-item mb-2">
-      <a href="/admin/pembina" class="nav-link text-white {{ request()->is('admin/pembina') ? 'active fw-bold' : '' }}" data-bs-toggle="tooltip" data-bs-placement="right" title="Data Pembina">
-        <i class="bi bi-person-badge"></i><span>Data Pembina</span>
-      </a>
-    </li>
-    <li class="nav-item mb-2">
-      <a href="/admin/dewan" class="nav-link text-white {{ request()->is('admin/dewan') ? 'active fw-bold' : '' }}" data-bs-toggle="tooltip" data-bs-placement="right" title="Data Dewan">
-        <i class="bi bi-people"></i><span>Data Dewan</span>
-      </a>
-    </li>
-    <li class="nav-item mb-2">
-      <a href="/admin/pesan" class="nav-link text-white {{ request()->is('admin/pesan') ? 'active fw-bold' : '' }}" data-bs-toggle="tooltip" data-bs-placement="right" title="Lihat Pesan">
-        <i class="bi bi-envelope"></i><span>Lihat Pesan</span>
-      </a>
-    </li>
+    <li class="nav-item mb-2"><a href="/admin" class="nav-link text-white {{ request()->is('admin') ? 'active fw-bold' : '' }}"><i class="bi bi-house-door"></i><span>Halaman Admin</span></a></li>
+    <li class="nav-item mb-2"><a href="/admin/berita" class="nav-link text-white {{ request()->is('admin/berita') ? 'active fw-bold' : '' }}"><i class="bi bi-newspaper"></i><span>Input Berita</span></a></li>
+    <li class="nav-item mb-2"><a href="/admin/galeri" class="nav-link text-white {{ request()->is('admin/galeri') ? 'active fw-bold' : '' }}"><i class="bi bi-images"></i><span>Input Galeri</span></a></li>
+    <li class="nav-item mb-2"><a href="/admin/pembina" class="nav-link text-white {{ request()->is('admin/pembina') ? 'active fw-bold' : '' }}"><i class="bi bi-person-badge"></i><span>Data Pembina</span></a></li>
+    <li class="nav-item mb-2"><a href="/admin/dewan" class="nav-link text-white {{ request()->is('admin/dewan') ? 'active fw-bold' : '' }}"><i class="bi bi-people"></i><span>Data Dewan</span></a></li>
+    <li class="nav-item mb-2"><a href="/admin/pesan" class="nav-link text-white {{ request()->is('admin/pesan') ? 'active fw-bold' : '' }}"><i class="bi bi-envelope"></i><span>Lihat Pesan</span></a></li>
   </ul>
   <div class="mt-auto p-4 border-top border-light d-flex justify-content-center">
-      <form action="{{ route('logout') }}" method="POST" class="d-flex align-items-center justify-content-center">
-          @csrf
-          <button type="submit" class="btn btn-outline-light d-flex align-items-center justify-content-center" data-bs-toggle="tooltip" data-bs-placement="right" title="Logout">
-              <i class="bi bi-box-arrow-right"></i>
-              <span class="ms-1">Logout</span>
-          </button>
-      </form>
+    <form action="{{ route('logout') }}" method="POST" class="d-flex align-items-center justify-content-center">
+      @csrf
+      <button type="submit" class="btn btn-outline-light d-flex align-items-center justify-content-center">
+        <i class="bi bi-box-arrow-right"></i>
+        <span class="ms-1">Logout</span>
+      </button>
+    </form>
   </div>
 </div>
 
 <!-- Sidebar Mobile -->
 <div class="d-lg-none">
-  <button class="btn btn-primary m-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasSidebar" aria-controls="offcanvasSidebar">
+  <button class="btn btn-primary m-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasSidebar">
     <i class="bi bi-list"></i> Menu
   </button>
   <div class="offcanvas offcanvas-start bg-primary text-white" tabindex="-1" id="offcanvasSidebar">
     <div class="offcanvas-header">
       <h5 class="offcanvas-title">Dashboard Admin</h5>
-      <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"></button>
     </div>
     <div class="offcanvas-body d-flex flex-column p-0">
       <ul class="nav flex-column mb-auto px-2 pt-3">
-        <li class="nav-item mb-2">
-          <a href="/admin" class="nav-link text-white"><i class="bi bi-house-door me-2"></i><span>Halaman Admin</span></a>
-        </li>
-        <li class="nav-item mb-2">
-          <a href="/admin/berita" class="nav-link text-white"><i class="bi bi-newspaper me-2"></i><span>Input Berita</span></a>
-        </li>
-        <li class="nav-item mb-2">
-          <a href="/admin/galeri" class="nav-link text-white"><i class="bi bi-images me-2"></i><span>Input Galeri</span></a>
-        </li>
-        <li class="nav-item mb-2">
-          <a href="/admin/pembina" class="nav-link text-white"><i class="bi bi-person-badge me-2"></i><span>Data Pembina</span></a>
-        </li>
-        <li class="nav-item mb-2">
-          <a href="/admin/dewan" class="nav-link text-white"><i class="bi bi-people me-2"></i><span>Data Dewan</span></a>
-        </li>
-        <li class="nav-item mb-2">
-          <a href="/admin/pesan" class="nav-link text-white"><i class="bi bi-envelope me-2"></i><span>Lihat Pesan</span></a>
-        </li>
+        <li class="nav-item mb-2"><a href="/admin" class="nav-link text-white"><i class="bi bi-house-door me-2"></i><span>Halaman Admin</span></a></li>
+        <li class="nav-item mb-2"><a href="/admin/berita" class="nav-link text-white"><i class="bi bi-newspaper me-2"></i><span>Input Berita</span></a></li>
+        <li class="nav-item mb-2"><a href="/admin/galeri" class="nav-link text-white"><i class="bi bi-images me-2"></i><span>Input Galeri</span></a></li>
+        <li class="nav-item mb-2"><a href="/admin/pembina" class="nav-link text-white"><i class="bi bi-person-badge me-2"></i><span>Data Pembina</span></a></li>
+        <li class="nav-item mb-2"><a href="/admin/dewan" class="nav-link text-white"><i class="bi bi-people me-2"></i><span>Data Dewan</span></a></li>
+        <li class="nav-item mb-2"><a href="/admin/pesan" class="nav-link text-white"><i class="bi bi-envelope me-2"></i><span>Lihat Pesan</span></a></li>
       </ul>
       <div class="mt-auto p-4 border-top border-light d-flex justify-content-center">
-          <form action="{{ route('logout') }}" method="POST" class="d-flex align-items-center justify-content-center">
-              @csrf
-              <button type="submit" class="btn btn-outline-light d-flex align-items-center justify-content-center" data-bs-toggle="tooltip" data-bs-placement="right" title="Logout">
-                  <i class="bi bi-box-arrow-right"></i>
-                  <span class="ms-1">Logout</span>
-              </button>
-          </form>
+        <form action="{{ route('logout') }}" method="POST" class="d-flex align-items-center justify-content-center">
+          @csrf
+          <button type="submit" class="btn btn-outline-light d-flex align-items-center justify-content-center">
+            <i class="bi bi-box-arrow-right"></i>
+            <span class="ms-1">Logout</span>
+          </button>
+        </form>
       </div>
     </div>
   </div>
@@ -248,7 +232,6 @@
       icon.classList.toggle('bi-chevron-double-right');
     });
 
-    // Tooltip inisialisasi
     document.querySelectorAll('[data-bs-toggle="tooltip"]').forEach(el => new bootstrap.Tooltip(el));
   });
 </script>

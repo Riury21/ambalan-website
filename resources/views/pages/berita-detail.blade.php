@@ -13,6 +13,7 @@
         padding: 1rem 0;
         border-bottom: 1px solid #dee2e6;
         border-radius: 10px;
+        transition: background-color 0.3s ease, color 0.3s ease;
     }
 
     @media (max-width: 768px) {
@@ -42,31 +43,31 @@
         padding: 1.5rem;
         border-radius: 10px;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: background-color 0.3s ease, color 0.3s ease;
         color: #212529;
     }
 
-    .content-bg a {
-        color: #0d6efd;
+    a {
+        color: #007bff;
     }
 
-    .content-bg a:hover {
-        color: #0a58ca;
+    a:hover {
         text-decoration: underline;
     }
 
     .btn-secondary {
         background-color: #0d6efd;
-        color: #fff !important;
+        color: #fff;
         border: none;
         transition: background-color 0.3s ease;
     }
 
     .btn-secondary:hover {
         background-color: #0b5ed7;
-        color: #fff !important;
+        color: #fff;
     }
 
-    /* === Dark Mode Support === */
+    /* === DARK MODE === */
     @media (prefers-color-scheme: dark) {
         body {
             background-color: #121212;
@@ -76,30 +77,27 @@
         .sticky-title {
             background-color: rgba(30, 30, 30, 0.95);
             border-bottom: 1px solid #333;
+            color: #e0e0e0;
         }
 
         .content-bg {
             background-color: rgba(30, 30, 30, 0.95);
             color: #e0e0e0;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
         }
 
-        .content-bg a {
-            color: #90caf9;
-        }
-
-        .content-bg a:hover {
-            color: #64b5f6;
+        a {
+            color: #66b0ff;
         }
 
         .btn-secondary {
             background-color: #0d6efd;
-            color: #fff !important;
+            color: #fff;
         }
 
         .btn-secondary:hover {
             background-color: #0b5ed7;
-            color: #fff !important;
+            color: #fff;
         }
     }
 </style>
