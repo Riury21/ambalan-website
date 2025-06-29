@@ -142,6 +142,21 @@
             color: #ff6b6b !important;
         }
     }
+
+    /* SWEETALERT DARK MODE */
+    .swal-dark {
+        background-color: #1e1e1e !important;
+        color: #e0e0e0 !important;
+        border: 1px solid #333;
+    }
+
+    .swal-dark .swal2-title {
+        color: #ffffff !important;
+    }
+
+    .swal-dark .swal2-html-container {
+        color: #dddddd !important;
+    }
 </style>
 
 <div class="container py-4">
@@ -193,13 +208,16 @@
 @if(session('success'))
     <script>
         document.addEventListener('DOMContentLoaded', function () {
+            const isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
             Swal.fire({
                 title: 'Berhasil!',
                 text: "Pesan kakak telah terkirim, silahkan cek email untuk balasan.",
                 icon: 'success',
                 confirmButtonText: 'OK',
                 customClass: {
-                    confirmButton: 'custom-ok-btn'
+                    confirmButton: 'custom-ok-btn',
+                    popup: isDark ? 'swal-dark' : ''
                 }
             });
         });
