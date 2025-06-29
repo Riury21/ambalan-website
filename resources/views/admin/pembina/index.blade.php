@@ -18,14 +18,13 @@
     /* Sticky Filter */
     .sticky-filter {
         position: sticky;
-        top: 56px; /* cukup kecil agar tidak terlalu jauh */
+        top: 56px;
         z-index: 998;
         background-color: white;
         padding-bottom: 0.75rem;
         border-bottom: 1px solid #dee2e6;
     }
 
-    /* Non-sticky di mobile */
     @media (max-width: 767.98px) {
         .sticky-header,
         .sticky-filter {
@@ -33,7 +32,6 @@
         }
     }
 
-    /* Hapus padding atas konten utama jika ada */
     #main-content {
         padding-top: 0 !important;
     }
@@ -77,57 +75,62 @@
         </form>
     </div>
 
-    <!-- Tabel -->
-    <table class="table table-bordered table-striped align-middle mt-3">
-        <thead class="table-primary">
-            <tr>
-                <th>No</th>
-                <th>Nama</th>
-                <th>Jabatan</th>
-                <th>Bertugas</th>
-                <th>HP</th>
-                <th>Email</th>
-                <th>Alamat</th>
-                <th>Foto</th>
-                <th>Keterangan</th>
-                <th>Aksi</th>
-            </tr>
-        </thead>
-        <tbody>
-            @forelse($pembina as $item)
+    <!-- Tabel (Responsif) -->
+    <div class="table-responsive">
+        <table class="table table-bordered table-striped table-sm align-middle mt-3">
+            <thead class="table-primary">
                 <tr>
-                    <td>{{ $loop->iteration }}</td>
-                    <td>{{ $item->nama }}</td>
-                    <td>{{ $item->jabatan }}</td>
-                    <td>{{ $item->tahun_menjabat ?? '-' }}</td>
-                    <td>{{ $item->nomer_hp ?? '-' }}</td>
-                    <td>{{ $item->email ?? '-' }}</td>
-                    <td>{{ $item->alamat ?? '-' }}</td>
-                    <td>
-                        @if($item->foto)
-                            <img src="{{ asset('uploads/' . $item->foto) }}" alt="Foto Pembina" height="60" width="60">
-                        @else
-                            <span class="text-muted">-</span>
-                        @endif
-                    </td>
-                    <td>{{ \Illuminate\Support\Str::limit(strip_tags($item->keterangan), 100, '...') }}</td>
-                    <td>
-                        <a href="{{ url('/admin/pembina/'.$item->id.'/edit') }}" class="btn btn-sm btn-warning">
-                            <i class="bi bi-pencil"></i>
-                        </a>
-                        <form action="{{ url('/admin/pembina/'.$item->id) }}" method="POST" class="d-inline" onsubmit="return confirm('Yakin hapus data ini?')">
-                            @csrf
-                            @method('DELETE')
-                            <button class="btn btn-sm btn-danger"><i class="bi bi-trash"></i></button>
-                        </form>
-                    </td>
+                    <th>No</th>
+                    <th>Nama</th>
+                    <th>Jabatan</th>
+                    <th>Bertugas</th>
+                    <th class="d-none d-md-table-cell">HP</th>
+                    <th class="d-none d-md-table-cell">Email</th>
+                    <th class="d-none d-md-table-cell">Alamat</th>
+                    <th>Foto</th>
+                    <th class="d-none d-md-table-cell">Keterangan</th>
+                    <th>Aksi</th>
                 </tr>
-            @empty
-                <tr>
-                    <td colspan="10" class="text-center text-muted">Belum ada data pembina.</td>
-                </tr>
-            @endforelse
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
+                @forelse($pembina as $item)
+                    <tr>
+                        <td>{{ $loop->iteration }}</td>
+                        <td>{{ $item->nama }}</td>
+                        <td>{{ $item->jabatan }}</td>
+                        <td>{{ $item->tahun_menjabat ?? '-' }}</td>
+                        <td class="d-none d-md-table-cell">{{ $item->nomer_hp ?? '-' }}</td>
+                        <td class="d-none d-md-table-cell">{{ $item->email ?? '-' }}</td>
+                        <td class="d-none d-md-table-cell">{{ $item->alamat ?? '-' }}</td>
+                        <td>
+                            @if($item->foto)
+                                <img src="{{ asset('uploads/' . $item->foto) }}" alt="Foto Pembina" height="60" width="60">
+                            @else
+                                <span class="text-muted">-</span>
+                            @endif
+                        </td>
+                        <td class="d-none d-md-table-cell">
+                            {{ \Illuminate\Support\Str::limit(strip_tags($item->keterangan), 100, '...') }}
+                        </td>
+                        <td>
+                            <a href="{{ url('/admin/pembina/'.$item->id.'/edit') }}" class="btn btn-sm btn-warning">
+                                <i class="bi bi-pencil"></i>
+                            </a>
+                            <form action="{{ url('/admin/pembina/'.$item->id) }}" method="POST" class="d-inline" onsubmit="return confirm('Yakin hapus data ini?')">
+                                @csrf
+                                @method('DELETE')
+                                <button class="btn btn-sm btn-danger"><i class="bi bi-trash"></i></button>
+                            </form>
+                        </td>
+                    </tr>
+                @empty
+                    <tr>
+                        <td colspan="10" class="text-center text-muted">Belum ada data pembina.</td>
+                    </tr>
+                @endforelse
+            </tbody>
+        </table>
+    </div>
 </div>
+
 @endsection

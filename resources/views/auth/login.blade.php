@@ -9,29 +9,34 @@
     <link rel="icon" href="{{ asset('logo/cikal.png') }}" type="image/png">
     <style>
         body {
-            background: #f5f6fa;
+            background: url("{{ asset('logo/bg1.png') }}") no-repeat center center fixed;
+            background-size: cover;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
             margin: 0;
         }
+
         .login-card {
             width: 100%;
             max-width: 400px;
             padding: 20px;
             border-radius: 12px;
-            background-color: white;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            background-color: rgba(255, 255, 255, 0.9); /* transparan supaya background kelihatan */
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
         }
+
         .logo-container {
             text-align: center;
             margin-bottom: 20px;
         }
+
         .logo-container img {
             max-width: 80px;
             margin: 0 10px;
         }
+
         @media (max-width: 480px) {
             .login-card {
                 padding: 15px;

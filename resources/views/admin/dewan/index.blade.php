@@ -96,15 +96,15 @@
                     <th>No</th>
                     <th>Nama</th>
                     <th>Jabatan</th>
-                    <th>Satuan</th>
+                    <th class="d-none d-md-table-cell">Satuan</th>
                     <th>Angkatan</th>
-                    <th>Keaktifan</th>
-                    <th>Tanggal Lahir</th>
-                    <th>Alamat</th>
-                    <th>HP</th>
-                    <th>Sosial Media</th>
+                    <th class="d-none d-md-table-cell">Keaktifan</th>
+                    <th class="d-none d-md-table-cell">Tanggal Lahir</th>
+                    <th class="d-none d-md-table-cell">Alamat</th>
+                    <th class="d-none d-md-table-cell">HP</th>
+                    <th class="d-none d-md-table-cell">Sosial Media</th>
                     <th>Foto</th>
-                    <th>Keterangan</th>
+                    <th class="d-none d-md-table-cell">Keterangan</th>
                     <th>Aksi</th>
                 </tr>
             </thead>
@@ -114,13 +114,13 @@
                         <td>{{ $loop->iteration }}</td>
                         <td>{{ $item->nama }}</td>
                         <td>{{ $item->jabatan }}</td>
-                        <td>{{ $item->satuan ?? '-' }}</td>
+                        <td class="d-none d-md-table-cell">{{ $item->satuan ?? '-' }}</td>
                         <td>{{ $item->angkatan ?? '-' }}</td>
-                        <td>{{ $item->keaktifan ?? '-' }}</td>
-                        <td>{{ $item->tanggal_lahir ? \Carbon\Carbon::parse($item->tanggal_lahir)->format('d M Y') : '-' }}</td>
-                        <td>{{ $item->alamat ?? '-' }}</td>
-                        <td>{{ $item->nomer_hp ?? '-' }}</td>
-                        <td>{{ $item->sosial_media ?? '-' }}</td>
+                        <td class="d-none d-md-table-cell">{{ $item->keaktifan ?? '-' }}</td>
+                        <td class="d-none d-md-table-cell">{{ $item->tanggal_lahir ? \Carbon\Carbon::parse($item->tanggal_lahir)->format('d M Y') : '-' }}</td>
+                        <td class="d-none d-md-table-cell">{{ $item->alamat ?? '-' }}</td>
+                        <td class="d-none d-md-table-cell">{{ $item->nomer_hp ?? '-' }}</td>
+                        <td class="d-none d-md-table-cell">{{ $item->sosial_media ?? '-' }}</td>
                         <td>
                             @if($item->foto)
                                 <img src="{{ asset('uploads/' . $item->foto) }}" alt="Foto" height="60" width="60">
@@ -128,7 +128,7 @@
                                 <span class="text-muted">-</span>
                             @endif
                         </td>
-                        <td>{{ \Illuminate\Support\Str::limit(strip_tags($item->keterangan), 100, '...') }}</td>
+                        <td class="d-none d-md-table-cell">{{ \Illuminate\Support\Str::limit(strip_tags($item->keterangan), 100, '...') }}</td>
                         <td>
                             <a href="{{ url('/admin/dewan/'.$item->id.'/edit') }}" class="btn btn-sm btn-warning">
                                 <i class="bi bi-pencil"></i>

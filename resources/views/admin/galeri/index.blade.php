@@ -40,7 +40,7 @@
                 <th>Judul</th>
                 <th>Deskripsi</th>
                 <th>Gambar</th>
-                <th>Tanggal Upload</th>
+                <th class="d-none d-md-table-cell">Tanggal Upload</th>
                 <th>Aksi</th>
             </tr>
         </thead>
@@ -57,7 +57,7 @@
                             <span class="text-muted">-</span>
                         @endif
                     </td>
-                    <td>{{ $item->tanggal_upload ? \Carbon\Carbon::parse($item->tanggal_upload)->format('d M Y') : '-' }}</td>
+                    <td class="d-none d-md-table-cell">{{ $item->tanggal_upload ? \Carbon\Carbon::parse($item->tanggal_upload)->format('d M Y') : '-' }}</td>
                     <td>
                         <a href="{{ url('/admin/galeri/'.$item->id.'/edit') }}" class="btn btn-sm btn-warning">
                             <i class="bi bi-pencil"></i>
