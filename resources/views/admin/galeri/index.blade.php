@@ -17,7 +17,7 @@
 
     @media (max-width: 767.98px) {
         .sticky-header {
-            position: static !important;
+            position: static;
         }
     }
 </style>

@@ -5,10 +5,26 @@
     <title>Tambah Galeri</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Untuk Android  -->
+    <link rel="manifest" href="/manifest.json">
+    <link rel="icon" href="/icons/icon-192x192.png" sizes="192x192">
+    <meta name="theme-color" content="#000000">
 
+    <!-- Untuk iOS -->
+    <link rel="apple-touch-icon" href="/icons/icon-192x192.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Kamajaya">
     <style>
         body {
-            background-color: #f4f6f9;
+            margin: 0;
+            background-image: url('{{ asset('logo/bg1.png') }}');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            min-height: 100vh;
         }
 
         .bg-kamajaya {

@@ -235,7 +235,7 @@
                 Pangkalan SMA Negeri 1 Sumpiuh</h2>
             <div class="content-container">
                 <p>Beikut alamat lengkap Pangkalan SMA Negeri 1 Sumpiuh:</p>
-                <p><strong>Alamat:</strong> Jl. Raya Sumpiuh No. 123, Sumpiuh, Kabupaten Banyumas, Jawa Tengah, Indonesia</p>
+                <p><strong>Alamat:</strong> Jl. Raya Barat No.95, Pesantren, Kebokura, Kec. Sumpiuh, Kabupaten Banyumas, Jawa Tengah 53195</p>
                 <p><strong>Google Maps:</strong> Klik <a href="https://www.google.com/maps?q=SMA+Negeri+1+Sumpiuh,+Jawa+Tengah" target="_blank" class="btn btn-primary">di sini</a> untuk melihat lokasi di Google Maps.</p>
             </div>
             <!-- Embed Google Maps dengan border -->

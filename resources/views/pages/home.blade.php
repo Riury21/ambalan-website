@@ -124,4 +124,38 @@
         <span class="visually-hidden">Next</span>
     </button>
 </div>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const carouselElement = document.getElementById('carouselExample');
+
+        let startX = 0;
+        let endX = 0;
+
+        // Event untuk memulai swipe
+        carouselElement.addEventListener('touchstart', (e) => {
+            startX = e.changedTouches[0].screenX;
+        });
+
+        // Event untuk mengakhiri swipe
+        carouselElement.addEventListener('touchend', (e) => {
+            endX = e.changedTouches[0].screenX;
+            handleSwipe();
+        });
+
+        // Fungsi untuk menangani swipe
+        function handleSwipe() {
+            const swipeDistance = endX - startX;
+
+            if (swipeDistance > 50) {
+                // Geser ke kiri (prev slide)
+                const prevButton = carouselElement.querySelector('.carousel-control-prev');
+                prevButton.click();
+            } else if (swipeDistance < -50) {
+                // Geser ke kanan (next slide)
+                const nextButton = carouselElement.querySelector('.carousel-control-next');
+                nextButton.click();
+            }
+        }
+    });
+</script>
 @endsection
