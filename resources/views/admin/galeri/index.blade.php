@@ -9,10 +9,9 @@
     .sticky-header {
         position: sticky;
         top: 0;
-        z-index: 1020;
-        background-color: #fff;
-        padding-top: 1rem;
-        padding-bottom: 0.5rem;
+        z-index: 999;
+        background-color: white;
+        padding: 0.5rem 0;
         border-bottom: 1px solid #dee2e6;
     }
 

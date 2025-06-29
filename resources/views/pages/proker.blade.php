@@ -401,7 +401,7 @@
     <!-- Download PDF -->
     <div class="row justify-content-center mt-4">
         <div class="col-12 text-center">
-            <a href="{{ asset('dokumen/program-kerja.pdf') }}" class="btn-download" target="_blank">
+            <a href="{{ asset('dokumen/KJKR.pdf') }}" class="btn-download" target="_blank">
                 📥 Unduh Program Kerja (PDF)
             </a>
         </div>

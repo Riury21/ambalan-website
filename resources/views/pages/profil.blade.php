@@ -228,5 +228,25 @@
             </div>
         </div>
     </div>
+    <!-- Lokasi Ambalan  -->
+    <div class="row justify-content-center mt-4">
+        <div class="col-12">
+            <h2 class="text-center" style="background-color: rgba(255, 255, 255, 0.8); padding: 10px 20px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+                Pangkalan SMA Negeri 1 Sumpiuh</h2>
+            <div class="content-container">
+                <p>Beikut alamat lengkap Pangkalan SMA Negeri 1 Sumpiuh:</p>
+                <p><strong>Alamat:</strong> Jl. Raya Sumpiuh No. 123, Sumpiuh, Kabupaten Banyumas, Jawa Tengah, Indonesia</p>
+                <p><strong>Google Maps:</strong> Klik <a href="https://www.google.com/maps?q=SMA+Negeri+1+Sumpiuh,+Jawa+Tengah" target="_blank" class="btn btn-primary">di sini</a> untuk melihat lokasi di Google Maps.</p>
+            </div>
+            <!-- Embed Google Maps dengan border -->
+            <div class="text-center mt-4">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3974.412052853116!2d109.37880901535972!3d-7.424143894048517!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e6ea58b38322d6d%3A0x99f498c3817e54b0!2sSMA%20Negeri%201%20Sumpiuh!5e0!3m2!1sid!2sid!4v1698676235238!5m2!1sid!2sid" 
+                    width="100%" height="400" 
+                    style="border: 8px solid rgba(0, 0, 0, 0.75); border-radius: 10px;" 
+                    allowfullscreen="" loading="lazy">
+                </iframe>
+            </div>
+        </div>
+    </div>
 </div>
 @endsection
