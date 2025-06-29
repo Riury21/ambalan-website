@@ -54,7 +54,7 @@
         left: 50%;
         width: 0;
         height: 0;
-        background: radial-gradient(circle, rgb(13, 110, 253), rgba(255, 215, 0, 0));
+        background: radial-gradient(circle, rgba(255, 0, 0, 1), rgba(255, 0, 0, 0));
         border-radius: 50%;
         transform: translate(-50%, -50%);
         opacity: 0;
