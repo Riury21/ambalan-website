@@ -4,7 +4,6 @@
 
 @section('content')
 <style>
-    /* Sticky Header (judul) */
     .sticky-header {
         position: sticky;
         top: 0;
@@ -14,17 +13,15 @@
         border-bottom: 1px solid #dee2e6;
     }
 
-    /* Sticky Filter */
     .sticky-filter {
         position: sticky;
-        top: 56px; /* cukup kecil agar tidak terlalu jauh */
+        top: 56px;
         z-index: 998;
         background-color: white;
         padding-bottom: 0.75rem;
         border-bottom: 1px solid #dee2e6;
     }
 
-    /* Non-sticky di mobile */
     @media (max-width: 767.98px) {
         .sticky-header,
         .sticky-filter {
@@ -32,14 +29,12 @@
         }
     }
 
-    /* Hapus padding atas konten utama jika ada */
     #main-content {
         padding-top: 0 !important;
     }
 </style>
 
 <div class="container py-4">
-    <!-- Sticky Judul -->
     <div class="sticky-header">
         <div class="d-flex justify-content-between align-items-center">
             <h2 class="mb-0">Daftar Dewan Ambalan</h2>
@@ -49,27 +44,31 @@
         </div>
     </div>
 
-    <!-- Sticky Filter -->
     <div class="sticky-filter mt-2">
         <form method="GET" action="{{ url('/admin/dewan') }}" class="row g-2">
             <div class="col-md-3">
                 <select name="jabatan" class="form-select">
                     <option value="">Semua Jabatan</option>
-                    <option value="Pradana" {{ request('jabatan') == 'Pradana' ? 'selected' : '' }}>Pradana</option>
-                    <option value="Wakil Pradana" {{ request('jabatan') == 'Wakil Pradana' ? 'selected' : '' }}>Wakil Pradana</option>
-                    <option value="Pemangku Adat" {{ request('jabatan') == 'Pemangku Adat' ? 'selected' : '' }}>Pemangku Adat</option>
-                    <option value="Pendamping Kanan" {{ request('jabatan') == 'Pendamping Kanan' ? 'selected' : '' }}>Pendamping Kanan</option>
-                    <option value="Pendamping Kiri" {{ request('jabatan') == 'Pendamping Kiri' ? 'selected' : '' }}>Pendamping Kiri</option>
-                    <option value="Sekretaris/Kerani" {{ request('jabatan') == 'Sekretaris/Kerani' ? 'selected' : '' }}>Sekretaris/Kerani</option>
-                    <option value="Bendahara/Juru Uang" {{ request('jabatan') == 'Bendahara/Juru Uang' ? 'selected' : '' }}>Bendahara/Juru Uang</option>
-                    <option value="Seksi Giat" {{ request('jabatan') == 'Seksi Giat' ? 'selected' : '' }}>Seksi Giat</option>
-                    <option value="Seksi Abdimas" {{ request('jabatan') == 'Seksi Abdimas' ? 'selected' : '' }}>Seksi Abdimas</option>
-                    <option value="Seksi Evabang" {{ request('jabatan') == 'Seksi Evabang' ? 'selected' : '' }}>Seksi Evabang</option>
-                    <option value="Seksi Kajian Pramuka" {{ request('jabatan') == 'Seksi Kajian Pramuka' ? 'selected' : '' }}>Seksi Kajian Pramuka</option>
+                    @php
+                        $jabatanList = [
+                            'Pradana', 'Wakil Pradana', 'Pemangku Adat',
+                            'Pendamping Kanan', 'Pendamping Kiri', 'Sekretaris/Kerani',
+                            'Bendahara/Juru Uang', 'Seksi Giat', 'Seksi Abdimas',
+                            'Seksi Evabang', 'Seksi Kajian Pramuka'
+                        ];
+                    @endphp
+                    @foreach($jabatanList as $jabatan)
+                        <option value="{{ $jabatan }}" {{ request('jabatan') == $jabatan ? 'selected' : '' }}>{{ $jabatan }}</option>
+                    @endforeach
                 </select>
             </div>
             <div class="col-md-2">
-                <input type="text" name="angkatan" class="form-control" placeholder="Filter Angkatan" value="{{ request('angkatan') }}">
+                <select name="angkatan" class="form-select">
+                    <option value="">Semua Angkatan</option>
+                    @foreach($angkatanList as $angkatan)
+                        <option value="{{ $angkatan }}" {{ request('angkatan') == $angkatan ? 'selected' : '' }}>{{ $angkatan }}</option>
+                    @endforeach
+                </select>
             </div>
             <div class="col-md-2">
                 <input type="text" name="alamat" class="form-control" placeholder="Filter Alamat" value="{{ request('alamat') }}">
@@ -88,7 +87,6 @@
         </form>
     </div>
 
-    <!-- Tabel Data -->
     <div class="mt-4">
         <table class="table table-bordered table-striped align-middle">
             <thead class="table-primary">

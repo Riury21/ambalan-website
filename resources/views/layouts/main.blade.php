@@ -287,7 +287,7 @@
   </div>
 
   <footer>
-    &copy; {{ date('Y') }} Ambalan Kamajaya Kamaratih. All Rights Reserved.
+    &copy; {{ date('Y') }} Ambalan Kamajaya Kamaratih. All Rights Reserved. // <a href="/dokumen/sumber.txt">Credits</a> 
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>

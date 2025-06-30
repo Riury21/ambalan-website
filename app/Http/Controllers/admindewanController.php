@@ -7,10 +7,12 @@ use Illuminate\Http\Request;
 
 class AdminDewanController extends Controller
 {
-        public function index(Request $request)
+    public function index(Request $request)
     {
+        // Query dasar untuk data Dewan
         $query = Dewan::query();
 
+        // Filter data berdasarkan input
         if ($request->filled('jabatan')) {
             $query->where('jabatan', 'like', '%' . $request->jabatan . '%');
         }
@@ -27,10 +29,24 @@ class AdminDewanController extends Controller
             $query->where('satuan', $request->satuan);
         }
 
+        // Urutkan data sesuai kebutuhan
+        $query->orderBy('angkatan', 'desc')
+            ->orderByRaw("FIELD(jabatan, 'Pradana', 'Wakil Pradana', 'Pemangku Adat', 'Pendamping Kanan', 'Pendamping Kiri', 'Sekretaris/Kerani', 'Bendahara/Juru Uang', 'Seksi Giat', 'Seksi Abdimas', 'Seksi Evabang', 'Seksi Kajian Pramuka')")  
+            ->orderByRaw("FIELD(satuan, 'Kamajaya', 'Kamaratih')");
+
+        // Ambil data Dewan setelah filter dan urutan
         $dewan = $query->get();
 
-        return view('admin.dewan.index', compact('dewan'));
+        // Daftar angkatan untuk select filter
+        $angkatanList = Dewan::select('angkatan')
+        ->distinct()
+        ->orderBy('angkatan', 'desc')
+        ->pluck('angkatan');
+
+        // Kirim data ke view
+        return view('admin.dewan.index', compact('dewan', 'angkatanList'));
     }
+
 
     public function create()
     {

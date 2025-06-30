@@ -48,7 +48,6 @@
         left: 50%;
         width: 0;
         height: 0;
-        background: radial-gradient(circle, rgb(0, 0, 254), rgba(123, 191, 255, 0));
         border-radius: 50%;
         transform: translate(-50%, -50%);
         opacity: 0;
