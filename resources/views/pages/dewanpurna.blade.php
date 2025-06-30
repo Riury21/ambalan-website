@@ -118,12 +118,32 @@
     }
 </style>
 
+@php
+    // Mapping judul berdasarkan angkatan
+    $titleMapping = [
+        '2012/2013' => 'Suradira Jaya Ningrat Lebur Dening Pangastuti',
+        '2013/2014' => 'Je Zult Nooit Allen Lopen',
+        '2014/2015' => 'Ritter Des Glaubens',
+        '2015/2016' => 'Veni Vidi Vici',
+        '2016/2017' => 'Donahue Wirasana',
+        // '2017/2018' => 'Semboyan'
+        '2018/2019' => 'Karan Ardhani Badrika Arsona',
+        // '2019/2020' => 'Semboyan'
+        // '2020/2021' => 'Semboyan'
+        '2021/2022' => 'Birendra Mahatma Ardhani',
+        '2022/2023' => 'Mahesa Gajahsora Wajrapani',
+        '2023/2024' => 'Amartya Pandya Danantya',
+        // Tambahkan angkatan lainnya di sini
+    ];
+    $currentTitle = $titleMapping[request('angkatan')] ?? 'Dewan Purna';
+@endphp
+
 <div class="container py-4">
     <!-- Sticky Title & Filter -->
     <div class="sticky-top-section sticky-visible" id="stickyHeader">
         <h1 class="text-center mb-3 d-flex align-items-center justify-content-center gap-2">
             <img src="{{ asset('logo/kj.png') }}" alt="Logo KJ" class="img-fluid" style="height: 70px;">
-            Dewan Purna
+            {{ $currentTitle }}
             <img src="{{ asset('logo/kr.png') }}" alt="Logo KR" class="img-fluid" style="height: 70px;">
         </h1>
 
