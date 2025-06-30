@@ -146,10 +146,10 @@ class UserController extends Controller
         return view('pages.berita-detail', compact('berita'));
     }
     
-    public function detailGaleri($id)
+    public function detailGaleri($slug)
     {
-        $galeri = Galeri::findOrFail($id);
+        $galeri = Galeri::where('slug', $slug)->firstOrFail();
         return view('pages.galeri-detail', compact('galeri'));
-    } 
+    }
 
 }
