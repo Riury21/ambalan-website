@@ -114,6 +114,7 @@ class UserController extends Controller
 
         // Pengurutan data berdasarkan jabatan
         $pembina = $query
+            ->orderByRaw("FIELD(tahun_menjabat, 'Ya', 'Tidak')")
             ->orderByRaw("
                 FIELD(jabatan, 
                 'Kamabigus', 

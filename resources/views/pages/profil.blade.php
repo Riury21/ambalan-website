@@ -240,7 +240,7 @@
             </div>
             <!-- Embed Google Maps dengan border -->
             <div class="text-center mt-4">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3974.412052853116!2d109.37880901535972!3d-7.424143894048517!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e6ea58b38322d6d%3A0x99f498c3817e54b0!2sSMA%20Negeri%201%20Sumpiuh!5e0!3m2!1sid!2sid!4v1698676235238!5m2!1sid!2sid" 
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d988.6755010546372!2d109.347968!3d-7.607371!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e6545e3a1e7abbb%3A0x3126734132dcf88c!2sSMA%20Negeri%201%20Sumpiuh!5e0!3m2!1sid!2sid!4v1751305014905!5m2!1sid!2sid"
                     width="100%" height="400" 
                     style="border: 10px solid rgba(0, 0, 0, 0.9); border-radius: 10px;" 
                     allowfullscreen="" loading="lazy">

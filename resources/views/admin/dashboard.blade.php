@@ -9,6 +9,30 @@
 
     <!-- Statistik -->
     <div class="row mt-4 g-3">
+                <div class="col-md-4">
+            <div class="card shadow-sm text-center">
+                <div class="card-body">
+                    <h5 class="card-title text-danger">Jumlah Pesan</h5>
+                    <p class="display-6 fw-bold text-danger">{{ $jumlahPesan }}</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card shadow-sm text-center">
+                <div class="card-body">
+                    <h5 class="card-title text-dark">Jumlah Galeri</h5>
+                    <p class="display-6 fw-bold text-dark">{{ $jumlahGaleri }}</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card shadow-sm text-center">
+                <div class="card-body">
+                    <h5 class="card-title text-muted">Jumlah Berita</h5>
+                    <p class="display-6 fw-bold text-muted">{{ $jumlahBerita }}</p>
+                </div>
+            </div>
+        </div>
         <div class="col-md-3">
             <div class="card shadow-sm text-center">
                 <div class="card-body">
@@ -38,30 +62,6 @@
                 <div class="card-body">
                     <h5 class="card-title text-warning">Dewan Purna</h5>
                     <p class="display-6 fw-bold text-warning">{{ $jumlahDewanPurna }}</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="card shadow-sm text-center">
-                <div class="card-body">
-                    <h5 class="card-title text-danger">Jumlah Pesan</h5>
-                    <p class="display-6 fw-bold text-danger">{{ $jumlahPesan }}</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="card shadow-sm text-center">
-                <div class="card-body">
-                    <h5 class="card-title text-dark">Jumlah Galeri</h5>
-                    <p class="display-6 fw-bold text-dark">{{ $jumlahGaleri }}</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="card shadow-sm text-center">
-                <div class="card-body">
-                    <h5 class="card-title text-muted">Jumlah Berita</h5>
-                    <p class="display-6 fw-bold text-muted">{{ $jumlahBerita }}</p>
                 </div>
             </div>
         </div>
