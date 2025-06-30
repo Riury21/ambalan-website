@@ -11,6 +11,7 @@ return new class extends Migration
         Schema::create('berita', function (Blueprint $table) {
             $table->id();
             $table->string('judul');
+            $table->string('slug')->unique();
             $table->text('isi');
             $table->string('gambar')->nullable(); // menyimpan data gambar secara langsung
             $table->string('penulis')->nullable();

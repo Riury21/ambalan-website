@@ -139,11 +139,13 @@ class UserController extends Controller
         $berita = \App\Models\Berita::orderBy('created_at', 'desc')->get();
         return view('pages.berita', compact('berita'));
     }
-    public function detailBerita($id)
+
+    public function detailBerita($slug)
     {
-        $berita = Berita::findOrFail($id);
+        $berita = Berita::where('slug', $slug)->firstOrFail();
         return view('pages.berita-detail', compact('berita'));
     }
+    
     public function detailGaleri($id)
     {
         $galeri = Galeri::findOrFail($id);

@@ -132,7 +132,7 @@ Route::get('/dewanambalan', [UserController::class, 'dewanAmbalan'])->name('dewa
 Route::get('/pembina', [UserController::class, 'pembina']);
 Route::get('/galeri', [UserController::class, 'galeri']);
 Route::get('/berita', [UserController::class, 'berita']);
-Route::get('/berita/{judul}', [UserController::class, 'detailBerita']);
+Route::get('/berita/{slug}', [UserController::class, 'detailBerita'])->name('berita.detail');
 Route::get('/galeri/{judul}', [UserController::class, 'detailGaleri']);
 
 Route::get('/pesan', [PesanController::class, 'create'])->name('pesan.create');

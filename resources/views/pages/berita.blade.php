@@ -79,7 +79,7 @@
     <div class="row justify-content-center mt-4">
         @forelse($berita as $item)
             <div class="col-12 col-md-6 mb-4">
-                <a href="{{ url('/berita/' . $item->id) }}" class="text-decoration-none text-dark">
+                <a href="{{ route('berita.detail', $item->slug) }}" class="text-decoration-none text-dark">
                     <div class="card h-100 shadow-sm">
                         @if($item->gambar)
                             <img src="{{ asset('uploads/' . $item->gambar) }}"
