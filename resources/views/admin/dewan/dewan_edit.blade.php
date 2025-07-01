@@ -69,10 +69,9 @@
                             @php
                                 $daftarJabatan = [
                                     'Pradana', 'Wakil Pradana', 'Pemangku Adat',
-                                    'Pendamping Kanan', 'Pendamping Kiri',
-                                    'Sekretaris/Kerani', 'Bendahara/Juru Uang',
-                                    'Seksi Giat', 'Seksi Evabang',
-                                    'Seksi Kajian Pramuka', 'Seksi Abdimas'
+                                    'Pendamping Kanan', 'Pendamping Kiri', 'Sekretaris/Kerani',
+                                    'Bendahara/Juru Uang', 'Seksi Giat', 'Seksi Kapram',
+                                    'Seksi Evabang','Seksi Abdimas'
                                 ];
                             @endphp
                             @foreach($daftarJabatan as $j)

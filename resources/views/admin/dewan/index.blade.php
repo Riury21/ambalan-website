@@ -53,8 +53,8 @@
                         $jabatanList = [
                             'Pradana', 'Wakil Pradana', 'Pemangku Adat',
                             'Pendamping Kanan', 'Pendamping Kiri', 'Sekretaris/Kerani',
-                            'Bendahara/Juru Uang', 'Seksi Giat', 'Seksi Abdimas',
-                            'Seksi Evabang', 'Seksi Kajian Pramuka'
+                            'Bendahara/Juru Uang', 'Seksi Giat', 'Seksi Kapram',
+                            'Seksi Evabang','Seksi Abdimas'    
                         ];
                     @endphp
                     @foreach($jabatanList as $jabatan)

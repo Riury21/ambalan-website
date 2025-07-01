@@ -78,8 +78,8 @@
                             <option value="Sekretaris/Kerani">Sekretaris/Kerani</option>
                             <option value="Bendahara/Juru Uang">Bendahara/Juru Uang</option>
                             <option value="Seksi Giat">Seksi Giat</option>
+                            <option value="Seksi Kapram">Seksi Kapram</option>
                             <option value="Seksi Evabang">Seksi Evabang</option>
-                            <option value="Seksi Kajian Pramuka">Seksi Kajian Pramuka</option>
                             <option value="Seksi Abdimas">Seksi Abdimas</option>
                             <option value="lain">Lainnya...</option>
                         </select>

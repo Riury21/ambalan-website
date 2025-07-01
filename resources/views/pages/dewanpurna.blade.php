@@ -153,7 +153,7 @@
             <div class="col-6 col-md-2">
                 <select name="jabatan" class="form-control" style="text-transform: capitalize;">
                     <option value="" disabled selected>Filter Jabatan</option>
-                    @foreach(['pradana', 'wakil pradana', 'pemangku adat', 'pendamping kanan', 'pendamping kiri', 'sekretaris/kerani', 'bendahara/juru uang', 'seksi giat', 'seksi kajian pramuka', 'seksi evabang', 'seksi abdimas'] as $jabatan)
+                    @foreach(['pradana', 'wakil pradana', 'pemangku adat', 'pendamping kanan', 'pendamping kiri', 'sekretaris/kerani', 'bendahara/juru uang', 'seksi giat', 'seksi kapram', 'seksi evabang', 'seksi abdimas'] as $jabatan)
                         <option value="{{ $jabatan }}" {{ request('jabatan') === $jabatan ? 'selected' : '' }}>{{ ucfirst($jabatan) }}</option>
                     @endforeach
                 </select>

@@ -160,7 +160,7 @@
                     <option value="sekretaris/kerani" {{ request('jabatan') === 'sekretaris/kerani' ? 'selected' : '' }}>Sekretaris/Kerani</option>
                     <option value="bendahara/juru uang" {{ request('jabatan') === 'bendahara/juru uang' ? 'selected' : '' }}>Bendahara/Juru Uang</option>
                     <option value="seksi giat" {{ request('jabatan') === 'seksi giat' ? 'selected' : '' }}>Seksi Giat</option>
-                    <option value="seksi kajian pramuka" {{ request('jabatan') === 'seksi kajian pramuka' ? 'selected' : '' }}>Seksi Kajian Pramuka</option>
+                    <option value="seksi kapram" {{ request('jabatan') === 'seksi kapram' ? 'selected' : '' }}>Seksi Kapram</option>
                     <option value="seksi evabang" {{ request('jabatan') === 'seksi evabang' ? 'selected' : '' }}>Seksi Evabang</option>
                     <option value="seksi abdimas" {{ request('jabatan') === 'seksi abdimas' ? 'selected' : '' }}>Seksi Abdimas</option>
                 </select>

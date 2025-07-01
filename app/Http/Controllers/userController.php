@@ -20,7 +20,7 @@ class UserController extends Controller
             'sekretaris/kerani',
             'bendahara/juru uang',
             'seksi giat',
-            'seksi kajian pramuka',
+            'seksi kapram',
             'seksi evabang',
             'seksi abdimas',
         ];
@@ -69,7 +69,7 @@ class UserController extends Controller
             'sekretaris/kerani',
             'bendahara/juru uang',
             'seksi giat',
-            'seksi kajian pramuka',
+            'seksi kapram',
             'seksi evabang',
             'seksi abdimas',
         ];
