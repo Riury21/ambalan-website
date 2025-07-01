@@ -33,7 +33,7 @@
     #main-content {
       flex: 1;
       padding: 1rem;
-      background-image: url('{{ asset('logo/bg1.png') }}');
+      background-image: url('{{ asset('logo/bg2.png') }}');
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
@@ -208,6 +208,19 @@
 
     /* Dark mode support */
     @media (prefers-color-scheme: dark) {
+      
+      #main-content {
+        flex: 1;
+        padding: 1rem;
+        background-image: url('{{ asset('logo/bg1.png') }}');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        min-height: calc(100vh - 4rem);
+        padding-bottom: 5rem;
+      }
+
       #floatingMenu {
         background-color: rgba(30, 30, 30, 0.85);
         color: #ffffff;
@@ -297,6 +310,11 @@
       const menuIcon = menuButton.querySelector('.menu-icon');
       const menu = document.getElementById('floatingMenu');
 
+      const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      document.body.style.backgroundImage = isDarkMode 
+        ? "url('{{ asset('logo/bg1.png') }}')" 
+        : "url('{{ asset('logo/bg2.png') }}')";
+        
       menuButton.addEventListener('click', function () {
         menu.classList.toggle('show');
         menuButton.classList.toggle('menu-opened');
