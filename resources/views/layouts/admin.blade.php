@@ -24,7 +24,7 @@
   <style>
     body {
       margin: 0;
-      background-image: url('{{ asset('logo/bg1.png') }}');
+      background-image: url('{{ asset('logo/bg2.png') }}');
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
