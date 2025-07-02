@@ -91,6 +91,41 @@
         a.text-dark {
             color: #ffffff !important;
         }
+        .form-control {
+            background-color: #2c2c2c;
+            color: #e0e0e0;
+            border-color: #444;
+            appearance: none;
+        }
+
+        .form-control::placeholder {
+            color: #aaa;
+        }
+
+        select.form-control {
+            background-image: none; /* hilangkan panah default */
+        }
+
+        option {
+            background-color: #2c2c2c;
+            color: #fff;
+        }
+
+        .btn-primary {
+            background-color: #0d6efd;
+            border-color: #0d6efd;
+            color: #fff;
+        }
+
+        .btn-secondary {
+            background-color: #3a3a3a;
+            border-color: #555;
+            color: #fff;
+        }
+
+        .text-muted {
+            color: #bbb !important;
+        }
     }
 </style>
 
@@ -102,6 +137,17 @@
             Galeri & Dokumentasi
             <img src="{{ asset('logo/kr.png') }}" alt="Logo KR" class="img-fluid" style="height: 70px;">
         </h1>
+        <form method="GET" action="{{ route('galeri.index') }}" class="row g-2 justify-content-center">
+            <div class="col-6 col-md-3">
+                <input type="text" name="search" class="form-control"
+                    placeholder="Cari Judul Galeri"
+                    value="{{ request('search') }}"
+                    oninput="this.form.submit();">
+            </div>
+            <div class="col-12 col-md-auto d-flex gap-2 justify-content-center">
+                <a href="{{ route('galeri.index') }}" class="btn btn-secondary">Reset</a>
+            </div>
+        </form>
     </div>
 
     <!-- Grid Galeri -->
@@ -150,4 +196,17 @@
         @endforelse
     </div>
 </div>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const input = document.querySelector('input[name="search"]');
+        let timer;
+
+        input.addEventListener("input", function () {
+            clearTimeout(timer);
+            timer = setTimeout(() => {
+                this.form.submit();
+            }, 500); // jeda 500ms setelah terakhir mengetik
+        });
+    });
+</script>
 @endsection

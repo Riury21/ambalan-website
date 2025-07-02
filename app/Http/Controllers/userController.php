@@ -129,15 +129,29 @@ class UserController extends Controller
         return view('pages.pembina', compact('pembina'));
     }
 
-    public function galeri()
+    public function galeri(Request $request)
     {
-        $galeri = \App\Models\Galeri::orderBy('tanggal_upload', 'desc')->get();
+        $query = Galeri::query();
+
+        if ($request->has('search') && $request->search != '') {
+            $query->where('judul', 'like', '%' . $request->search . '%');
+        }
+
+        $galeri = $query->orderBy('tanggal_upload', 'desc')->get();
+
         return view('pages.galeri', compact('galeri'));
     }
 
-    public function berita()
+    public function berita(Request $request)
     {
-        $berita = \App\Models\Berita::orderBy('created_at', 'desc')->get();
+        $query = Berita::query();
+
+        if ($request->has('search') && $request->search != '') {
+            $query->where('judul', 'like', '%' . $request->search . '%');
+        }
+
+        $berita = $query->orderBy('created_at', 'desc')->get();
+
         return view('pages.berita', compact('berita'));
     }
 

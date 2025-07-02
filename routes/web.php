@@ -130,8 +130,8 @@ Route::middleware('auth')->group(function () {
 Route::get('/dewanpurna', [UserController::class, 'dewanPurna'])->name('dewan-purna.index');
 Route::get('/dewanambalan', [UserController::class, 'dewanAmbalan'])->name('dewan-ambalan.index');
 Route::get('/pembina', [UserController::class, 'pembina']);
-Route::get('/galeri', [UserController::class, 'galeri']);
-Route::get('/berita', [UserController::class, 'berita']);
+Route::get('/galeri', [UserController::class, 'galeri'])->name('galeri.index');
+Route::get('/berita', [UserController::class, 'berita'])->name('berita.index');
 Route::get('/berita/{slug}', [UserController::class, 'detailBerita'])->name('berita.detail');
 Route::get('/galeri/{slug}', [UserController::class, 'detailGaleri'])->name('galeri.detail');
 
