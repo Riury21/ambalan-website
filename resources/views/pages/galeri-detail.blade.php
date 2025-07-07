@@ -129,7 +129,7 @@
                     );
                 @endphp
 
-                <div class="clearfix mb-4">{!! $withLinks !!}</div>
+                <div class="clearfix mb-4"style="text-align: justify;">{!! $withLinks !!}</div>
 
                 <p><strong>Tanggal Upload:</strong> {{ \Carbon\Carbon::parse($galeri->tanggal_upload)->format('d M Y') }}</p>
 

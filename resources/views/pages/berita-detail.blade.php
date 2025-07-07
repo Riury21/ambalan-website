@@ -129,7 +129,7 @@
                     );
                 @endphp
 
-                <div class="clearfix mb-4">{!! $withLinks !!}</div>
+                <div class="clearfix mb-4" style="text-align: justify;">{!! $withLinks !!}</div>
 
                 <p><strong>Penulis:</strong> {{ $berita->penulis ?? '-' }}</p>
                 <p><strong>Tanggal:</strong> {{ $berita->created_at->format('d M Y') }}</p>
