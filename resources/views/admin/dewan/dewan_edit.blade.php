@@ -71,7 +71,8 @@
                                     'Pradana', 'Wakil Pradana', 'Pemangku Adat',
                                     'Pendamping Kanan', 'Pendamping Kiri', 'Sekretaris/Kerani',
                                     'Bendahara/Juru Uang', 'Seksi Giat', 'Seksi Kapram',
-                                    'Seksi Evabang','Seksi Abdimas'
+                                    'Seksi Evabang','Seksi Abdimas',
+                                    'Seksi Litev', 'Seksi Tekspram', 'Seksi Binbang', 'Seksi Sarpras'
                                 ];
                             @endphp
                             @foreach($daftarJabatan as $j)

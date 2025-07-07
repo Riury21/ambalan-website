@@ -81,6 +81,10 @@
                             <option value="Seksi Kapram">Seksi Kapram</option>
                             <option value="Seksi Evabang">Seksi Evabang</option>
                             <option value="Seksi Abdimas">Seksi Abdimas</option>
+                            <option value="Seksi Litev">Seksi Litev</option>
+                            <option value="Seksi Tekspram">Seksi Tekspram</option>
+                            <option value="Seksi Binbang">Seksi Binbang</option>
+                            <option value="Seksi Sarpras">Seksi Sarpras</option>
                             <option value="lain">Lainnya...</option>
                         </select>
                         <input type="text" class="form-control" id="jabatan" name="jabatan" placeholder="Tulis jabatan lain (jika tidak ada di atas)">

@@ -31,7 +31,9 @@ class AdminDewanController extends Controller
 
         // Urutkan data sesuai kebutuhan
         $query->orderBy('angkatan', 'desc')
-            ->orderByRaw("FIELD(jabatan, 'Pradana', 'Wakil Pradana', 'Pemangku Adat', 'Pendamping Kanan', 'Pendamping Kiri', 'Sekretaris/Kerani', 'Bendahara/Juru Uang', 'Seksi Giat', 'Seksi Kapram', 'Seksi Abdimas', 'Seksi Evabang')")  
+            ->orderByRaw("FIELD(jabatan, 'Pradana', 'Wakil Pradana', 'Pemangku Adat', 'Pendamping Kanan', 'Pendamping Kiri', 'Sekretaris/Kerani', 'Bendahara/Juru Uang',
+             'Seksi Giat', 'Seksi Kapram', 'Seksi Evabang', 'Seksi Abdimas',
+             'Seksi Litev', 'Seksi Tekspram', 'Seksi Binbang','Seksi Sarpras')")  
             ->orderByRaw("FIELD(satuan, 'Kamajaya', 'Kamaratih')");
 
         // Ambil data Dewan setelah filter dan urutan

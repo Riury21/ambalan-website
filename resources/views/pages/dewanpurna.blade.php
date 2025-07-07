@@ -125,13 +125,14 @@
         '2014/2015' => 'Ritter Des Glaubens',
         '2015/2016' => 'Veni Vidi Vici',
         '2016/2017' => 'Donahue Wirasana',
-        // '2017/2018' => 'Semboyan'
+        '2017/2018' => 'Aji Adanu Sangshetta',
         '2018/2019' => 'Karan Ardhani Badrika Arsona',
         // '2019/2020' => 'Semboyan'
         // '2020/2021' => 'Semboyan'
         '2021/2022' => 'Birendra Mahatma Ardhani',
         '2022/2023' => 'Mahesa Gajahsora Wajrapani',
         '2023/2024' => 'Amartya Pandya Danantya',
+        '2024/2025' => 'Adhyaksa Diraya Satyagraha',
         // Tambahkan angkatan lainnya di sini
     ];
     $currentTitle = $titleMapping[request('angkatan')] ?? 'Dewan Purna';
@@ -153,7 +154,9 @@
             <div class="col-6 col-md-2">
                 <select name="jabatan" class="form-control" style="text-transform: capitalize;">
                     <option value="" disabled selected>Filter Jabatan</option>
-                    @foreach(['pradana', 'wakil pradana', 'pemangku adat', 'pendamping kanan', 'pendamping kiri', 'sekretaris/kerani', 'bendahara/juru uang', 'seksi giat', 'seksi kapram', 'seksi evabang', 'seksi abdimas'] as $jabatan)
+                    @foreach(['pradana', 'wakil pradana', 'pemangku adat', 'pendamping kanan', 'pendamping kiri',
+                     'sekretaris/kerani', 'bendahara/juru uang', 'seksi giat', 'seksi kapram', 'seksi evabang', 'seksi abdimas',
+                     'seksi litev', 'seksi tekspram', 'seksi binbang', 'seksi sarpras'] as $jabatan)
                         <option value="{{ $jabatan }}" {{ request('jabatan') === $jabatan ? 'selected' : '' }}>{{ ucfirst($jabatan) }}</option>
                     @endforeach
                 </select>

@@ -282,7 +282,7 @@
         <a href="https://www.tiktok.com/@ksatria_kjkr" target="_blank" title="TikTok">
           <i class="bi bi-tiktok"></i>
         </a>
-        <a href="https://www.facebook.com" target="_blank" title="Facebook">
+        <a href="https://www.facebook.com/profile.php?id=61576301246790" target="_blank" title="Facebook">
           <i class="bi bi-facebook"></i>
         </a>
         <a href="https://www.youtube.com/@AmbalanKamajayaKamaratih" target="_blank" title="YouTube">

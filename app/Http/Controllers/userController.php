@@ -23,6 +23,10 @@ class UserController extends Controller
             'seksi kapram',
             'seksi evabang',
             'seksi abdimas',
+            'seksi litev',
+            'seksi tekspram',
+            'seksi binbang',
+            'seksi sarpras',
         ];
 
         $query = Dewan::where('keaktifan', 'Purna');

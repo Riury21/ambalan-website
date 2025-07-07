@@ -19,6 +19,11 @@ class AdminPembinaController extends Controller
             $query->where('tahun_menjabat', 'like', '%' . $request->tahun_menjabat . '%');
         }
 
+        // Urutkan data sesuai kebutuhan
+        $query->orderByRaw("FIELD(tahun_menjabat, 'Ya', 'Tidak')")
+        ->orderByRaw("FIELD(jabatan, 'kamabigus', 'ketua gudep kamajaya', 'ketua gudep kamaratih',
+         'pembina kamajaya', 'pembina kamaratih')");
+
         $pembina = $query->get();
 
         return view('admin.pembina.index', compact('pembina'));

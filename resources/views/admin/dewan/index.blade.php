@@ -54,6 +54,7 @@
                             'Pradana', 'Wakil Pradana', 'Pemangku Adat',
                             'Pendamping Kanan', 'Pendamping Kiri', 'Sekretaris/Kerani',
                             'Bendahara/Juru Uang', 'Seksi Giat', 'Seksi Kapram',
+                            'Seksi Litev', 'Seksi Tekspram', 'Seksi Binbang', 'Seksi Sarpras',
                             'Seksi Evabang','Seksi Abdimas'    
                         ];
                     @endphp
