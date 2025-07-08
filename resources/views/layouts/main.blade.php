@@ -256,6 +256,9 @@
     <a href="/proker" class="{{ request()->is('proker') ? 'fw-bold' : '' }}">
       <i class="bi bi-gem me-2"></i>Program Kerja DA
     </a>
+    <a href="/materi" class="{{ request()->is('materi') ? 'fw-bold' : '' }}">
+      <i class="bi bi-file-earmark-pdf me-2"></i>Materi Pramuka
+    </a>
     <a href="/berita" class="{{ request()->is('berita') ? 'fw-bold' : '' }}">
       <i class="bi bi-newspaper me-2"></i>Berita / Artikel
     </a>

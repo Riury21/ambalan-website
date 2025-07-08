@@ -171,4 +171,21 @@ class UserController extends Controller
         return view('pages.galeri-detail', compact('galeri'));
     }
 
+    public function materi(Request $request)
+    {
+        $search = $request->search;
+
+        $path = public_path('dokumen');
+        $files = file_exists($path) ? glob($path . '/*.pdf') : [];
+
+        if ($search) {
+            $files = array_filter($files, function ($file) use ($search) {
+                return stripos(pathinfo($file, PATHINFO_FILENAME), $search) !== false;
+            });
+        }
+
+        return view('pages.materi', compact('files'));
+    }
+
+
 }

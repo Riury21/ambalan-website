@@ -142,6 +142,8 @@ Route::get('/galeri', [UserController::class, 'galeri'])->name('galeri.index');
 Route::get('/berita', [UserController::class, 'berita'])->name('berita.index');
 Route::get('/berita/{slug}', [UserController::class, 'detailBerita'])->name('berita.detail');
 Route::get('/galeri/{slug}', [UserController::class, 'detailGaleri'])->name('galeri.detail');
+Route::get('/materi', [UserController::class, 'materi'])->name('materi.user');
+Route::get('/materi', [UserController::class, 'materi'])->name('materi.user.index');
 
 Route::get('/pesan', [PesanController::class, 'create'])->name('pesan.create');
 Route::post('/pesan', [PesanController::class, 'store'])->name('pesan.store');
