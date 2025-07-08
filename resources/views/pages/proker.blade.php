@@ -158,12 +158,12 @@
                     <li>Penerimaan Tamu Ambalan (PTA)</li>
                     <li>Pelantikan Bantara</li>
                     <li>Temu Kangen Para Dewan Purna</li>
-                    <li>Pelatihan Pramuka Lapangan/li>
+                    <li>Pelatihan Pramuka Lapangan</li>
                     <li>Pengukuhan Bantara</li>
                     <li>Pengembaraan dan Pelantikan Laksana</li>
                     <li>Re-Organisasi Dewan Ambalan dan Musyawarah Penegak</li>
                     <li>Perkemahan Tingkat Kwarran, Kwarcab, Kwarda ataupun Kwarnas</li>
-                    <li>Latihan Gabungan Dengan Instansi (Kepolisian, Tentara, Pemadam Keabaran dsb.)</li>
+                    <li>Latihan Gabungan Dengan Instansi (Kepolisian, Tentara, Pemadam Kebakaran dsb.)</li>
                 </ul>
             </div>
         </div>
