@@ -4,8 +4,12 @@
 
 @section('content')
 <div class="container py-4">
-    <h2 class="mb-4">Dashboard Admin</h2>
-    <p>Selamat datang, Anda berhasil login sebagai admin.</p>
+    <h2 class="mb-0">Dashboard Admin Ambalan Kamajaya Kamaratih 19.2823-19.2824</h2>
+    <p class="mb-0">Pesan u/ Admin :
+        <li>Jangan buat Berita/ Artikel/ Galeri HOAX</li>
+        <li>Lengkapi data Dewan & Pembina</li>
+        <li>Lakukan Update jika ada kekeliruan data</li>
+    </p>
 
     <!-- Statistik -->
     <div class="row mt-4 g-3">

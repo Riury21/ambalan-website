@@ -34,7 +34,7 @@
     .carousel .carousel-inner,
     .carousel .carousel-item {
         width: 100vw; /* Lebar penuh layar */
-        height: 100vh; /* Tinggi penuh layar */
+        height: calc(var(--vh, 1vh) * 100); /* Tinggi penuh layar */
     }
 
     /* Gambar di carousel */
@@ -50,7 +50,7 @@
     .carousel-caption {
         position: absolute;
         bottom: 30px; /* naikkan teks (default 0 → ubah ke 30px) */
-        left: 30px;   /* geser teks ke kanan sedikit */
+        left: 10px;   /* geser teks ke kanan sedikit */
         padding: 15px 20px;
         margin: 0;
         width: auto;
@@ -91,24 +91,23 @@
             <div class="carousel-caption">
                 <h1>Gerakan Pramuka</h1>
                 <h2>Ambalan Kamajaya Kamaratih</h2>
-                <h3>Pangkalan SMA Negeri 1 Sumpiuh</h3>
-                <h4>Gugus Depan 19.2823-19.2824</h4>
+                <h2>Pangkalan SMA Negeri 1 Sumpiuh Gugus Depan 19.2823-19.2824</h2>
             </div>
         </div>
         <!-- Slide 2 -->
         <div class="carousel-item">
             <img src="/logo/kjkr2016.jpg" alt="Kegiatan 2">
             <div class="carousel-caption">
-                <h3>Kami belajar bahwa cinta bukan hanya urusan hati,</h3>
-                <h3>tapi juga aksi nyata: menolong tanpa mengharap balasan,</h3>
-                <h3>memberi tanpa meminta kembali.</h3>
+                <h4>Kami belajar bahwa cinta bukan hanya urusan hati,</h4>
+                <h4>tapi juga aksi nyata: menolong tanpa mengharap balasan,</h4>
+                <h4>memberi tanpa meminta kembali.</h4>
             </div>
         </div>
         <!-- Slide 3 -->
         <div class="carousel-item">
             <img src="/logo/kjkr2017.jpg" alt="Kegiatan 3">
             <div class="carousel-caption">
-                <h1>Diamku bukan tanpa arti,</h1>
+                <h2>Diamku bukan tanpa arti,</h2>
                 <h2>aku hanya memilih berbicara lewat tindakan.</h2>
                 <p>Giat 15/16 Priyanggono</p>
             </div>
@@ -156,6 +155,14 @@
                 nextButton.click();
             }
         }
-    });
+        function setFullHeight() {
+            const vh = window.innerHeight * 0.01;
+            document.documentElement.style.setProperty('--vh', `${vh}px`);
+        }
+
+        // Jalankan saat halaman dimuat & saat di-resize
+        window.addEventListener('load', setFullHeight);
+        window.addEventListener('resize', setFullHeight);
+        });
 </script>
 @endsection

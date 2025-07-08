@@ -133,20 +133,15 @@
             </h2>
             <div class="content-container">
                 <h3>Visi</h3>
-                <ul>
-                    <li>Latihan Rutin Mingguan</li>
-                    <li>Penerimaan Tamu Ambalan (PTA)</li>
-                    <li>Pelatihan Kepemimpinan</li>
-                    <li>Perkemahan Sabtu Minggu (Persami)</li>
-                    <li>Lomba Tingkat (LT I & II)</li>
-                </ul>
+                <p>“Menjadi wadah pembinaan generasi muda yang tangguh, berkarakter, dan berjiwa kepemimpinan,
+                     yang mampu mengabdi pada masyarakat, bangsa, dan lingkungan melalui semangat kepramukaan.”</p>
                 <h3>Misi</h3>
                 <ul>
-                    <li>Kegiatan Bakti Sosial</li>
-                    <li>Pengembangan Kreativitas</li>
-                    <li>Upacara Hari Besar Nasional</li>
-                    <li>Rapat Evaluasi Dewan Ambalan</li>
-                    <li>Pelatihan Skill Khusus (Tali-temali, P3K, Semaphore, dll)</li>
+                    <li>Menumbuhkan karakter disiplin, tanggung jawab, dan semangat pengabdian melalui kegiatan kepramukaan yang terstruktur dan menyenangkan.</li>
+                    <li>Meningkatkan keterampilan dan wawasan anggota melalui pelatihan, perkemahan, dan kegiatan sosial berbasis Tri Satya dan Dasa Dharma.</li>
+                    <li>Membangun jiwa kepemimpinan dan kerja sama tim di kalangan penegak untuk menciptakan kader pemimpin yang visioner dan solutif.</li>
+                    <li>Mengembangkan peran aktif pramuka dalam kehidupan sekolah dan masyarakat, baik melalui bakti sosial, pelestarian lingkungan, maupun kegiatan kreatif lainnya.</li>
+                    <li>Menjaga marwah dan identitas Ambalan Kamajaya – Kamaratih sebagai simbol pramuka penegak SMA Negeri 1 Sumpiuh yang unggul, cinta tanah air, dan berpikiran terbuka.</li>
                 </ul>
             </div>
         </div>
@@ -161,14 +156,14 @@
                 <ul>
                     <li>Latihan Rutin Mingguan</li>
                     <li>Penerimaan Tamu Ambalan (PTA)</li>
-                    <li>Pelatihan Kepemimpinan</li>
-                    <li>Perkemahan Sabtu Minggu (Persami)</li>
-                    <li>Lomba Tingkat (LT I & II)</li>
-                    <li>Kegiatan Bakti Sosial</li>
-                    <li>Pengembangan Kreativitas</li>
-                    <li>Upacara Hari Besar Nasional</li>
-                    <li>Rapat Evaluasi Dewan Ambalan</li>
-                    <li>Pelatihan Skill Khusus (Tali-temali, P3K, Semaphore, dll)</li>
+                    <li>Pelantikan Bantara</li>
+                    <li>Temu Kangen Para Dewan Purna</li>
+                    <li>Pelatihan Pramuka Lapangan/li>
+                    <li>Pengukuhan Bantara</li>
+                    <li>Pengembaraan dan Pelantikan Laksana</li>
+                    <li>Re-Organisasi Dewan Ambalan dan Musyawarah Penegak</li>
+                    <li>Perkemahan Tingkat Kwarran, Kwarcab, Kwarda ataupun Kwarnas</li>
+                    <li>Latihan Gabungan Dengan Instansi (Kepolisian, Tentara, Pemadam Keabaran dsb.)</li>
                 </ul>
             </div>
         </div>
@@ -192,8 +187,10 @@
                     <div id="collapseJuli" class="accordion-collapse collapse show" data-bs-parent="#accordionTahunAjaran">
                         <div class="accordion-body">
                             <ul>
-                                <li>Pembentukan Dewan Ambalan</li>
-                                <li>Rapat kerja tahunan</li>
+                                <li>Penyusunan Rencana Program Kerja Tahunan</li>
+                                <li>Konsolidasi internal Dewan Ambalan</li>
+                                <li>Inventarisasi dan perawatan perlengkapan pramuka</li>
+                                <li>Pengumpulan anggota calon tamu ambalan</li>
                             </ul>
                         </div>
                     </div>
@@ -209,8 +206,9 @@
                     <div id="collapseAgustus" class="accordion-collapse collapse" data-bs-parent="#accordionTahunAjaran">
                         <div class="accordion-body">
                             <ul>
-                                <li>Latihan perdana</li>
-                                <li>Upacara Hari Pramuka (14 Agustus)</li>
+                                <li>Penerimaan Tamu Ambalan (PTA)</li>
+                                <li>Latihan rutin dasar-dasar kepramukaan</li>
+                                <li>Latihan gabungan lintas ekstrakurikuler</li>
                             </ul>
                         </div>
                     </div>
@@ -226,8 +224,9 @@
                     <div id="collapseSeptember" class="accordion-collapse collapse" data-bs-parent="#accordionTahunAjaran">
                         <div class="accordion-body">
                             <ul>
-                                <li>Penerimaan Tamu Ambalan (PTA)</li>
-                                <li>Perayaan Hari Jadi Ambalan</li>
+                                <li>Latihan rutin (pionering, sandi, semaphore, tali-temali)</li>
+                                <li>Simulasi Pelantikan Bantara</li>
+                                <li>Kegiatan bakti sosial ringan</li>
                             </ul>
                         </div>
                     </div>
@@ -243,10 +242,10 @@
                     <div id="collapseOktober" class="accordion-collapse collapse" data-bs-parent="#accordionTahunAjaran">
                         <div class="accordion-body">
                             <ul>
-                                <li>Latihan rutin lanjutan</li>
-                                <li>Pelatihan Kepemimpinan</li>
-                                <li>Persiapan Lomba Tingkat</li>
-                                <li>Evaluasi akhir semester</li>
+                                <li>Pelantikan Bantara</li>
+                                <li>Pengukuhan Bantara</li>
+                                <li>Outbound ringan untuk pelatihan kepemimpinan</li>
+                                <li>Pengenalan struktur organisasi pramuka</li>
                             </ul>
                         </div>
                     </div>
@@ -262,10 +261,9 @@
                     <div id="collapseNovember" class="accordion-collapse collapse" data-bs-parent="#accordionTahunAjaran">
                         <div class="accordion-body">
                             <ul>
-                                <li>Latihan rutin lanjutan</li>
-                                <li>Pelatihan Kepemimpinan</li>
-                                <li>Persiapan Lomba Tingkat</li>
-                                <li>Evaluasi akhir semester</li>
+                                <li>Pelatihan Pramuka Lapangan</li>
+                                <li>Latihan Gabungan dengan Instansi</li>
+                                <li>Diskusi karakter "Pramuka untuk Negeri"</li>
                             </ul>
                         </div>
                     </div>
@@ -281,10 +279,9 @@
                     <div id="collapseDesember" class="accordion-collapse collapse" data-bs-parent="#accordionTahunAjaran">
                         <div class="accordion-body">
                             <ul>
-                                <li>Latihan rutin lanjutan</li>
-                                <li>Pelatihan Kepemimpinan</li>
-                                <li>Persiapan Lomba Tingkat</li>
-                                <li>Evaluasi akhir semester</li>
+                                <li>Temu Kangen Dewan Purna</li>
+                                <li>Evaluasi kegiatan semester 1</li>
+                                <li>Latihan kreatif & pemanfaatan teknologi</li>
                             </ul>
                         </div>
                     </div>
@@ -300,8 +297,9 @@
                     <div id="collapseJanuari" class="accordion-collapse collapse" data-bs-parent="#accordionTahunAjaran">
                         <div class="accordion-body">
                             <ul>
-                                <li>Latihan awal semester</li>
-                                <li>Evaluasi semester ganjil</li>
+                                <li>Persiapan Pengembaraan dan Pelantikan Laksana</li>
+                                <li>Latihan fisik dan mental, pendalaman SKU</li>
+                                <li>Latihan penyusunan laporan kegiatan</li>
                             </ul>
                         </div>
                     </div>
@@ -317,8 +315,9 @@
                     <div id="collapseFebruari" class="accordion-collapse collapse" data-bs-parent="#accordionTahunAjaran">
                         <div class="accordion-body">
                             <ul>
-                                <li>Pelatihan keterampilan (Tali-temali, P3K, Semaphore)</li>
-                                <li>Simulasi perkemahan</li>
+                                <li>Pengembaraan dan Pelantikan Laksana</li>
+                                <li>Napak tilas/penjelajahan lintas desa</li>
+                                <li>Refleksi dan pelantikan akhir</li>
                             </ul>
                         </div>
                     </div>
@@ -334,8 +333,9 @@
                     <div id="collapseMaret" class="accordion-collapse collapse" data-bs-parent="#accordionTahunAjaran">
                         <div class="accordion-body">
                             <ul>
-                                <li>Persami Ambalan</li>
-                                <li>Lomba Tingkat II</li>
+                                <li>Evaluasi semester 2</li>
+                                <li>Persiapan Musyawarah Penegak (MUSPEN)</li>
+                                <li>Pembuatan proposal program kerja ambalan selanjutnya</li>
                             </ul>
                         </div>
                     </div>
@@ -351,8 +351,9 @@
                     <div id="collapseApril" class="accordion-collapse collapse" data-bs-parent="#accordionTahunAjaran">
                         <div class="accordion-body">
                             <ul>
-                                <li>Kegiatan Bakti Sosial</li>
-                                <li>Pengembangan Kreativitas</li>
+                                <li>Reorganisasi Dewan Ambalan</li>
+                                <li>Pelatihan dasar kepemimpinan untuk pengurus baru</li>
+                                <li>Latihan bersama pengurus lama dan baru</li>
                             </ul>
                         </div>
                     </div>
@@ -367,10 +368,10 @@
                     </h2>
                     <div id="collapseMei" class="accordion-collapse collapse" data-bs-parent="#accordionTahunAjaran">
                         <div class="accordion-body">
-                            <ul>
-                                <li>Penutupan semester</li>
-                                <li>Rapat Akhir Tahun</li>
-                                <li>Penyusunan Laporan Kegiatan</li>
+                            <lu>
+                                <li>Persiapan mengikuti Perkemahan Tingkat Kwarran/Kwarcab</li>
+                                <li>Penguatan materi lomba: Hasta Karya, PBB, LT</li>
+                                <li>Pameran mini hasil karya pramuka</li>
                             </ul>
                         </div>
                     </div>
@@ -386,9 +387,9 @@
                     <div id="collapseJuni" class="accordion-collapse collapse" data-bs-parent="#accordionTahunAjaran">
                         <div class="accordion-body">
                             <ul>
-                                <li>Penutupan semester</li>
-                                <li>Rapat Akhir Tahun</li>
-                                <li>Penyusunan Laporan Kegiatan</li>
+                                <li>Outbound, pentas seni, dan bakti sosial</li>
+                                <li>Penutupan program tahunan ambalan</li>
+                                <li>Refleksi bersama dan dokumentasi kegiatan</li>
                             </ul>
                         </div>
                     </div>
@@ -401,14 +402,14 @@
     <!-- Download PDF -->
 <div class="row justify-content-center mt-4">
     <div class="col-12 text-center">
-        <a href="{{ asset('dokumen/KJKR.pdf') }}" class="btn-download btn btn-primary w-100" target="_blank">
+        <a href="{{ asset('dokumen/Prokja.pdf') }}" class="btn-download btn btn-primary w-100" target="_blank">
             📥 Unduh Program Kerja (PDF)
         </a>
     </div>
 </div>
 <div class="row justify-content-center mt-4">
     <div class="col-12 text-center">
-        <a href="{{ asset('dokumen/KJKR.pdf') }}" class="btn-download btn btn-primary w-100" target="_blank">
+        <a href="{{ asset('dokumen/LKP.pdf') }}" class="btn-download btn btn-primary w-100" target="_blank">
             📥 Unduh Lembar Kerja Pramuka
         </a>
     </div>
