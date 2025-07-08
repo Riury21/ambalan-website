@@ -400,21 +400,13 @@
     </div>
 
     <!-- Download PDF -->
-<div class="row justify-content-center mt-4">
-    <div class="col-12 text-center">
-        <a href="{{ asset('dokumen/Prokja.pdf') }}" class="btn-download btn btn-primary w-100" target="_blank">
-            📥 Unduh Program Kerja (PDF)
-        </a>
+    <div class="row justify-content-center mt-4">
+        <div class="col-12 text-center">
+            <a href="{{ asset('dokumen/khusus/Prokja.pdf') }}" class="btn-download btn btn-primary w-100" target="_blank">
+                📥 Unduh Program Kerja (PDF)
+            </a>
+        </div>
     </div>
-</div>
-<div class="row justify-content-center mt-4">
-    <div class="col-12 text-center">
-        <a href="{{ asset('dokumen/LKP.pdf') }}" class="btn-download btn btn-primary w-100" target="_blank">
-            📥 Unduh Lembar Kerja Pramuka
-        </a>
-    </div>
-</div>
-
 </div>
 
 <!-- Pastikan Bootstrap JS aktif -->

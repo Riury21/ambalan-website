@@ -53,6 +53,7 @@
                 </button>
             </div>
         </form>
+        <p class="mt-3 mb-0"><strong>NOTE :</strong> Khusus file program kerja, nama file harus "Prokja.pdf"</p>
     </div>
 
     <!-- Tabel Materi -->
