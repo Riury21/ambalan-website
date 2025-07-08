@@ -164,6 +164,7 @@
     <li class="nav-item mb-2"><a href="/admin" class="nav-link text-white {{ request()->is('admin') ? 'active fw-bold' : '' }}"><i class="bi bi-house-door"></i><span>Halaman Admin</span></a></li>
     <li class="nav-item mb-2"><a href="/admin/berita" class="nav-link text-white {{ request()->is('admin/berita') ? 'active fw-bold' : '' }}"><i class="bi bi-newspaper"></i><span>Input Berita</span></a></li>
     <li class="nav-item mb-2"><a href="/admin/galeri" class="nav-link text-white {{ request()->is('admin/galeri') ? 'active fw-bold' : '' }}"><i class="bi bi-images"></i><span>Input Galeri</span></a></li>
+    <li class="nav-item mb-2"><a href="/admin/materi" class="nav-link text-white {{ request()->is('admin/materi') ? 'active fw-bold' : '' }}"><i class="bi bi-file-earmark-arrow-up"></i><span>Input Materi</span></a></li>
     <li class="nav-item mb-2"><a href="/admin/pembina" class="nav-link text-white {{ request()->is('admin/pembina') ? 'active fw-bold' : '' }}"><i class="bi bi-person-badge"></i><span>Data Pembina</span></a></li>
     <li class="nav-item mb-2"><a href="/admin/dewan" class="nav-link text-white {{ request()->is('admin/dewan') ? 'active fw-bold' : '' }}"><i class="bi bi-people"></i><span>Data Dewan</span></a></li>
     <li class="nav-item mb-2"><a href="/admin/pesan" class="nav-link text-white {{ request()->is('admin/pesan') ? 'active fw-bold' : '' }}"><i class="bi bi-envelope"></i><span>Lihat Pesan</span></a></li>
@@ -194,6 +195,7 @@
         <li class="nav-item mb-2"><a href="/admin" class="nav-link text-white"><i class="bi bi-house-door me-2"></i><span>Halaman Admin</span></a></li>
         <li class="nav-item mb-2"><a href="/admin/berita" class="nav-link text-white"><i class="bi bi-newspaper me-2"></i><span>Input Berita</span></a></li>
         <li class="nav-item mb-2"><a href="/admin/galeri" class="nav-link text-white"><i class="bi bi-images me-2"></i><span>Input Galeri</span></a></li>
+        <li class="nav-item mb-2"><a href="/admin/materi" class="nav-link text-white"><i class="bi bi-file-earmark-arrow-up me-2"></i><span>Input Materi</span></a></li>
         <li class="nav-item mb-2"><a href="/admin/pembina" class="nav-link text-white"><i class="bi bi-person-badge me-2"></i><span>Data Pembina</span></a></li>
         <li class="nav-item mb-2"><a href="/admin/dewan" class="nav-link text-white"><i class="bi bi-people me-2"></i><span>Data Dewan</span></a></li>
         <li class="nav-item mb-2"><a href="/admin/pesan" class="nav-link text-white"><i class="bi bi-envelope me-2"></i><span>Lihat Pesan</span></a></li>

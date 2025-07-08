@@ -12,6 +12,7 @@ use App\Http\Controllers\PesanController;
 use App\Http\Controllers\PesanAdminController;
 use App\Http\Controllers\DashboardAdminController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\MateriController;
 
 Route::get('/', function () {
     return view('pages.home');
@@ -75,6 +76,13 @@ Route::get('/logout', function () {
 // Route untuk admin, dilindungi middleware auth
 Route::middleware('auth')->group(function () {
     Route::get('/admin', [DashboardAdminController::class, 'index'])->name('admin.dashboard');
+
+    // materi
+    Route::prefix('admin/materi')->group(function () {
+        Route::get('/', [MateriController::class, 'index'])->name('materi.index');
+        Route::post('/', [MateriController::class, 'upload'])->name('materi.upload');
+        Route::delete('/{filename}', [MateriController::class, 'destroy'])->name('materi.destroy');
+    });
 
     // Rute berita
     Route::prefix('admin/berita')->group(function () {
