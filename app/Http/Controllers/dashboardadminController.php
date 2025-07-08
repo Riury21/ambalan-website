@@ -20,7 +20,13 @@ class DashboardAdminController extends Controller
         $jumlahPesan = Pesan::count();
         $jumlahGaleri = Galeri::count();
         $jumlahBerita = Berita::count();
+        $jumlahDokumen = 0;
+        $path = public_path('dokumen');
 
+        if (file_exists($path)) {
+            $jumlahDokumen = count(glob($path . '/*.pdf'));
+        }
+        
         return view('admin.dashboard', compact(
             'jumlahPembina',
             'jumlahPembinaAktif',
@@ -28,7 +34,8 @@ class DashboardAdminController extends Controller
             'jumlahDewanPurna',
             'jumlahPesan',
             'jumlahGaleri',
-            'jumlahBerita'
+            'jumlahBerita',
+            'jumlahDokumen'
         ));
     }
 

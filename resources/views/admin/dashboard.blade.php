@@ -8,12 +8,20 @@
     <p class="mb-0">Pesan u/ Admin :
         <li>Jangan buat Berita/ Artikel/ Galeri HOAX</li>
         <li>Lengkapi data Dewan & Pembina</li>
-        <li>Lakukan Update jika ada kekeliruan data</li>
+        <li>Lakukan Penambahan & Update data</li>
     </p>
 
     <!-- Statistik -->
     <div class="row mt-4 g-3">
-                <div class="col-md-4">
+        <div class="col-md-6">
+            <div class="card shadow-sm text-center">
+                <div class="card-body">
+                    <h5 class="card-title text-warning">Jumlah Dokumen</h5>
+                    <p class="display-6 fw-bold text-warning">{{ $jumlahDokumen }}</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
             <div class="card shadow-sm text-center">
                 <div class="card-body">
                     <h5 class="card-title text-danger">Jumlah Pesan</h5>
@@ -21,7 +29,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-3">
             <div class="card shadow-sm text-center">
                 <div class="card-body">
                     <h5 class="card-title text-dark">Jumlah Galeri</h5>
@@ -29,7 +37,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-3">
             <div class="card shadow-sm text-center">
                 <div class="card-body">
                     <h5 class="card-title text-muted">Jumlah Berita</h5>
@@ -53,7 +61,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-6">
             <div class="card shadow-sm text-center">
                 <div class="card-body">
                     <h5 class="card-title text-success">Dewan Ambalan</h5>
@@ -61,7 +69,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-6">
             <div class="card shadow-sm text-center">
                 <div class="card-body">
                     <h5 class="card-title text-warning">Dewan Purna</h5>

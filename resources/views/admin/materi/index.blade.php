@@ -44,10 +44,10 @@
             <div class="col-md-5">
                 <input type="text" name="judul" placeholder="Judul Materi" class="form-control" required>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-5">
                 <input type="file" name="file" accept="application/pdf" class="form-control" required>
             </div>
-            <div class="col-md-3 d-flex">
+            <div class="col-md-2 d-flex">
                 <button type="submit" class="btn btn-success me-2">
                     <i class="bi bi-upload me-1"></i> Upload
                 </button>
