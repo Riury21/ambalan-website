@@ -10,8 +10,10 @@
         top: 0;
         z-index: 1020;
         background-color: rgba(255, 255, 255, 0.95);
-        padding: 0.5rem 0 1rem;
+        padding: 0.5rem 0;
         border-bottom: 1px solid #dee2e6;
+        border-radius: 10px;
+        transition: background-color 0.3s ease, color 0.3s ease;
     }
 
     .materi-card {
@@ -142,5 +144,4 @@
         });
     });
 </script>
-
 @endsection
