@@ -150,9 +150,16 @@ class UserController extends Controller
     {
         $query = Berita::query();
 
-        if ($request->has('search') && $request->search != '') {
-            $query->where('judul', 'like', '%' . $request->search . '%');
-        }
+    if ($request->has('search') && $request->search != '') {
+        $keywords = explode(' ', $request->search);
+
+        $query->where(function($q) use ($keywords) {
+            foreach ($keywords as $word) {
+                $q->orWhere('judul', 'like', "%{$word}%")
+                ->orWhere('isi', 'like', "%{$word}%");
+            }
+        });
+    }
 
         $berita = $query->orderBy('created_at', 'desc')->get();
 

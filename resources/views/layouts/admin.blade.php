@@ -161,6 +161,7 @@
   </div>
   <ul class="nav flex-column mb-auto px-2 pt-3">
     <li class="nav-item mb-2"><a href="/admin" class="nav-link text-white {{ request()->is('admin') ? 'active fw-bold' : '' }}"><i class="bi bi-house-door"></i><span>Halaman Admin</span></a></li>
+    <li class="nav-item mb-2"><a href="/admin/proker" class="nav-link text-white {{ request()->is('admin/proker') ? 'active fw-bold' : '' }}"><i class="bi bi-journal-text"></i><span>Data Proker</span></a></li>
     <li class="nav-item mb-2"><a href="/admin/berita" class="nav-link text-white {{ request()->is('admin/berita') ? 'active fw-bold' : '' }}"><i class="bi bi-newspaper"></i><span>Input Berita</span></a></li>
     <li class="nav-item mb-2"><a href="/admin/galeri" class="nav-link text-white {{ request()->is('admin/galeri') ? 'active fw-bold' : '' }}"><i class="bi bi-images"></i><span>Input Galeri</span></a></li>
     <li class="nav-item mb-2"><a href="/admin/materi" class="nav-link text-white {{ request()->is('admin/materi') ? 'active fw-bold' : '' }}"><i class="bi bi-file-earmark-arrow-up"></i><span>Input Materi</span></a></li>
@@ -192,6 +193,7 @@
     <div class="offcanvas-body d-flex flex-column p-0">
       <ul class="nav flex-column mb-auto px-2 pt-3">
         <li class="nav-item mb-2"><a href="/admin" class="nav-link text-white"><i class="bi bi-house-door me-2"></i><span>Halaman Admin</span></a></li>
+        <li class="nav-item mb-2"><a href="/admin/proker" class="nav-link text-white"><i class="bi bi-journal-text me-2"></i><span>Data Proker</span></a></li>
         <li class="nav-item mb-2"><a href="/admin/berita" class="nav-link text-white"><i class="bi bi-newspaper me-2"></i><span>Input Berita</span></a></li>
         <li class="nav-item mb-2"><a href="/admin/galeri" class="nav-link text-white"><i class="bi bi-images me-2"></i><span>Input Galeri</span></a></li>
         <li class="nav-item mb-2"><a href="/admin/materi" class="nav-link text-white"><i class="bi bi-file-earmark-arrow-up me-2"></i><span>Input Materi</span></a></li>

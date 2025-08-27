@@ -13,6 +13,7 @@ use App\Http\Controllers\PesanAdminController;
 use App\Http\Controllers\DashboardAdminController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\MateriController;
+use App\Http\Controllers\ProkerController;
 
 Route::get('/', function () {
     return view('pages.home');
@@ -132,6 +133,26 @@ Route::middleware('auth')->group(function () {
         Route::delete('/{id}', [PesanAdminController::class, 'destroy'])->name('pesan.destroy');
         Route::patch('/{id}', [PesanAdminController::class, 'update'])->name('pesan.update');
     });
+
+// Proker (rapih sesuai struktur admin lainnya)
+    Route::prefix('admin/proker')->group(function () {
+        Route::get('/', [ProkerController::class, 'index'])->name('proker.index');
+
+        // Visi Misi
+        Route::post('/visi-misi', [ProkerController::class, 'storeVisiMisi'])->name('proker.visimisi.store');
+        Route::put('/visi-misi/{id}', [ProkerController::class, 'updateVisiMisi'])->name('proker.visimisi.update');
+        Route::delete('/visi-misi/{id}', [ProkerController::class, 'destroyVisiMisi'])->name('proker.visimisi.destroy');
+
+        // Program Umum
+        Route::post('/program-umum', [ProkerController::class, 'storeProgramUmum'])->name('proker.program.store');
+        Route::put('/program-umum/{id}', [ProkerController::class, 'updateProgramUmum'])->name('proker.program.update');
+        Route::delete('/program-umum/{id}', [ProkerController::class, 'destroyProgramUmum'])->name('proker.program.destroy');
+
+        // Timeline
+        Route::post('/timeline', [ProkerController::class, 'storeTimeline'])->name('proker.timeline.store');
+        Route::put('/timeline/{id}', [ProkerController::class, 'updateTimeline'])->name('proker.timeline.update');
+        Route::delete('/timeline/{id}', [ProkerController::class, 'destroyTimeline'])->name('proker.timeline.destroy');
+    });
 });
 
 // Route untuk pengguna, tanpa middleware
@@ -147,5 +168,8 @@ Route::get('/materi', [UserController::class, 'materi'])->name('materi.user.inde
 
 Route::get('/pesan', [PesanController::class, 'create'])->name('pesan.create');
 Route::post('/pesan', [PesanController::class, 'store'])->name('pesan.store');
+
+Route::get('/proker', [ProkerController::class,'showPublic'])->name('proker.public');
+
 
 
