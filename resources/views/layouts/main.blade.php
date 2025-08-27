@@ -259,10 +259,10 @@
       <i class="bi bi-file-earmark-pdf me-2"></i>Materi Pramuka
     </a>
     <a href="/berita" class="{{ request()->is('berita') ? 'fw-bold' : '' }}">
-      <i class="bi bi-newspaper me-2"></i>Berita / Artikel
+      <i class="bi bi-newspaper me-2"></i>Berita & Artikel
     </a>
     <a href="/galeri" class="{{ request()->is('galeri') ? 'fw-bold' : '' }}">
-      <i class="bi bi-images me-2"></i>Galeri
+      <i class="bi bi-images me-2"></i>Galeri & Dokumentasi
     </a>
     <a href="/pembina" class="{{ request()->is('pembina') ? 'fw-bold' : '' }}">
       <i class="bi bi-person-badge me-2"></i>Pembina

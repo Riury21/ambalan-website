@@ -173,7 +173,7 @@
     <div class="row justify-content-center mt-4">
         <div class="col-12">
             <h2 class="text-center section-title">
-                Timeline Kegiatan (Tahun Ajaran)
+                Timeline Kegiatan Dewan Ambalan 2024/2025
             </h2>
             <div class="accordion" id="accordionTahunAjaran">
 
@@ -395,15 +395,6 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-
-    <!-- Download PDF -->
-    <div class="row justify-content-center mt-4">
-        <div class="col-12 text-center">
-            <a href="{{ asset('dokumen/Prokja.pdf') }}" class="btn-download btn btn-primary w-100" target="_blank">
-                📥 Unduh Program Kerja (PDF)
-            </a>
         </div>
     </div>
 </div>
