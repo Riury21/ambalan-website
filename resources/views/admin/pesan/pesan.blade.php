@@ -11,8 +11,9 @@
         top: 0;
         z-index: 999;
         background-color: white;
-        padding: 0.5rem 0;
+        padding: 0.5rem 0.5rem;
         border-bottom: 1px solid #dee2e6;
+        border-radius: 0.5rem;
     }
 
     /* Tabel */

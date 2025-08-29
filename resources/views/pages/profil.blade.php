@@ -119,7 +119,7 @@
     <!-- Sejarah Ambalan -->
     <div class="row justify-content-center mt-4">
         <div class="col-12">
-            <h2 class="text-center" style="background-color: rgba(255, 255, 255, 0.8); padding: 10px 20px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">Sejarah Terbentuknya Ambalan KJKR</h2>
+            <h2 class="text-center" style="background-color: rgba(255, 255, 255, 0.9); padding: 10px 20px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">Sejarah Terbentuknya Ambalan KJKR</h2>
             <div class="content-container">
                 <p>Semenjak berdirinya SMA Negeri 1 Sumpiuh pada tahun 1985, barulah pada tahun <strong>1988</strong> tercetus gagasan untuk mendirikan GUGUS DEPAN SMA NEGERI I SUMPIUH. Sejak tahun 1988 mulai diselenggarakan iuran bulanan Pramuka, namun kegiatan kepramukaan belum ada dan berlangsung selama satu tahun.</p>
 
@@ -137,7 +137,7 @@
     <!-- Arti Logo -->
     <div class="row justify-content-center mt-4">
         <div class="col-12">
-            <h2 class="text-center" style="background-color: rgba(255, 255, 255, 0.8); padding: 10px 20px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">Logo dan Filosofi Ambalan</h2>
+            <h2 class="text-center" style="background-color: rgba(255, 255, 255, 0.9); padding: 10px 20px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">Logo dan Filosofi Ambalan</h2>
         </div>
         <div class="badge-container">
             <div class="badge-column">
@@ -196,7 +196,7 @@
     <!-- Tokoh Wayang Kamajaya Kamaratih -->
     <div class="row justify-content-center mt-4">
         <div class="col-12">
-            <h2 class="text-center" style="background-color: rgba(255, 255, 255, 0.8); padding: 10px 20px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">Tokoh Wayang Kamajaya dan Kamaratih</h2>
+            <h2 class="text-center" style="background-color: rgba(255, 255, 255, 0.9); padding: 10px 20px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">Tokoh Wayang Kamajaya dan Kamaratih</h2>
                 <div class="content-container">
                     <p><strong>Kamajaya</strong> adalah tokoh wayang yang dikenal sebagai dewa cinta dan kasih sayang. Dalam pewayangan Jawa, Kamajaya merupakan personifikasi dari Dewa Asmara atau Kamadeva dalam tradisi Hindu. Ia adalah putra Batara Semar (Ismaya), salah satu punakawan utama yang bijaksana. Kamajaya digambarkan sebagai sosok yang sangat tampan, lembut, dan memancarkan wibawa karena cinta dan ketulusan hatinya.</p>
 
@@ -221,7 +221,7 @@
     <!-- Makna untuk Ambalan -->
     <div class="row justify-content-center mt-4">
         <div class="col-12">
-            <h2 class="text-center" style="background-color: rgba(255, 255, 255, 0.8); padding: 10px 20px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">Makna untuk Ambalan Kamajaya – Kamaratih</h2>
+            <h2 class="text-center" style="background-color: rgba(255, 255, 255, 0.9); padding: 10px 20px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">Makna untuk Ambalan Kamajaya – Kamaratih</h2>
             <div class="content-container">
                 <p>Pemilihan nama dan simbol Kamajaya–Kamaratih bukan hanya untuk keindahan, melainkan sebagai nilai pendidikan karakter. Ambalan ini diharapkan mencetak Pramuka Penegak yang bijaksana, penuh cinta, tangguh, dan setia pada tugas pengabdian.</p>
                 <p>Anggota Ambalan diarahkan untuk mengamalkan nilai Tri Satya dan Dasa Dharma dengan sepenuh hati, serta menjadi generasi muda yang tangguh, siap berkarya, dan menjaga kehormatan bangsa.</p>
@@ -231,7 +231,7 @@
     <!-- Lokasi Ambalan  -->
     <div class="row justify-content-center mt-4">
         <div class="col-12">
-            <h2 class="text-center" style="background-color: rgba(255, 255, 255, 0.8); padding: 10px 20px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+            <h2 class="text-center" style="background-color: rgba(255, 255, 255, 0.9); padding: 10px 20px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
                 Pangkalan SMA Negeri 1 Sumpiuh</h2>
             <div class="content-container">
                 <p>Beikut alamat lengkap Pangkalan SMA Negeri 1 Sumpiuh:</p>
@@ -242,7 +242,7 @@
             <div class="text-center mt-4">
                 <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d988.6755010546372!2d109.347968!3d-7.607371!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e6545e3a1e7abbb%3A0x3126734132dcf88c!2sSMA%20Negeri%201%20Sumpiuh!5e0!3m2!1sid!2sid!4v1751305014905!5m2!1sid!2sid"
                     width="100%" height="400" 
-                    style="border: 10px solid rgba(0, 0, 0, 0.9); border-radius: 10px;" 
+                    style="border: 10px solid rgba(255, 255, 255, 1); border-radius: 10px;" 
                     allowfullscreen="" loading="lazy">
                 </iframe>
             </div>

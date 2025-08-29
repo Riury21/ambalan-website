@@ -87,6 +87,39 @@
         background-color: #0056b3 !important;
     }
 
+  .whatsapp-float {
+    position: fixed;
+    bottom: 80px;   /* dinaikkan agar tidak nabrak footer */
+    right: 20px;
+    width: 55px;
+    height: 55px;
+    border-radius: 8px;   /* kotak dengan sedikit rounded */
+    background-color: #ffffff; /* default light mode */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: #25d366; /* hijau WA */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    z-index: 1100;
+    transition: all 0.3s ease;
+  }
+
+  .whatsapp-float:hover {
+    transform: scale(1.1);
+  }
+
+  /* Dark mode support */
+  @media (prefers-color-scheme: dark) {
+    .whatsapp-float {
+      background-color: #000000; /* kotak hitam */
+      color: #ffffff;           /* ikon putih */
+    }
+    .whatsapp-float:hover {
+      background-color: #111111;
+    }
+  }
+
     @media (max-width: 768px) {
         .form-container {
             padding: 15px;
@@ -225,3 +258,12 @@
 @endif
 
 @endsection
+
+<!-- Floating WhatsApp Button -->
+<a href="https://wa.me/6283192611753?text=Salam%20Pramuka,%0AHalo%20Kakak-Kakak%20Admin%20Pramuka%20Ambalan%20Kamajaya-Kamaratih%20SMAN%201%20Sumpiuh%20yang%20Ganteng%20dan%20Cantik"
+   target="_blank"
+   class="whatsapp-float"
+   title="WhatsApp">
+  <i class="bi bi-whatsapp"></i>
+</a>
+
