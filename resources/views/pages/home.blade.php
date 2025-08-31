@@ -87,11 +87,16 @@
     }
 
     .main-text h1 {
-        font-size: 3rem;
+        font-size: 3.5rem;
         margin: 0;
     }
 
     .main-text h2 {
+        font-size: 2.5rem;
+        margin: 0.5rem 0;
+        font-weight: 400;
+    }
+    .main-text h3 {
         font-size: 1.5rem;
         margin: 0.5rem 0;
         font-weight: 400;
@@ -114,7 +119,7 @@
     <div class="main-text">
         <h1>Gerakan Pramuka</h1>
         <h2>Ambalan Kamajaya Kamaratih</h2>
-        <h2>Pangkalan SMA Negeri 1 Sumpiuh Gugus Depan 19.2823-19.2824</h2>
+        <h3>Pangkalan SMA Negeri 1 Sumpiuh Gugus Depan 19.2823-19.2824</h3>
     </div>
 </div>
 @endsection
