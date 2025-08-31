@@ -3,178 +3,118 @@
 @section('title', 'Home - Kamajaya Kamaratih')
 
 @section('content')
-<meta name="viewport" content="width=1024, initial-scale=0.5">
-
 <style>
-    /* Import Google Fonts */
-    @import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Montserrat:wght@600;700&family=Poppins:wght@400;500&display=swap');
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
 
     html, body {
-        margin: 0;
-        padding: 0;
         width: 100%;
         height: 100%;
-        font-family: 'Poppins', sans-serif;
-        overflow-x: hidden;
-    }
-
-    .carousel {
-        margin: 0;
-        padding: 0;
-        width: 100vw;
-        position: relative;
         overflow: hidden;
-        height: 100vh;
+        background: #000;
     }
 
-    #main-content {
-        margin-left: 0;
-        padding: 0;
-    }
-
-    .carousel .carousel-inner,
-    .carousel .carousel-item {
+    .gate-container {
+        position: fixed;
+        top: 0;
+        left: 0;
         width: 100vw;
-        height: calc(var(--vh, 1vh) * 100);
+        height: 100vh;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        justify-content: center; /* teks dan logo di tengah */
+        align-items: center;
     }
 
-    .carousel-item img {
-        width: 100%; 
-        height: 100%;
-        object-fit: cover;
-        object-position: center;
-        display: block;
-    }
-
-    /* Area teks */
-    .carousel-caption {
+    .gate {
         position: absolute;
-        bottom: 8%;
-        left: 5%;
-        padding: 10px 15px;
+        top: 0;
+        width: 100vw;
+        height: 100vh;
+        background: url('/logo/dewanambalan.jpg') center center no-repeat;
+        background-size: cover;
+        z-index: 5;
+    }
+
+    .gate.left {
+        left: -100vw;
+        clip-path: inset(0 50% 0 0);
+        animation: closeLeft 2.5s forwards;
+        box-shadow: inset -1px 0 0 #000;
+    }
+
+    .gate.right {
+        right: -100vw;
+        clip-path: inset(0 0 0 50%);
+        animation: closeRight 2.5s forwards;
+        box-shadow: inset 1px 0 0 #000;
+    }
+
+    @keyframes closeLeft {
+        from { left: -100vw; }
+        to   { left: 0; }
+    }
+
+    @keyframes closeRight {
+        from { right: -100vw; }
+        to   { right: 0; }
+    }
+
+    /* Logo di atas teks, muncul setelah gerbang menutup */
+    .logo-overlay {
+        width: 160px;
+        height: auto;
+        z-index: 10;
+        animation: fadeIn 2s ease forwards;
+        margin-bottom: 20px; /* beri jarak ke teks */
+        opacity: 0; /* pastikan fadeIn bekerja */
+        animation-delay: 2.6s; /* muncul setelah gerbang menutup */
+    }
+
+    /* Teks utama di tengah */
+    .main-text {
+        text-align: center;
+        opacity: 0;
         color: #fff;
-        text-align: left;
+        font-family: 'Cinzel Decorative', cursive;
+        animation: fadeIn 1s ease forwards;
+        animation-delay: 3.8s; /* tetap muncul setelah logo */
+        z-index: 20;
     }
 
-    /* Shadow hanya di teks */
-    .carousel-caption h1,
-    .carousel-caption h2,
-    .carousel-caption h4,
-    .carousel-caption p {
-        text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.9);
-        margin: 0.4rem 0;
-    }
-
-    /* Judul utama */
-    .carousel-caption h1 {
-        font-family: 'Cinzel Decorative', serif;
+    .main-text h1 {
         font-size: 3rem;
-        font-weight: 700;
-        letter-spacing: 2px;
+        margin: 0;
     }
 
-    /* Subjudul */
-    .carousel-caption h2 {
-        font-family: 'Montserrat', sans-serif;
-        font-size: 1.8rem;
-        font-weight: 600;
-    }
-
-    /* Kalimat puitis */
-    .carousel-caption h4 {
-        font-family: 'Cinzel Decorative', serif;
-        font-size: 1.4rem;
+    .main-text h2 {
+        font-size: 1.5rem;
+        margin: 0.5rem 0;
         font-weight: 400;
-        line-height: 1.6;
     }
 
-    .carousel-caption p {
-        font-family: 'Poppins', sans-serif;
-        font-size: 1rem;
-        font-weight: 400;
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(-20px); }
+        to   { opacity: 1; transform: translateY(0); }
     }
 </style>
 
-<div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
-    <div class="carousel-inner">
-        <!-- Slide 1: Panji Bendera Ambalan -->
-        <div class="carousel-item active">
-            <img src="/logo/dewanambalan.jpg" alt="Kegiatan 1">
-            <div class="carousel-caption">
-                <h1>Gerakan Pramuka</h1>
-                <h2>Ambalan Kamajaya Kamaratih</h2>
-                <h2>Pangkalan SMA Negeri 1 Sumpiuh<br>Gugus Depan 19.2823-19.2824</h2>
-            </div>
-        </div>
+<div class="gate-container">
+    <div class="gate left"></div>
+    <div class="gate right"></div>
 
-        <!-- Slide 2: Dewi Kamaratih & Kamajaya -->
-        <div class="carousel-item">
-            <img src="/logo/kjkr2016.jpg" alt="Kegiatan 2">
-            <div class="carousel-caption">
-                <h4>
-                    Kamaratih menebar bunga kasih,<br>
-                    Kamajaya menyambut dengan jiwa yang suci.<br>
-                    Cinta bukan sekadar rasa,<br>
-                    melainkan pengorbanan tanpa pamrih.
-                </h4>
-            </div>
-        </div>
+    <!-- Logo overlay di atas teks -->
+    <img src="/logo/lencana.png" alt="Logo Pramuka" class="logo-overlay">
 
-        <!-- Slide 3: Ksatria Kamajaya merenung -->
-        <div class="carousel-item">
-            <img src="/logo/kjkr2017.jpg" alt="Kegiatan 3">
-            <div class="carousel-caption">
-                <h2>
-                    Dalam diam tersimpan kekuatan,<br>
-                    merenung bukan kelemahan,<br>
-                    tapi awal dari sebuah perencanaan.
-                </h2>
-                <p>Giat 15/16 Priyanggono</p>
-            </div>
-        </div>
+    <!-- Tulisan muncul setelah gerbang menutup -->
+    <div class="main-text">
+        <h1>Gerakan Pramuka</h1>
+        <h2>Ambalan Kamajaya Kamaratih</h2>
+        <h2>Pangkalan SMA Negeri 1 Sumpiuh Gugus Depan 19.2823-19.2824</h2>
     </div>
-
-    <!-- Navigasi -->
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-    </button>
 </div>
-
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        const carouselElement = document.getElementById('carouselExample');
-        let startX = 0, endX = 0;
-
-        carouselElement.addEventListener('touchstart', (e) => {
-            startX = e.changedTouches[0].screenX;
-        });
-
-        carouselElement.addEventListener('touchend', (e) => {
-            endX = e.changedTouches[0].screenX;
-            handleSwipe();
-        });
-
-        function handleSwipe() {
-            const swipeDistance = endX - startX;
-            if (swipeDistance > 50) {
-                carouselElement.querySelector('.carousel-control-prev').click();
-            } else if (swipeDistance < -50) {
-                carouselElement.querySelector('.carousel-control-next').click();
-            }
-        }
-
-        function setFullHeight() {
-            const vh = window.innerHeight * 0.01;
-            document.documentElement.style.setProperty('--vh', `${vh}px`);
-        }
-
-        window.addEventListener('load', setFullHeight);
-        window.addEventListener('resize', setFullHeight);
-    });
-</script>
 @endsection

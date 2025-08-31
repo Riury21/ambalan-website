@@ -10,7 +10,7 @@
         top: 0;
         z-index: 1020;
         background-color: rgba(255, 255, 255, 0.95);
-        padding: 0.5rem 0;
+        padding: 0.5rem 0.5rem;
         border-bottom: 1px solid #dee2e6;
         border-radius: 10px;
         transition: background-color 0.3s ease, color 0.3s ease;
@@ -153,7 +153,7 @@
     <!-- Grid Galeri -->
     <div class="row justify-content-center mt-4">
         @forelse($galeri as $item)
-            <div class="col-12 col-md-6 mb-4">
+            <div class="col-12 col-md-4 col-lg-4">
                 <a href="{{ route('galeri.detail', $item->slug) }}" class="text-decoration-none text-dark">
                     <div class="card h-100 shadow-sm">
                         @if($item->gambar)

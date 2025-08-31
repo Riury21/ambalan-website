@@ -65,12 +65,14 @@
                             <label for="isi" class="form-label">Isi/Deskripsi</label>
                             <textarea class="form-control" id="isi" name="isi" rows="6" required></textarea>
                         </div>
-
                         <div class="mb-3">
                             <label for="penulis" class="form-label">Penulis</label>
                             <input type="text" class="form-control" id="penulis" name="penulis">
                         </div>
-
+                        <div class="mb-3">
+                            <label for="tanggal_upload" class="form-label">Tanggal Upload</label>
+                            <input type="date" class="form-control" id="tanggal_upload" name="tanggal_upload" required>
+                        </div>
                         <div class="mb-3">
                             <label for="gambar" class="form-label">Gambar</label>
                             <input type="file" class="form-control" id="gambar" name="gambar" accept="image/*">

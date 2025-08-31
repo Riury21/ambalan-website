@@ -32,6 +32,7 @@ class AdminBeritaController extends Controller
             'judul' => 'required',
             'isi' => 'required',
             'penulis' => 'nullable',
+            'tanggal_upload' => 'required|date',
             'gambar' => 'nullable|image|max:2048',
         ]);
 
@@ -39,6 +40,7 @@ class AdminBeritaController extends Controller
         $berita->judul = $request->judul;
         $berita->isi = $request->isi;
         $berita->penulis = $request->penulis;
+        $berita->tanggal_upload = $request->tanggal_upload;
 
         if ($request->hasFile('gambar')) {
             $file = $request->file('gambar');
@@ -72,12 +74,14 @@ public function update(Request $request, $id)
         'judul' => 'required',
         'isi' => 'required',
         'penulis' => 'nullable',
+        'tanggal_upload' => 'required|date',
         'gambar' => 'nullable|image|max:2048',
     ]);
 
     $berita->judul = $request->judul;
     $berita->isi = $request->isi;
     $berita->penulis = $request->penulis;
+    $berita->tanggal_upload = $request->tanggal_upload;
 
     if ($request->hasFile('gambar')) {
         $file = $request->file('gambar');

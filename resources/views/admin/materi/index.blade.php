@@ -44,17 +44,15 @@
         <form action="{{ route('materi.upload') }}" method="POST" enctype="multipart/form-data" class="row g-2">
             @csrf
             <div class="col-md-5">
-                <input type="text" name="judul" placeholder="Judul Materi" class="form-control" required>
-            </div>
-            <div class="col-md-5">
                 <input type="file" name="file" accept="application/pdf" class="form-control" required>
             </div>
-            <div class="col-md-2 d-flex">
+            <div class="col-md-2 d-flex mb-1">
                 <button type="submit" class="btn btn-success me-2">
                     <i class="bi bi-upload me-1"></i> Upload
                 </button>
             </div>
         </form>
+        <b>Sesuaikan nama file PDF yang diunggah.</b>
     </div>
 
     <!-- Tabel Materi -->

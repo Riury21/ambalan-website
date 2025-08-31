@@ -22,12 +22,11 @@ class MateriController extends Controller
     public function upload(Request $request)
     {
         $request->validate([
-            'judul' => 'required|string|max:255',
             'file' => 'required|mimes:pdf|max:10240', // 10MB
         ]);
 
         $file = $request->file('file');
-        $filename = time() . '-' . $file->getClientOriginalName();
+        $filename = $file->getClientOriginalName(); // gunakan nama asli file
         $file->move(public_path('dokumen'), $filename);
 
         return back()->with('success', 'Materi berhasil diunggah.');

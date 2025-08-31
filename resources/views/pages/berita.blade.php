@@ -10,7 +10,7 @@
         top: 0;
         z-index: 1020;
         background-color: rgba(255, 255, 255, 0.95);
-        padding: 0.5rem 0;
+        padding: 0.5rem 0.5rem;
         border-bottom: 1px solid #dee2e6;
         border-radius: 10px;
     }
@@ -124,7 +124,7 @@
     <!-- Grid Berita -->
     <div class="row justify-content-center mt-4">
         @forelse($berita as $item)
-            <div class="col-12 col-md-6 mb-4">
+            <div class="col-12 col-md-4 col-lg-4">
                 <a href="{{ route('berita.detail', $item->slug) }}" class="text-decoration-none text-dark">
                     <div class="card h-100 shadow-sm">
                         @if($item->gambar)
@@ -154,7 +154,7 @@
 
                             <p class="card-text mt-2">
                                 <strong>Penulis:</strong> {{ $item->penulis ?? '-' }} <br>
-                                <strong>Tanggal:</strong> {{ $item->created_at->format('d M Y') }}
+                                <strong>Tanggal:</strong> {{ $item->tanggal_upload ? \Carbon\Carbon::parse($item->tanggal_upload)->format('d M Y') : '-' }}
                             </p>
                         </div>
                     </div>

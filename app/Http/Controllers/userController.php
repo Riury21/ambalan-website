@@ -161,7 +161,7 @@ class UserController extends Controller
         });
     }
 
-        $berita = $query->orderBy('created_at', 'desc')->get();
+        $berita = $query->orderBy('tanggal_upload', 'desc')->get();
 
         return view('pages.berita', compact('berita'));
     }

@@ -71,7 +71,10 @@
                             <label for="penulis" class="form-label">Penulis</label>
                             <input type="text" class="form-control" id="penulis" name="penulis" value="{{ old('penulis', $berita->penulis) }}">
                         </div>
-
+                        <div class="mb-3">
+                            <label for="tanggal_upload" class="form-label">Tanggal Upload</label>
+                            <input type="date" class="form-control" id="tanggal_upload" name="tanggal_upload" value="{{ old('tanggal_upload', $berita->tanggal_upload) }}" required>
+                        </div>
                         <div class="mb-3">
                             <label for="gambar" class="form-label">Gambar (biarkan kosong jika tidak ingin mengubah)</label>
                             <input type="file" class="form-control" id="gambar" name="gambar" accept="image/*">

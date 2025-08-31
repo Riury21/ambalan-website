@@ -11,7 +11,7 @@
         top: 0;
         z-index: 1020;
         background-color: rgba(255, 255, 255, 0.95);
-        padding: 0.5rem 0;
+        padding: 0.5rem 0.5rem;
         border-bottom: 1px solid #dee2e6;
         border-radius: 10px;
         transition: transform 0.3s ease, opacity 0.3s ease;

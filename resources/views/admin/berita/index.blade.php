@@ -41,6 +41,7 @@
                 <th>Judul</th>
                 <th>Penulis</th>
                 <th>Isi/Deskripsi</th>
+                <th>Tanggal</th>
                 <th>Gambar</th>
                 <th>Aksi</th>
             </tr>
@@ -52,6 +53,7 @@
                     <td>{{ $item->judul }}</td>
                     <td>{{ $item->penulis }}</td>
                     <td>{{ \Illuminate\Support\Str::limit(strip_tags($item->isi), 100, '...') }}</td>
+                    <td class="d-none d-md-table-cell">{{ $item->tanggal_upload ? \Carbon\Carbon::parse($item->tanggal_upload)->format('d M Y') : '-' }}</td>
                     <td>
                         @if($item->gambar)
                             <img src="{{ asset('uploads/' . $item->gambar) }}" alt="Gambar Berita" height="60" width="60">
