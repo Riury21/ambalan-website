@@ -33,7 +33,13 @@
 
     /* Premium Card */
     .premium-card {
-        background: linear-gradient(180deg, #ffffff, #ffe5e5);
+        background: linear-gradient(
+            180deg,
+            #ffffff 0%,
+            #ffffff 50%,
+            #ffffff 50%,
+            #ff0000 100%
+        );
         border-radius: 12px;
         overflow: hidden;
         border: none;

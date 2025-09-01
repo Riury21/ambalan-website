@@ -38,7 +38,13 @@
 
     /* === Kamajaya theme (biru tua) === */
     .kamajaya {
-        background: linear-gradient(180deg, #ffffff, #e6f0ff);
+        background: linear-gradient(
+            180deg,
+            #ffffff 0%,
+            #ffffff 50%,
+            #ffffff 50%,
+            #0055aa 100%
+        );
     }
     .kamajaya .photo-wrapper {
         background: linear-gradient(135deg, #003366, #0055aa);
@@ -54,7 +60,13 @@
 
     /* === Kamaratih theme (biru langit) === */
     .kamaratih {
-        background: linear-gradient(180deg, #ffffff, #e6f9ff);
+        background: linear-gradient(
+            180deg,
+            #ffffff 0%,
+            #ffffff 50%,
+            #ffffff 50%,
+            #0099ff 100%
+        );
     }
     .kamaratih .photo-wrapper {
         background: linear-gradient(135deg, #0099ff, #66ccff);
