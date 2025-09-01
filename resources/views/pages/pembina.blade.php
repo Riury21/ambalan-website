@@ -187,6 +187,10 @@
                         <h6 class="card-title nama-premium">Kak {{ $item->nama }}</h6>
                         <div class="garis-premium"></div>
                         <p class="card-text mb-1"><strong>Jabatan:</strong> {{ $item->jabatan }}</p>
+                        {{-- Tampilkan keterangan khusus jika jabatan = Kamabigus --}}
+                        @if(strtolower($item->jabatan) === 'kamabigus')
+                            <p class="card-text">{{ $item->keterangan ?? '-' }}</p>
+                        @endif
                         <p class="card-text mb-1"><strong>Kontak:</strong> {{ $item->kontak ?? '-' }}</p>
                         <p class="card-text"><strong>Alamat:</strong> {{ $item->alamat ?? '-' }}</p>
                     </div>
