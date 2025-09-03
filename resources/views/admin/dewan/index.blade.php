@@ -85,7 +85,10 @@
             </div>
             <div class="col-md-3 d-flex">
                 <button type="submit" class="btn btn-primary me-2">Filter</button>
-                <a href="{{ url('/admin/dewan') }}" class="btn btn-secondary">Reset</a>
+                <a href="{{ url('/admin/dewan') }}" class="btn btn-secondary me-2">Reset</a>
+                <a href="{{ url('/admin/dewan/export?' . http_build_query(request()->all())) }}" class="btn btn-success">
+                    Export CSV
+                </a>
             </div>
         </form>
     </div>

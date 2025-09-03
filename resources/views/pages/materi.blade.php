@@ -124,8 +124,12 @@
                 </div>
             </div>
         @empty
-            <div class="col-12 text-center text-muted mt-4">
-                Belum ada materi yang tersedia.
+            <div class="row justify-content-center mt-4">
+                <div class="col-6 col-md-4">
+                    <div class="text-center text-muted bg-white p-3 rounded shadow-sm">
+                        Materi yang anda cari tidak tersedia.
+                    </div>
+                </div>
             </div>
         @endforelse
     </div>

@@ -9,26 +9,87 @@ class AdminPembinaController extends Controller
 {
     public function index(Request $request)
     {
-        $query = \App\Models\Pembina::query();
+        $query = Pembina::query();
 
+        // Filter jabatan
         if ($request->filled('jabatan')) {
             $query->where('jabatan', 'like', '%' . $request->jabatan . '%');
         }
 
+        // Filter tahun menjabat
         if ($request->filled('tahun_menjabat')) {
             $query->where('tahun_menjabat', 'like', '%' . $request->tahun_menjabat . '%');
         }
 
-        // Urutkan data sesuai kebutuhan
+        // Urutkan data
         $query->orderByRaw("FIELD(tahun_menjabat, 'Ya', 'Tidak')")
-        ->orderByRaw("FIELD(jabatan, 'kamabigus', 'ketua gudep kamajaya', 'ketua gudep kamaratih',
-         'pembina kamajaya', 'pembina kamaratih')");
+              ->orderByRaw("FIELD(jabatan, 'kamabigus', 'ketua gudep kamajaya', 'ketua gudep kamaratih',
+                 'pembina kamajaya', 'pembina kamaratih')");
 
         $pembina = $query->get();
 
         return view('admin.pembina.index', compact('pembina'));
     }
 
+    // **Method publik export()**
+    public function export(Request $request)
+    {
+        $query = Pembina::query();
+
+        // Filter jabatan
+        if ($request->filled('jabatan')) {
+            $query->where('jabatan', 'like', '%' . $request->jabatan . '%');
+        }
+
+        // Filter tahun menjabat
+        if ($request->filled('tahun_menjabat')) {
+            $query->where('tahun_menjabat', 'like', '%' . $request->tahun_menjabat . '%');
+        }
+
+        // Urutkan data
+        $query->orderByRaw("FIELD(tahun_menjabat, 'Ya', 'Tidak')")
+              ->orderByRaw("FIELD(jabatan, 'kamabigus', 'ketua gudep kamajaya', 'ketua gudep kamaratih',
+                 'pembina kamajaya', 'pembina kamaratih')");
+
+        $pembina = $query->get();
+
+        return $this->exportCsv($pembina);
+    }
+
+    // Fungsi internal untuk membuat CSV
+    protected function exportCsv($pembina)
+    {
+        $filename = 'pembina_export_' . date('Y-m-d_H-i-s') . '.csv';
+
+        $headers = [
+            'Content-Type' => 'text/csv',
+            'Content-Disposition' => "attachment; filename=\"$filename\"",
+        ];
+
+        $columns = ['No', 'Nama', 'Jabatan', 'Bertugas', 'HP', 'Email', 'Alamat', 'Keterangan'];
+
+        $callback = function() use ($pembina, $columns) {
+            $file = fopen('php://output', 'w');
+            fputcsv($file, $columns);
+
+            foreach ($pembina as $index => $item) {
+                fputcsv($file, [
+                    $index + 1,
+                    $item->nama,
+                    $item->jabatan,
+                    $item->tahun_menjabat ?? '-',
+                    $item->nomer_hp ?? '-',
+                    $item->email ?? '-',
+                    $item->alamat ?? '-',
+                    strip_tags($item->keterangan),
+                ]);
+            }
+
+            fclose($file);
+        };
+
+        return response()->stream($callback, 200, $headers);
+    }
 
     public function create()
     {

@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Dewan;
 use Illuminate\Http\Request;
+use Symfony\Component\HttpFoundation\StreamedResponse;
+use Carbon\Carbon;
 
 class AdminDewanController extends Controller
 {
@@ -49,6 +51,63 @@ class AdminDewanController extends Controller
         return view('admin.dewan.index', compact('dewan', 'angkatanList'));
     }
 
+    public function export(Request $request)
+    {
+        // Query dasar
+        $query = Dewan::query();
+
+        // Filter sama seperti index
+        if ($request->filled('jabatan')) {
+            $query->where('jabatan', 'like', '%' . $request->jabatan . '%');
+        }
+
+        if ($request->filled('angkatan')) {
+            $query->where('angkatan', 'like', '%' . $request->angkatan . '%');
+        }
+
+        if ($request->filled('alamat')) {
+            $query->where('alamat', 'like', '%' . $request->alamat . '%');
+        }
+
+        if ($request->filled('satuan')) {
+            $query->where('satuan', $request->satuan);
+        }
+
+        $dewan = $query->orderBy('angkatan', 'desc')->get();
+
+        $response = new StreamedResponse(function () use ($dewan) {
+            $handle = fopen('php://output', 'w');
+
+            // Header kolom CSV
+            fputcsv($handle, [
+                'No', 'Nama', 'Jabatan', 'Satuan', 'Angkatan',
+                'Keaktifan', 'Tanggal Lahir', 'Alamat', 'HP', 'Sosial Media', 'Keterangan'
+            ]);
+
+            foreach ($dewan as $i => $item) {
+                fputcsv($handle, [
+                    $i + 1,
+                    $item->nama,
+                    $item->jabatan,
+                    $item->satuan,
+                    $item->angkatan,
+                    $item->keaktifan,
+                    $item->tanggal_lahir ? Carbon::parse($item->tanggal_lahir)->format('d-m-Y') : '',
+                    $item->alamat,
+                    $item->nomer_hp,
+                    $item->sosial_media,
+                    $item->keterangan,
+                ]);
+            }
+
+            fclose($handle);
+        });
+
+        $response->headers->set('Content-Type', 'text/csv');
+        $response->headers->set('Content-Disposition', 'attachment; filename="dewan_export_' . date('Y-m-d_H-i-s') . '.csv"');
+
+        return $response;
+    }
 
     public function create()
     {
@@ -86,10 +145,10 @@ class AdminDewanController extends Controller
     }
 
     public function edit($id)
-        {
-            $dewan = Dewan::findOrFail($id);
-            return view('admin.dewan.dewan_edit', compact('dewan'));
-        }
+    {
+        $dewan = Dewan::findOrFail($id);
+        return view('admin.dewan.dewan_edit', compact('dewan'));
+    }
 
     public function update(Request $request, $id)
     {
@@ -129,5 +188,4 @@ class AdminDewanController extends Controller
 
         return redirect('/admin/dewan')->with('success', 'Data Dewan Ambalan berhasil dihapus!');
     }
-
 }

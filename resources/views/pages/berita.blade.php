@@ -161,8 +161,12 @@
                 </a>
             </div>
         @empty
-            <div class="col-12 text-center">
-                <p class="text-muted">Belum ada berita yang ditampilkan.</p>
+            <div class="row justify-content-center mt-4">
+                <div class="col-6 col-md-4">
+                    <div class="text-center text-muted bg-white p-3 rounded shadow-sm">
+                        Berita yang anda cari tidak tersedia.
+                    </div>
+                </div>
             </div>
         @endforelse
     </div>

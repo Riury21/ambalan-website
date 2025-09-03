@@ -72,7 +72,10 @@
 
             <div class="col d-flex">
                 <button type="submit" class="btn btn-primary me-2">Filter</button>
-                <a href="{{ url('/admin/pembina') }}" class="btn btn-secondary">Reset</a>
+                <a href="{{ url('/admin/pembina') }}" class="btn btn-secondary me-2">Reset</a>
+                <a href="{{ url('/admin/pembina/export?' . http_build_query(request()->all())) }}" class="btn btn-success">
+                    Export CSV
+                </a>
             </div>
         </form>
     </div>

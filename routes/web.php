@@ -110,6 +110,7 @@ Route::middleware('auth')->group(function () {
     // Rute pembina
     Route::prefix('admin/pembina')->group(function () {
         Route::get('/', [AdminPembinaController::class, 'index']);
+        Route::get('/export', [AdminPembinaController::class, 'export'])->name('pembina.export');
         Route::get('/create', [AdminPembinaController::class, 'create']);
         Route::post('/', [AdminPembinaController::class, 'store']);
         Route::get('/{id}/edit', [AdminPembinaController::class, 'edit']);
@@ -120,13 +121,18 @@ Route::middleware('auth')->group(function () {
     // Rute dewan
     Route::prefix('admin/dewan')->group(function () {
         Route::get('/', [AdminDewanController::class, 'index']);
+        
+        // 🚀 export taruh di sini
+        Route::get('/export', [AdminDewanController::class, 'export'])->name('dewan.export');
+
         Route::get('/create', [AdminDewanController::class, 'create']);
         Route::post('/', [AdminDewanController::class, 'store']);
-        Route::get('/{id}/edit', [AdminDewanController::class, 'edit']);
-        Route::put('/{id}', [AdminDewanController::class, 'update']);
-        Route::delete('/{id}', [AdminDewanController::class, 'destroy']);
-    });
 
+        // ⚡ pastikan {id} hanya angka
+        Route::get('/{id}/edit', [AdminDewanController::class, 'edit'])->where('id', '[0-9]+');
+        Route::put('/{id}', [AdminDewanController::class, 'update'])->where('id', '[0-9]+');
+        Route::delete('/{id}', [AdminDewanController::class, 'destroy'])->where('id', '[0-9]+');
+    });
     // Rute pesan
     Route::prefix('admin/pesan')->group(function () {
         Route::get('/', [PesanAdminController::class, 'index'])->name('pesan.index');
