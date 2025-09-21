@@ -162,6 +162,9 @@ Route::middleware('auth')->group(function () {
 });
 
 // Route untuk pengguna, tanpa middleware
+Route::get('/', [UserController::class, 'home'])->name('home');
+Route::get('/berita', [UserController::class, 'berita'])->name('berita.index');
+Route::get('/berita/{slug}', [UserController::class, 'detailBerita'])->name('berita.detail');
 Route::get('/dewanpurna', [UserController::class, 'dewanPurna'])->name('dewan-purna.index');
 Route::get('/dewanambalan', [UserController::class, 'dewanAmbalan'])->name('dewan-ambalan.index');
 Route::get('/pembina', [UserController::class, 'pembina']);

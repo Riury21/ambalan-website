@@ -9,6 +9,14 @@ use App\Models\Galeri;
 
 class UserController extends Controller
 {
+    public function home()
+    {
+        // Ambil 5 berita terbaru
+        $berita = Berita::orderByDesc('tanggal_upload')->take(5)->get();
+
+        return view('pages.home', compact('berita'));
+    }
+
     public function dewanPurna(Request $request)
     {
         $jabatanOrder = [

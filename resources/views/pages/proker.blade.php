@@ -51,7 +51,7 @@
     <div class="sticky-top-section text-center">
         <h1 class="mb-3 d-flex justify-content-center align-items-center gap-2">
             <img src="{{ asset('logo/kjkj.png') }}" alt="Logo KJ" style="height:100px;">
-            Program Kerja Ambalan Kamajaya Kamaratih
+            Program Kerja
             <img src="{{ asset('logo/krkr.png') }}" alt="Logo KR" style="height:100px;">
         </h1>
     </div>

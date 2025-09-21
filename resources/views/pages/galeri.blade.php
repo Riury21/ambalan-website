@@ -13,7 +13,6 @@
         padding: 0.5rem 0.5rem;
         border-bottom: 1px solid #dee2e6;
         border-radius: 10px;
-        transition: background-color 0.3s ease, color 0.3s ease;
     }
 
     @media (max-width: 768px) {
@@ -23,74 +22,66 @@
         }
     }
 
-    .truncate {
+    /* === GALLERY CARD STYLE === */
+    .gallery-card {
+        border: 1px solid #e5e5e5;
+        border-radius: 8px;
         overflow: hidden;
-        text-overflow: ellipsis;
-        display: -webkit-box;
-        -webkit-line-clamp: 4;
-        -webkit-box-orient: vertical;
+        transition: transform 0.2s, box-shadow 0.2s;
+        background: #fff;
     }
 
-    .card {
-        transition: background-color 0.3s ease, color 0.3s ease;
-        background-color: #ffffff;
-        color: #000000;
+    .gallery-card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
     }
 
-    .card-text a {
+    .gallery-thumb img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+    }
+
+    .gallery-body {
+        padding: 1rem;
+    }
+
+    .gallery-title {
+        font-size: 1.1rem;
+        font-weight: 700;
+        color: #222;
+        line-height: 1.4;
+        transition: color 0.2s;
+    }
+
+    .gallery-card:hover .gallery-title {
         color: #0d6efd;
-        text-decoration: underline;
     }
 
-    .card-text a:hover {
-        color: #084298;
+    .gallery-meta {
+        color: #777;
+        font-size: 0.85rem;
+        margin-bottom: 0.5rem;
     }
 
-    .text-muted {
-        color: #6c757d !important;
+    .gallery-excerpt {
+        font-size: 0.95rem;
+        color: #444;
+        line-height: 1.5;
     }
 
-    /* === DARK MODE === */
+    /* === Dark Mode === */
     @media (prefers-color-scheme: dark) {
         body {
             background-color: #121212;
-            color: #ffffff;
+            color: #e0e0e0;
         }
 
         .sticky-top-section {
             background-color: rgba(30, 30, 30, 0.95);
-            border-bottom: 1px solid #444;
-            color: #ffffff;
+            border-bottom: 1px solid #333;
         }
 
-        .card {
-            background-color: #1e1e1e;
-            color: #ffffff;
-            border: 1px solid #444;
-        }
-
-        .card-title,
-        .card-body,
-        .card-text,
-        .card p {
-            color: #ffffff;
-        }
-
-        .card-text a {
-            color: #66b0ff;
-        }
-
-        .card-text a:hover {
-            color: #89c9ff;
-        }
-
-        .text-muted {
-            color: #aaa !important;
-        }
-
-        a.text-dark {
-            color: #ffffff !important;
-        }
         .form-control {
             background-color: #2c2c2c;
             color: #e0e0e0;
@@ -100,10 +91,6 @@
 
         .form-control::placeholder {
             color: #aaa;
-        }
-
-        select.form-control {
-            background-image: none; /* hilangkan panah default */
         }
 
         option {
@@ -126,10 +113,33 @@
         .text-muted {
             color: #bbb !important;
         }
+
+        /* === Dark Mode for Gallery Card === */
+        .gallery-card {
+            background-color: #1e1e1e;
+            border-color: #333;
+        }
+
+        .gallery-title {
+            color: #e0e0e0;
+        }
+
+        .gallery-card:hover .gallery-title {
+            color: #64b5f6;
+        }
+
+        .gallery-meta {
+            color: #aaa;
+        }
+
+        .gallery-excerpt {
+            color: #ccc;
+        }
     }
 </style>
 
 <div class="container py-4">
+
     <!-- Sticky Title -->
     <div class="sticky-top-section">
         <h1 class="text-center mb-3 d-flex align-items-center justify-content-center gap-2">
@@ -141,8 +151,7 @@
             <div class="col-6 col-md-3">
                 <input type="text" name="search" class="form-control"
                     placeholder="Cari Judul Galeri"
-                    value="{{ request('search') }}"
-                    oninput="this.form.submit();">
+                    value="{{ request('search') }}">
             </div>
             <div class="col-12 col-md-auto d-flex gap-2 justify-content-center">
                 <a href="{{ route('galeri.index') }}" class="btn btn-secondary">Reset</a>
@@ -153,53 +162,42 @@
     <!-- Grid Galeri -->
     <div class="row justify-content-center mt-4">
         @forelse($galeri as $item)
-            <div class="col-12 col-md-4 col-lg-4">
-                <a href="{{ route('galeri.detail', $item->slug) }}" class="text-decoration-none text-dark">
-                    <div class="card h-100 shadow-sm">
+            <div class="col-12 col-md-6 col-lg-4 mb-4">
+                <div class="gallery-card h-100">
+                    <a href="{{ route('galeri.detail', $item->slug) }}" class="text-decoration-none">
                         @if($item->gambar)
-                            <img src="{{ asset('uploads/' . $item->gambar) }}"
-                                 class="card-img-top img-fluid"
-                                 style="height: 300px; object-fit: cover;"
-                                 alt="Gambar Galeri">
+                            <div class="gallery-thumb">
+                                <img src="{{ asset('uploads/' . $item->gambar) }}" alt="Gambar Galeri" class="img-fluid">
+                            </div>
                         @else
-                            <img src="https://via.placeholder.com/600x300?text=No+Image"
-                                 class="card-img-top img-fluid"
-                                 style="height: 300px; object-fit: cover;"
-                                 alt="No Image">
+                            <div class="gallery-thumb">
+                                <img src="https://via.placeholder.com/600x300?text=No+Image" alt="No Image" class="img-fluid">
+                            </div>
                         @endif
-
-                        <div class="card-body">
-                            <h5 class="card-title mb-2">{{ $item->judul }}</h5>
-
-                            @php
-                                $text = nl2br(e($item->deskripsi));
-                                $withLinks = preg_replace(
-                                    '/(https?:\/\/[^\s<]+)/',
-                                    '<a href="$1" target="_blank" rel="noopener noreferrer">$1</a>',
-                                    $text
-                                );
-                            @endphp
-
-                            <p class="card-text truncate">{!! $withLinks !!}</p>
-
-                            <p class="card-text mt-2">
-                                <strong>Tanggal:</strong> {{ \Carbon\Carbon::parse($item->tanggal_upload)->format('d M Y') ?? '-' }}
+                        <div class="gallery-body">
+                            <h5 class="gallery-title mb-2">{{ $item->judul }}</h5>
+                            <p class="gallery-meta">
+                                📅 {{ $item->tanggal_upload ? \Carbon\Carbon::parse($item->tanggal_upload)->format('d M Y') : '-' }}
                             </p>
+                            @php
+                                $text = strip_tags($item->deskripsi);
+                                $excerpt = Str::limit($text, 120, '...');
+                            @endphp
+                            <p class="gallery-excerpt">{{ $excerpt }}</p>
                         </div>
-                    </div>
-                </a>
+                    </a>
+                </div>
             </div>
         @empty
-            <div class="row justify-content-center mt-4">
-                <div class="col-6 col-md-4">
-                    <div class="text-center text-muted bg-white p-3 rounded shadow-sm">
-                        Data yang anda cari tidak tersedia.
-                    </div>
+            <div class="col-12 text-center mt-4">
+                <div class="text-muted p-4 rounded bg-light">
+                    Data yang anda cari tidak tersedia.
                 </div>
             </div>
         @endforelse
     </div>
 </div>
+
 <script>
     document.addEventListener("DOMContentLoaded", function () {
         const input = document.querySelector('input[name="search"]');

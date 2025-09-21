@@ -15,19 +15,59 @@
         border-radius: 10px;
     }
 
-    .truncate {
-        overflow: hidden;
-        text-overflow: ellipsis;
-        display: -webkit-box;
-        -webkit-line-clamp: 4;
-        -webkit-box-orient: vertical;
-    }
-
     @media (max-width: 768px) {
         .sticky-top-section {
             top: 0px;
             padding-top: 0.5rem;
         }
+    }
+
+    /* === NEWS CARD STYLE === */
+    .news-card {
+        border: 1px solid #e5e5e5;
+        border-radius: 8px;
+        overflow: hidden;
+        transition: transform 0.2s, box-shadow 0.2s;
+        background: #fff;
+    }
+
+    .news-card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+    }
+
+    .news-thumb img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+    }
+
+    .news-body {
+        padding: 1rem;
+    }
+
+    .news-title {
+        font-size: 1.1rem;
+        font-weight: 700;
+        color: #222;
+        line-height: 1.4;
+        transition: color 0.2s;
+    }
+
+    .news-card:hover .news-title {
+        color: #0d6efd;
+    }
+
+    .news-meta {
+        color: #777;
+        font-size: 0.85rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .news-excerpt {
+        font-size: 0.95rem;
+        color: #444;
+        line-height: 1.5;
     }
 
     /* === Dark Mode === */
@@ -42,26 +82,6 @@
             border-bottom: 1px solid #333;
         }
 
-        .card {
-            background-color: #1e1e1e;
-            color: #e0e0e0;
-            border-color: #444;
-        }
-
-        .card a,
-        .card-text a {
-            color: #90caf9;
-        }
-
-        .card a:hover,
-        .card-text a:hover {
-            color: #64b5f6;
-        }
-
-        .text-dark {
-            color: #e0e0e0 !important;
-        }
-
         .form-control {
             background-color: #2c2c2c;
             color: #e0e0e0;
@@ -71,10 +91,6 @@
 
         .form-control::placeholder {
             color: #aaa;
-        }
-
-        select.form-control {
-            background-image: none; /* hilangkan panah default */
         }
 
         option {
@@ -97,6 +113,28 @@
         .text-muted {
             color: #bbb !important;
         }
+
+        /* === Dark Mode for News Card === */
+        .news-card {
+            background-color: #1e1e1e;
+            border-color: #333;
+        }
+
+        .news-title {
+            color: #e0e0e0;
+        }
+
+        .news-card:hover .news-title {
+            color: #64b5f6;
+        }
+
+        .news-meta {
+            color: #aaa;
+        }
+
+        .news-excerpt {
+            color: #ccc;
+        }
     }
 </style>
 
@@ -113,64 +151,54 @@
             <div class="col-6 col-md-3">
                 <input type="text" name="search" class="form-control"
                     placeholder="Cari Judul Berita"
-                    value="{{ request('search') }}"
-                    oninput="this.form.submit();">
+                    value="{{ request('search') }}">
             </div>
             <div class="col-12 col-md-auto d-flex gap-2 justify-content-center">
                 <a href="{{ route('berita.index') }}" class="btn btn-secondary">Reset</a>
             </div>
         </form>
     </div>
+
     <!-- Grid Berita -->
     <div class="row justify-content-center mt-4">
         @forelse($berita as $item)
-            <div class="col-12 col-md-4 col-lg-4">
-                <a href="{{ route('berita.detail', $item->slug) }}" class="text-decoration-none text-dark">
-                    <div class="card h-100 shadow-sm">
+            <div class="col-12 col-md-6 col-lg-4 mb-4">
+                <div class="news-card h-100">
+                    <a href="{{ route('berita.detail', $item->slug) }}" class="text-decoration-none">
                         @if($item->gambar)
-                            <img src="{{ asset('uploads/' . $item->gambar) }}"
-                                 class="card-img-top img-fluid"
-                                 style="height: 300px; object-fit: cover;"
-                                 alt="Gambar Berita">
+                            <div class="news-thumb">
+                                <img src="{{ asset('uploads/' . $item->gambar) }}" alt="Gambar Berita" class="img-fluid">
+                            </div>
                         @else
-                            <img src="https://via.placeholder.com/600x300?text=No+Image"
-                                 class="card-img-top img-fluid"
-                                 style="height: 300px; object-fit: cover;"
-                                 alt="No Image">
+                            <div class="news-thumb">
+                                <img src="https://via.placeholder.com/600x300?text=No+Image" alt="No Image" class="img-fluid">
+                            </div>
                         @endif
-
-                        <div class="card-body">
-                            <h5 class="card-title mb-2">{{ $item->judul }}</h5>
-
-                            @php
-                                $text = nl2br(e($item->isi));
-                                $withLinks = preg_replace(
-                                    '/(https?:\/\/[^\s<]+)/',
-                                    '<a href="$1" target="_blank" rel="noopener noreferrer">$1</a>',
-                                    $text
-                                );
-                            @endphp
-                            <p class="card-text truncate">{!! $withLinks !!}</p>
-
-                            <p class="card-text mt-2">
-                                <strong>Penulis:</strong> {{ $item->penulis ?? '-' }} <br>
-                                <strong>Tanggal:</strong> {{ $item->tanggal_upload ? \Carbon\Carbon::parse($item->tanggal_upload)->format('d M Y') : '-' }}
+                        <div class="news-body">
+                            <h5 class="news-title mb-2">{{ $item->judul }}</h5>
+                            <p class="news-meta">
+                                ✍ {{ $item->penulis ?? '-' }} |
+                                {{ $item->tanggal_upload ? \Carbon\Carbon::parse($item->tanggal_upload)->format('d M Y') : '-' }}
                             </p>
+                            @php
+                                $text = strip_tags($item->isi);
+                                $excerpt = Str::limit($text, 120, '...');
+                            @endphp
+                            <p class="news-excerpt">{{ $excerpt }}</p>
                         </div>
-                    </div>
-                </a>
+                    </a>
+                </div>
             </div>
         @empty
-            <div class="row justify-content-center mt-4">
-                <div class="col-6 col-md-4">
-                    <div class="text-center text-muted bg-white p-3 rounded shadow-sm">
-                        Berita yang anda cari tidak tersedia.
-                    </div>
+            <div class="col-12 text-center mt-4">
+                <div class="text-muted p-4 rounded bg-light">
+                    Berita yang anda cari tidak tersedia.
                 </div>
             </div>
         @endforelse
     </div>
 </div>
+
 <script>
     document.addEventListener("DOMContentLoaded", function () {
         const input = document.querySelector('input[name="search"]');
