@@ -146,10 +146,12 @@
         '2016/2017' => 'Donahue Wirasana',
         '2017/2018' => 'Aji Adanu Sangshetta',
         '2018/2019' => 'Karan Ardhani Badrika Arsona',
+        '2019/2020' => 'Abhiniya Ganendra Ardhani',
         '2021/2022' => 'Birendra Mahatma Ardhani',
         '2022/2023' => 'Mahesa Gajahsora Wajrapani',
         '2023/2024' => 'Amartya Pandya Danantya',
         '2024/2025' => 'Adhyaksa Diraya Satyagraha',
+        '2025/2026' => 'Whita Thyasti Agni',
     ];
     $currentTitle = $titleMapping[request('angkatan')] ?? 'Dewan Purna';
 @endphp

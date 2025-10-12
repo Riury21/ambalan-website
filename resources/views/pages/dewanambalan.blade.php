@@ -144,7 +144,7 @@
             Dewan Ambalan
             <img src="{{ asset('logo/kr.png') }}" alt="Logo KR" class="img-fluid" style="height: 70px;">
         </h1>
-        <h4 class="text-center mb-3">--Semboyan?--</h4>
+        <h4 class="text-center mb-3">Whita Thyasti Agni</h4>
 
         <!-- Filter -->
         <form method="GET" action="{{ route('dewan-ambalan.index') }}" class="row g-2 justify-content-center">
