@@ -147,6 +147,7 @@
         '2017/2018' => 'Aji Adanu Sangshetta',
         '2018/2019' => 'Karan Ardhani Badrika Arsona',
         '2019/2020' => 'Abhiniya Ganendra Ardhani',
+        '2020/2021' => 'Dharma Jayasebadra',
         '2021/2022' => 'Birendra Mahatma Ardhani',
         '2022/2023' => 'Mahesa Gajahsora Wajrapani',
         '2023/2024' => 'Amartya Pandya Danantya',
