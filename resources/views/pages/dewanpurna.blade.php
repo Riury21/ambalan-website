@@ -139,6 +139,7 @@
 @php
     // Mapping judul berdasarkan angkatan
     $titleMapping = [
+        '2009/2010' => 'Disiplin untuk Setia, Setia pada Janji',
         '2012/2013' => 'Suradira Jaya Ningrat Lebur Dening Pangastuti',
         '2013/2014' => 'Je Zult Nooit Allen Lopen',
         '2014/2015' => 'Ritter Des Glaubens',
